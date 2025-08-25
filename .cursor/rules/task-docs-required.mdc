@@ -1,0 +1,15 @@
+---
+alwaysApply: false
+description: Require a task document in doc/tasks before implementation
+---
+# Task Documentation Required Before Implementation
+
+Before starting any implementation, write a task document in `doc/tasks/` describing the change. Link the document in PR description.
+
+## Requirements
+- File location: `doc/tasks/{kebab-case-task-name}.md`
+- Include: goal, scope, acceptance criteria, risks, rollout plan.
+- Reference relevant files using `mdc:` links for clarity.
+
+## Template
+Use the template: [doc/tasks/task-template.md](mdc:doc/tasks/task-template.md)

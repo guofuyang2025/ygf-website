@@ -1,0 +1,24 @@
+---
+globs: src/**/*.tsx,src/**/*.ts
+---
+# Frontend UI Library Rule
+
+Use Material UI (MUI) for UI components and `@mui/icons-material` for icons.
+
+## Guidelines
+- Prefer MUI components (`@mui/material`) over custom HTML for consistency and accessibility.
+- Use theme tokens; avoid hard-coded colors/sizes. Configure theme at app root.
+- Icons must come from `@mui/icons-material` (or `@mui/icons-material/*`).
+- Avoid mixing multiple UI libraries in the same view.
+
+## Setup
+- Ensure MUI is installed:
+  - `@mui/material`
+  - `@emotion/react`
+  - `@emotion/styled`
+  - `@mui/icons-material`
+- Provide the theme via `ThemeProvider` in [src/app/layout.tsx](mdc:src/app/layout.tsx).
+
+## Examples
+- Buttons: `import { Button } from '@mui/material'`
+- Icons: `import LoginIcon from '@mui/icons-material/Login'`

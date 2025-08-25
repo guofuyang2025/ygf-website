@@ -1,0 +1,34 @@
+---
+alwaysApply: true
+---
+# Website Template: Project Structure
+
+This project is a reusable website template with a home page (header and footer) and Supabase authentication.
+
+This is a Next.js 15.5.0 frontend project using the App Router. The backend is in a separate project.
+
+## Key Entrypoints
+- `Next.js` app router root: [src/app/layout.tsx](mdc:src/app/layout.tsx)
+- Home page: [src/app/page.tsx](mdc:src/app/page.tsx)
+- Global styles: [src/app/globals.css](mdc:src/app/globals.css)
+- Middleware (auth-aware): [src/middleware.ts](mdc:src/middleware.ts)
+
+## Auth (Supabase)
+- Supabase client: [src/lib/supabase.ts](mdc:src/lib/supabase.ts)
+- Auth context provider: [src/contexts/AuthContext.tsx](mdc:src/contexts/AuthContext.tsx)
+- Protected route wrapper: [src/components/auth/ProtectedRoute.tsx](mdc:src/components/auth/ProtectedRoute.tsx)
+- Login UI: [src/components/auth/LoginForm.tsx](mdc:src/components/auth/LoginForm.tsx)
+- Profile UI: [src/components/auth/UserProfile.tsx](mdc:src/components/auth/UserProfile.tsx)
+- OAuth callback route: [src/app/auth/callback/route.ts](mdc:src/app/auth/callback/route.ts)
+
+## Conventions
+- Prefer colocated UI in `src/app` and reusable components in `src/components`.
+- Keep page layout scaffolding (header, footer, main) in `layout.tsx` or shared components.
+- Use the `AuthContext` to read the current session; avoid duplicating Supabase initialization.
+- For protected content, wrap with `ProtectedRoute` or enforce via middleware.
+
+## Docs & Config
+- Task documentation: [doc/tasks/supabase-auth-implementation.md](mdc:doc/tasks/supabase-auth-implementation.md)
+- TypeScript: [tsconfig.json](mdc:tsconfig.json)
+- ESLint: [eslint.config.mjs](mdc:eslint.config.mjs)
+- Build config: [next.config.ts](mdc:next.config.ts)
