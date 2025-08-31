@@ -3,6 +3,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import UserProfile from '@/components/auth/UserProfile'
+import TmpPage from '@/components/TmpPage'
 import { Container, Box, Typography } from '@mui/material'
 import { useI18n } from '@/contexts/LanguageContent'
 
@@ -15,6 +16,7 @@ export default function ProfilePage() {
         <Box sx={{ py: 6 }}>
           <Typography variant="h4" gutterBottom>{t.profilePage.title}</Typography>
           <UserProfile />
+          <TmpPage />
         </Box>
       </Container>
       <Footer />
