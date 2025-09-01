@@ -35,34 +35,28 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // if user is not signed in and the current path is not public, redirect to /
-  const publicPaths = new Set<string>(['/', '/login', '/profile', '/about'])
-  if (!user && !publicPaths.has(request.nextUrl.pathname)) {
+  // If user is not signed in and the current path is /dashboard, redirect to /auth/sign-in
+  if (!user && request.nextUrl.pathname.startsWith('/dashboard')) {
     const redirectUrl = request.nextUrl.clone()
-    redirectUrl.pathname = '/'
+    redirectUrl.pathname = '/auth/sign-in'
     return NextResponse.redirect(redirectUrl)
   }
 
-  // IMPORTANT: You *must* return the supabaseResponse object as it is. If you're
-  // creating a new response object with NextResponse.next() make sure to:
-  // 1. Pass the request in it, like so:
-  //    const myNewResponse = NextResponse.next({ request })
-  // 2. Copy over the cookies, like so:
-  //    myNewResponse.cookies.setAll(supabaseResponse.cookies.getAll())
-  // 3. Change the myNewResponse object instead of the supabaseResponse object
+  // If user is signed in and the current path is /auth, redirect to /dashboard/overview
+  if (user && request.nextUrl.pathname.startsWith('/auth')) {
+    const redirectUrl = request.nextUrl.clone()
+    redirectUrl.pathname = '/dashboard/overview'
+    return NextResponse.redirect(redirectUrl)
+  }
 
   return supabaseResponse
 }
 
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * Feel free to modify this pattern to include more paths.
-     */
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
-  ],
+    // Skip Next.js internals and all static files, unless found in search params
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    // Always run for API routes
+    '/(api|trpc)(.*)'
+  ]
 }
