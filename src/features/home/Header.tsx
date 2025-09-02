@@ -54,6 +54,12 @@ export default function Header() {
               <Button component={Link} href="/contact" color="inherit">
                 {t.header.contact}
               </Button>
+              <Button component={Link} href="/franchise" color="inherit">
+                {t.header.franchise}
+              </Button>
+              <Button component={Link} href="/careers" color="inherit">
+                {t.header.careers}
+              </Button>
               <Button onClick={toggleLanguage} startIcon={<LanguageIcon />} color="inherit">
                 {t.header.language}
               </Button>
@@ -93,6 +99,12 @@ export default function Header() {
             </Button>
             <Button component={Link} href="/contact" color="inherit">
               {t.header.contact}
+            </Button>
+            <Button component={Link} href="/franchise" color="inherit">
+              {t.header.franchise}
+            </Button>
+            <Button component={Link} href="/careers" color="inherit">
+              {t.header.careers}
             </Button>
             <Button onClick={toggleLanguage} startIcon={<LanguageIcon />} color="inherit">
               {t.header.language}
