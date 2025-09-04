@@ -1,25 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server'
-
-export interface CareerApplicationData {
-    firstName: string
-    lastName: string
-    email: string
-    position: string
-    resume: string // Base64 encoded file or file path
-    coverLetter: string
-    phone?: string
-    linkedin?: string
-    portfolio?: string
-    experience?: string
-    education?: string
-    skills?: string[]
-    availability?: string
-    salary?: string
-    source?: string
-}
+import { toAddress, fromAddress } from '@/config/email'
+import { generateCareersEmailHtml, type CareerApplicationData } from '@/components/email-templates/careers-email'
 
 export async function POST(request: NextRequest) {
     try {
+        const apiKey = process.env.RESEND_API_KEY
+        if (!apiKey) {
+            console.error('Missing RESEND_API_KEY environment variable')
+            // In development, return success to allow testing
+            if (process.env.NODE_ENV === 'development') {
+                console.log('Development mode: Simulating careers email send')
+                return NextResponse.json({ 
+                    success: true, 
+                    id: 'dev-simulated',
+                    message: 'Careers email would be sent in production (RESEND_API_KEY not set)'
+                })
+            }
+            return NextResponse.json({ error: 'Email service not configured' }, { status: 500 })
+        }
+
         const formData = await request.formData()
 
         // Extract form fields
@@ -77,7 +76,6 @@ export async function POST(request: NextRequest) {
             lastName,
             email,
             position,
-            resume: resumeData ? JSON.stringify(resumeData) : '',
             coverLetter,
             phone: phone || undefined,
             linkedin: linkedin || undefined,
@@ -87,15 +85,10 @@ export async function POST(request: NextRequest) {
             skills: skills ? skills.split(',').map(s => s.trim()) : undefined,
             availability: availability || undefined,
             salary: salary || undefined,
-            source: source || undefined
+            source: source || undefined,
+            hasResume: !!resumeData,
+            resumeFileName: resumeData?.fileName,
         }
-
-        // TODO: Save to database
-        // await saveApplicationToDatabase(applicationData)
-
-
-        // TODO: Process resume file (store in cloud storage, parse content, etc.)
-        // await processResumeFile(resumeData)
 
         // Log application (for development/debugging)
         console.log('Career application received:', {
@@ -106,6 +99,48 @@ export async function POST(request: NextRequest) {
             timestamp: new Date().toISOString()
         })
 
+        const html = generateCareersEmailHtml(applicationData)
+
+        const attachments = resumeData
+            ? [
+                  {
+                      filename: resumeData.fileName,
+                      content: resumeData.base64,
+                      content_type: resumeData.fileType,
+                  },
+              ]
+            : undefined
+
+        console.log('Sending careers email via Resend:', { from: fromAddress, to: toAddress, position })
+
+        const resendResponse = await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${apiKey}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                from: fromAddress,
+                to: [toAddress],
+                subject: `[Website] Career Application: ${applicationData.position}`,
+                html,
+                reply_to: applicationData.email,
+                attachments,
+            }),
+        })
+
+        if (!resendResponse.ok) {
+            const err = await resendResponse.text()
+            console.error('Resend API error:', { status: resendResponse.status, error: err })
+            return NextResponse.json({ 
+                error: 'Failed to send email', 
+                details: err,
+                status: resendResponse.status
+            }, { status: 502 })
+        }
+
+        const data = await resendResponse.json()
+        console.log('Careers email sent successfully:', { id: data?.id })
         return NextResponse.json({
             success: true,
             message: 'Application submitted successfully',
@@ -131,33 +166,4 @@ export async function GET() {
         { error: 'Method not allowed' },
         { status: 405 }
     )
-}
-
-
-export async function saveApplicationToDatabase(applicationData: CareerApplicationData) {
-    // TODO: Implement database storage
-    // Example structure:
-    // const db = await getDatabase()
-    // const result = await db.collection('career_applications').insertOne({
-    //   ...applicationData,
-    //   createdAt: new Date(),
-    //   status: 'pending',
-    //   reviewedBy: null,
-    //   reviewedAt: null,
-    //   notes: null
-    // })
-    // return result
-
-    console.log('Application would be saved to database:', applicationData.firstName)
-}
-
-export async function processResumeFile(resumeData: any) {
-    // TODO: Implement resume processing
-    // Example structure:
-    // 1. Store file in cloud storage (AWS S3, Google Cloud Storage, etc.)
-    // 2. Parse resume content using AI/ML services
-    // 3. Extract key information (skills, experience, education)
-    // 4. Store parsed data in database
-
-    console.log('Resume would be processed:', resumeData.fileName)
 }

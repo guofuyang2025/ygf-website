@@ -1,15 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Header from '@/components/layout/public-header'
 import Footer from '@/components/layout/Footer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { FormInput } from '@/components/ui/form-input'
-import { FormTextarea } from '@/components/ui/form-textarea'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Label } from '@/components/ui/label'
-import FileUpload from '@/components/ui/file-upload'
 import {
     Briefcase,
     MapPin,
@@ -22,12 +17,14 @@ import {
     CheckCircle,
     ArrowRight
 } from 'lucide-react'
+import CareersEmail, { type CareersEmailRef } from '@/components/form/careers-email'
 
 export default function CareersPage() {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
     const [submitMessage, setSubmitMessage] = useState('')
-    const [resumeFile, setResumeFile] = useState<File | null>(null)
+    const careersEmailRef = useRef<CareersEmailRef>(null)
+    const formRef = useRef<HTMLFormElement>(null)
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -37,25 +34,24 @@ export default function CareersPage() {
 
         try {
             const formData = new FormData(e.currentTarget)
-
-            // Add resume file if selected
+            
+            // Get resume file from the component ref
+            const resumeFile = careersEmailRef.current?.getResumeFile()
             if (resumeFile) {
                 formData.append('resume', resumeFile)
             }
 
-            const response = await fetch('/api/careers', {
-                method: 'POST',
-                body: formData,
-            })
-
+            const response = await fetch('/api/email/careers', { method: 'POST', body: formData })
             const result = await response.json()
 
             if (response.ok) {
                 setSubmitStatus('success')
                 setSubmitMessage(result.message || 'Application submitted successfully!')
-                // Reset form
-                e.currentTarget.reset()
-                setResumeFile(null)
+                // Reset form safely
+                if (formRef.current) {
+                    formRef.current.reset()
+                }
+                careersEmailRef.current?.resetForm()
             } else {
                 setSubmitStatus('error')
                 setSubmitMessage(result.message || result.error || 'Failed to submit application')
@@ -69,13 +65,13 @@ export default function CareersPage() {
         }
     }
 
-    const handleResumeSelect = (file: File) => {
-        setResumeFile(file)
-    }
-
-    const handleResumeRemove = () => {
-        setResumeFile(null)
-    }
+    const positions = [
+        { value: 'frontend-developer', label: 'Senior Frontend Developer' },
+        { value: 'product-manager', label: 'Product Manager' },
+        { value: 'ux-designer', label: 'UX/UI Designer' },
+        { value: 'devops-engineer', label: 'DevOps Engineer' },
+        { value: 'other', label: 'Other' },
+    ]
 
     const openPositions = [
         {
@@ -353,69 +349,7 @@ export default function CareersPage() {
                                     </CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    <form onSubmit={handleSubmit} className="space-y-6">
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                            <FormInput
-                                                label="First Name"
-                                                htmlFor="firstName"
-                                                name="firstName"
-                                                placeholder="Enter your first name"
-                                                required
-                                            />
-                                            <FormInput
-                                                label="Last Name"
-                                                htmlFor="lastName"
-                                                name="lastName"
-                                                placeholder="Enter your last name"
-                                                required
-                                            />
-                                        </div>
-
-                                        <FormInput
-                                            label="Email Address"
-                                            htmlFor="email"
-                                            name="email"
-                                            type="email"
-                                            placeholder="Enter your email address"
-                                            required
-                                        />
-
-                                        <div className="space-y-2">
-                                            <Label htmlFor="position" className="text-sm font-medium text-foreground">
-                                                Position
-                                            </Label>
-                                            <Select name="position" required>
-                                                <SelectTrigger className="w-full">
-                                                    <SelectValue placeholder="Select a position" />
-                                                </SelectTrigger>
-                                                <SelectContent>
-                                                    <SelectItem value="frontend-developer">Senior Frontend Developer</SelectItem>
-                                                    <SelectItem value="product-manager">Product Manager</SelectItem>
-                                                    <SelectItem value="ux-designer">UX/UI Designer</SelectItem>
-                                                    <SelectItem value="devops-engineer">DevOps Engineer</SelectItem>
-                                                    <SelectItem value="other">Other</SelectItem>
-                                                </SelectContent>
-                                            </Select>
-                                        </div>
-
-                                        <FormTextarea
-                                            label="Cover Letter"
-                                            htmlFor="coverLetter"
-                                            name="coverLetter"
-                                            placeholder="Tell us why you're interested in this position and what makes you a great fit..."
-                                            required
-                                        />
-
-                                        <FileUpload
-                                            label="Resume/CV"
-                                            accept=".pdf,.doc,.docx,.txt"
-                                            maxSize={10}
-                                            selectedFile={resumeFile}
-                                            onFileSelect={handleResumeSelect}
-                                            onFileRemove={handleResumeRemove}
-                                            placeholder="Drag and drop your resume here, or click to browse"
-                                        />
-
+                                    <form onSubmit={handleSubmit} className="space-y-6" ref={formRef}>
                                         {/* Submit Status Messages */}
                                         {submitStatus === 'success' && (
                                             <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
@@ -432,25 +366,13 @@ export default function CareersPage() {
                                                 </p>
                                             </div>
                                         )}
-
-                                        <Button
-                                            type="submit"
-                                            className="w-full"
-                                            size="lg"
-                                            disabled={isSubmitting}
-                                        >
-                                            {isSubmitting ? (
-                                                <>
-                                                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
-                                                    Submitting...
-                                                </>
-                                            ) : (
-                                                <>
-                                                    <Send className="w-4 h-4 mr-2" />
-                                                    Submit Application
-                                                </>
-                                            )}
-                                        </Button>
+                                        
+                                        <CareersEmail
+                                            buttonLabel={isSubmitting ? 'Submitting...' : 'Submit Application'}
+                                            positions={positions}
+                                            isSubmitting={isSubmitting}
+                                            ref={careersEmailRef}
+                                        />
                                     </form>
                                 </CardContent>
                             </Card>

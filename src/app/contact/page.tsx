@@ -3,20 +3,10 @@
 import Header from '@/components/layout/public-header'
 import Footer from '@/components/layout/Footer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { FormInput } from '@/components/ui/form-input'
-import { FormTextarea } from '@/components/ui/form-textarea'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Label } from '@/components/ui/label'
-import { Mail, Phone, MapPin, MessageCircle, Send } from 'lucide-react'
+import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react'
+import ContactEmail from '@/components/form/contact-email'
 
 export default function ContactPage() {
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault()
-        // TODO: Implement form submission logic
-        console.log('Form submitted')
-    }
-
     return (
         <>
             <Header />
@@ -50,60 +40,17 @@ export default function ContactPage() {
                                 </p>
                             </CardHeader>
                             <CardContent>
-                                <form onSubmit={handleSubmit} className="space-y-6">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <FormInput
-                                            label="First Name"
-                                            htmlFor="firstName"
-                                            placeholder="Enter your first name"
-                                            required
-                                        />
-                                        <FormInput
-                                            label="Last Name"
-                                            htmlFor="lastName"
-                                            placeholder="Enter your last name"
-                                            required
-                                        />
-                                    </div>
-
-                                    <FormInput
-                                        label="Email Address"
-                                        htmlFor="email"
-                                        type="email"
-                                        placeholder="Enter your email address"
-                                        required
-                                    />
-
-                                    <div className="space-y-2">
-                                        <Label htmlFor="subject" className="text-sm font-medium text-foreground">
-                                            Subject
-                                        </Label>
-                                        <Select>
-                                            <SelectTrigger className="w-full">
-                                                <SelectValue placeholder="Select a subject" />
-                                            </SelectTrigger>
-                                            <SelectContent>
-                                                <SelectItem value="general">General Inquiry</SelectItem>
-                                                <SelectItem value="support">Technical Support</SelectItem>
-                                                <SelectItem value="partnership">Partnership</SelectItem>
-                                                <SelectItem value="feedback">Feedback</SelectItem>
-                                                <SelectItem value="other">Other</SelectItem>
-                                            </SelectContent>
-                                        </Select>
-                                    </div>
-
-                                    <FormTextarea
-                                        label="Message"
-                                        htmlFor="message"
-                                        placeholder="Tell us more about your inquiry..."
-                                        required
-                                    />
-
-                                    <Button type="submit" className="w-full" size="lg">
-                                        <Send className="w-4 h-4 mr-2" />
-                                        Send Message
-                                    </Button>
-                                </form>
+                                <ContactEmail
+                                    subjectOptions={[
+                                        { value: 'general', label: 'General Inquiry' },
+                                        { value: 'support', label: 'Technical Support' },
+                                        { value: 'partnership', label: 'Partnership' },
+                                        { value: 'feedback', label: 'Feedback' },
+                                        { value: 'other', label: 'Other' },
+                                    ]}
+                                    buttonLabel="Send Message"
+                                    messagePlaceholder="Tell us more about your inquiry..."
+                                />
                             </CardContent>
                         </Card>
 
@@ -156,10 +103,6 @@ export default function ContactPage() {
                                     </div>
                                 </CardContent>
                             </Card>
-
-
-
-
                         </div>
                     </div>
                 </div>
