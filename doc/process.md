@@ -1,4 +1,4 @@
-进展
+##进展
 
 除 product和dashboard
 外页面（home contact
@@ -17,7 +17,7 @@ Dashboard
 删除了重复的登录头像
 调整了主题风格
 
-TODO
+##TODO
 前端
 完善 product 页面 美化和显示问题
 Dashboard 重复/模糊的功能
@@ -30,7 +30,7 @@ auth 对用户隐藏 dashboard
 SMTP
 Map 功能 初步实现？
 
-计划
+##计划
 
 周四9.4
 完善 product 页面
