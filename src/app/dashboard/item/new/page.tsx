@@ -2,7 +2,7 @@ import PageContainer from '@/components/layout/page-container';
 import { Heading } from '@/components/ui/heading';
 import { Separator } from '@/components/ui/separator';
 import { Suspense } from 'react';
-import NewItemForm from './new-item-form';
+import NewItemForm from './new-item-form-shadcn';
 
 export const metadata = {
   title: 'Dashboard: Add New Item',

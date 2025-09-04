@@ -1,6 +1,7 @@
 'use client'
 
-import Header from '@/features/home/Header'
+import { useState } from 'react'
+import Header from '@/components/layout/public-header'
 import Footer from '@/components/layout/Footer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -8,6 +9,7 @@ import { FormInput } from '@/components/ui/form-input'
 import { FormTextarea } from '@/components/ui/form-textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Label } from '@/components/ui/label'
+import FileUpload from '@/components/ui/file-upload'
 import {
     Briefcase,
     MapPin,
@@ -22,10 +24,57 @@ import {
 } from 'lucide-react'
 
 export default function CareersPage() {
-    const handleSubmit = (e: React.FormEvent) => {
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+    const [submitMessage, setSubmitMessage] = useState('')
+    const [resumeFile, setResumeFile] = useState<File | null>(null)
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        // TODO: Implement form submission logic
-        console.log('Career application submitted')
+        setIsSubmitting(true)
+        setSubmitStatus('idle')
+        setSubmitMessage('')
+
+        try {
+            const formData = new FormData(e.currentTarget)
+
+            // Add resume file if selected
+            if (resumeFile) {
+                formData.append('resume', resumeFile)
+            }
+
+            const response = await fetch('/api/careers', {
+                method: 'POST',
+                body: formData,
+            })
+
+            const result = await response.json()
+
+            if (response.ok) {
+                setSubmitStatus('success')
+                setSubmitMessage(result.message || 'Application submitted successfully!')
+                // Reset form
+                e.currentTarget.reset()
+                setResumeFile(null)
+            } else {
+                setSubmitStatus('error')
+                setSubmitMessage(result.message || result.error || 'Failed to submit application')
+            }
+        } catch (error) {
+            console.error('Error submitting application:', error)
+            setSubmitStatus('error')
+            setSubmitMessage('An unexpected error occurred. Please try again.')
+        } finally {
+            setIsSubmitting(false)
+        }
+    }
+
+    const handleResumeSelect = (file: File) => {
+        setResumeFile(file)
+    }
+
+    const handleResumeRemove = () => {
+        setResumeFile(null)
     }
 
     const openPositions = [
@@ -103,12 +152,12 @@ export default function CareersPage() {
             <Header />
             <main className="min-h-screen bg-background">
                 {/* Hero Section */}
-                <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-950/20 dark:to-indigo-950/20">
+                <section className="py-20 bg-primary/80">
                     <div className="container mx-auto px-4 text-center">
-                        <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+                        <h1 className="text-5xl md:text-6xl font-bold text-white dark:text-black mb-6 [text-shadow:_0_4px_8px_rgb(0_0_0_/_0.4)] dark:[text-shadow:_0_4px_8px_rgb(255_255_255_/_0.4)]">
                             Join Our Team
                         </h1>
-                        <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                        <p className="text-xl text-white dark:text-black max-w-3xl mx-auto leading-relaxed [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
                             Build the future with us. We're looking for passionate, talented individuals
                             who want to make a difference and grow their careers in an innovative environment.
                         </p>
@@ -146,7 +195,7 @@ export default function CareersPage() {
                                         </div>
                                     </CardHeader>
                                     <CardContent>
-                                        <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
+                                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
                                             <div className="flex items-center gap-2">
                                                 <MapPin className="w-4 h-4" />
                                                 {position.location}
@@ -160,10 +209,6 @@ export default function CareersPage() {
                                                 {position.experience}
                                             </div>
                                         </div>
-                                        <Button className="w-full" variant="outline">
-                                            View Details
-                                            <ArrowRight className="w-4 h-4 ml-2" />
-                                        </Button>
                                     </CardContent>
                                 </Card>
                             ))}
@@ -172,7 +217,7 @@ export default function CareersPage() {
                 </section>
 
                 {/* Our Culture Section */}
-                <section className="py-20 bg-muted/30">
+                <section className="py-20 bg-primary/20">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -264,20 +309,20 @@ export default function CareersPage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                             {applicationSteps.map((step) => (
-                                <Card key={step.step} className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
+                                <Card key={step.step} className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/20">
                                     <CardContent>
                                         <div className="flex justify-center mb-4">
                                             {step.icon}
                                         </div>
                                         <div className="mb-3">
-                                            <span className="inline-flex items-center justify-center w-8 h-8 bg-blue-100 dark:bg-blue-900/20 text-blue-600 rounded-full text-sm font-semibold">
+                                            <span className="inline-flex items-center justify-center w-8 h-8 bg-primary/80 text-white rounded-full text-sm font-semibold">
                                                 {step.step}
                                             </span>
                                         </div>
                                         <h3 className="text-lg font-semibold text-foreground mb-3">
                                             {step.title}
                                         </h3>
-                                        <p className="text-muted-foreground text-sm leading-relaxed">
+                                        <p className="text-foreground text-sm leading-relaxed">
                                             {step.description}
                                         </p>
                                     </CardContent>
@@ -288,7 +333,7 @@ export default function CareersPage() {
                 </section>
 
                 {/* Apply Now Form Section */}
-                <section className="py-20 bg-muted/30">
+                <section className="py-20 bg-primary/20">
                     <div className="container mx-auto px-4">
                         <div className="max-w-4xl mx-auto">
                             <div className="text-center mb-12">
@@ -313,12 +358,14 @@ export default function CareersPage() {
                                             <FormInput
                                                 label="First Name"
                                                 htmlFor="firstName"
+                                                name="firstName"
                                                 placeholder="Enter your first name"
                                                 required
                                             />
                                             <FormInput
                                                 label="Last Name"
                                                 htmlFor="lastName"
+                                                name="lastName"
                                                 placeholder="Enter your last name"
                                                 required
                                             />
@@ -327,6 +374,7 @@ export default function CareersPage() {
                                         <FormInput
                                             label="Email Address"
                                             htmlFor="email"
+                                            name="email"
                                             type="email"
                                             placeholder="Enter your email address"
                                             required
@@ -336,7 +384,7 @@ export default function CareersPage() {
                                             <Label htmlFor="position" className="text-sm font-medium text-foreground">
                                                 Position
                                             </Label>
-                                            <Select>
+                                            <Select name="position" required>
                                                 <SelectTrigger className="w-full">
                                                     <SelectValue placeholder="Select a position" />
                                                 </SelectTrigger>
@@ -351,15 +399,57 @@ export default function CareersPage() {
                                         </div>
 
                                         <FormTextarea
-                                            label="Resume & Cover Letter"
-                                            htmlFor="resume"
-                                            placeholder="Paste your resume and cover letter here, or describe your relevant experience..."
+                                            label="Cover Letter"
+                                            htmlFor="coverLetter"
+                                            name="coverLetter"
+                                            placeholder="Tell us why you're interested in this position and what makes you a great fit..."
                                             required
                                         />
 
-                                        <Button type="submit" className="w-full" size="lg">
-                                            <Send className="w-4 h-4 mr-2" />
-                                            Submit Application
+                                        <FileUpload
+                                            label="Resume/CV"
+                                            accept=".pdf,.doc,.docx,.txt"
+                                            maxSize={10}
+                                            selectedFile={resumeFile}
+                                            onFileSelect={handleResumeSelect}
+                                            onFileRemove={handleResumeRemove}
+                                            placeholder="Drag and drop your resume here, or click to browse"
+                                        />
+
+                                        {/* Submit Status Messages */}
+                                        {submitStatus === 'success' && (
+                                            <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+                                                <p className="text-green-800 dark:text-green-200 text-sm">
+                                                    {submitMessage}
+                                                </p>
+                                            </div>
+                                        )}
+
+                                        {submitStatus === 'error' && (
+                                            <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+                                                <p className="text-red-800 dark:text-red-200 text-sm">
+                                                    {submitMessage}
+                                                </p>
+                                            </div>
+                                        )}
+
+                                        <Button
+                                            type="submit"
+                                            className="w-full"
+                                            size="lg"
+                                            disabled={isSubmitting}
+                                        >
+                                            {isSubmitting ? (
+                                                <>
+                                                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
+                                                    Submitting...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <Send className="w-4 h-4 mr-2" />
+                                                    Submit Application
+                                                </>
+                                            )}
                                         </Button>
                                     </form>
                                 </CardContent>

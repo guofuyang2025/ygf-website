@@ -39,6 +39,33 @@ type Strings = {
   profilePage: {
     title: string
   }
+  // 新增首页内容
+  homePage: {
+    hero: {
+      title: string
+      subtitle: string
+      ctaButton: string
+    }
+    brand: {
+      title: string
+      description: string
+      ctaButton: string
+    }
+    products: {
+      title: string
+      description: string
+      ctaButton: string
+    }
+    testimonials: {
+      title: string
+      subtitle: string
+      items: Array<{
+        name: string
+        feedback: string
+        rating: number
+      }>
+    }
+  }
   aboutPage: {
     title: string
     body: string
@@ -121,6 +148,32 @@ const en: Strings = {
   profilePage: {
     title: 'Profile',
   },
+  homePage: {
+    hero: {
+      title: 'Welcome to Our Digital Solutions',
+      subtitle: 'Transform your business with cutting-edge technology and innovative solutions.',
+      ctaButton: 'Learn More',
+    },
+    brand: {
+      title: 'About Our Brand',
+      description: 'We are a leading provider of digital transformation solutions, helping businesses thrive in the digital age.',
+      ctaButton: 'Our Story',
+    },
+    products: {
+      title: 'Our Products',
+      description: 'Discover our suite of products designed to meet your digital needs. From web applications to AI-powered tools, we have you covered.',
+      ctaButton: 'View All Products',
+    },
+    testimonials: {
+      title: 'What Our Clients Say',
+      subtitle: 'Hear from our satisfied customers about their experience with our services.',
+      items: [
+        { name: 'John Doe', feedback: 'Excellent service and results! Highly recommend.', rating: 5 },
+        { name: 'Jane Smith', feedback: 'Great communication and attention to detail. Very professional.', rating: 4 },
+        { name: 'Peter Jones', feedback: 'Impressed with the speed and quality of the project. Will work with them again.', rating: 5 },
+      ],
+    },
+  },
   aboutPage: {
     title: 'About Us',
     body: 'This is a placeholder About page for the template.',
@@ -202,6 +255,32 @@ const zh: Strings = {
   },
   profilePage: {
     title: '个人信息',
+  },
+  homePage: {
+    hero: {
+      title: '欢迎来到我们的数字解决方案',
+      subtitle: '用尖端技术和创新解决方案推动您的业务发展。',
+      ctaButton: '了解更多',
+    },
+    brand: {
+      title: '关于我们的品牌',
+      description: '我们是一家领先的数字转型解决方案提供商，帮助企业在数字时代蓬勃发展。',
+      ctaButton: '我们的故事',
+    },
+    products: {
+      title: '我们的产品',
+      description: '探索我们的一套产品，旨在满足您的数字需求。从Web应用程序到AI驱动的工具，我们应有尽有。',
+      ctaButton: '查看所有产品',
+    },
+    testimonials: {
+      title: '客户怎么说',
+      subtitle: '听听我们满意客户的意见。',
+      items: [
+        { name: '张三', feedback: '出色的服务和结果！强烈推荐。', rating: 5 },
+        { name: '李四', feedback: '出色的沟通和关注细节。非常专业。', rating: 4 },
+        { name: '王五', feedback: '对项目的速度和质量印象深刻。会再次合作。', rating: 5 },
+      ],
+    },
   },
   aboutPage: {
     title: '关于我们',

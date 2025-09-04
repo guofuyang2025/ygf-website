@@ -9,7 +9,7 @@ import { Plus, Edit } from 'lucide-react';
 import Link from 'next/link';
 import { SearchParams } from 'nuqs/server';
 import { Suspense } from 'react';
-import Details from './details';
+import Details from './details-shadcn';
 import { getItemByIdWithParsedData } from '@/db/items';
 import { notFound } from 'next/navigation';
 

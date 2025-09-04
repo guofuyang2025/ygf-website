@@ -2,7 +2,7 @@ import PageContainer from '@/components/layout/page-container';
 import { Heading } from '@/components/ui/heading';
 import { Separator } from '@/components/ui/separator';
 import { Suspense } from 'react';
-import EditItemForm from './edit-item-form';
+import EditItemForm from './edit-item-form-shadcn';
 import { notFound } from 'next/navigation';
 import { getItemByIdWithParsedData } from '@/db/items';
 

@@ -1,11 +1,9 @@
 'use client'
 
-import Header from '@/features/home/Header'
+import Header from '@/components/layout/public-header'
 import Footer from '@/components/layout/Footer'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Badge } from '@/components/ui/badge'
 import { useI18n } from '@/lib/contexts/LanguageContent'
 
 export default function AboutPage() {
@@ -16,15 +14,15 @@ export default function AboutPage() {
             <Header />
             <main className="min-h-screen bg-background">
                 {/* Hero Section */}
-                <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-950/20 dark:to-indigo-950/20">
+                <section className="py-20 bg-primary/80">
                     <div className="container mx-auto px-4 text-center">
-                        <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+                        <h1 className="text-5xl md:text-6xl font-bold text-white dark:text-black mb-6 [text-shadow:_0_4px_8px_rgb(0_0_0_/_0.4)] dark:[text-shadow:_0_4px_8px_rgb(255_255_255_/_0.4)]">
                             {t.aboutPage.hero.title}
                         </h1>
-                        <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+                        <p className="text-xl md:text-2xl text-white dark:text-black mb-8 max-w-3xl mx-auto [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
                             {t.aboutPage.hero.subtitle}
                         </p>
-                        <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                        <p className="text-lg text-white dark:text-black max-w-4xl mx-auto leading-relaxed [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
                             {t.aboutPage.hero.description}
                         </p>
                     </div>
@@ -101,8 +99,18 @@ export default function AboutPage() {
                     </div>
                 </section>
 
+                {/* Brand Story Section Title */}
+                <section className="py-12 bg-primary/10">
+                    <div className="container mx-auto px-4 text-center">
+                        <h2 className="text-4xl font-bold text-foreground mb-4">Our Brand Story</h2>
+                        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                            Discover the journey that shaped our company and the values that drive us forward
+                        </p>
+                    </div>
+                </section>
+
                 {/* Story Section 1 - Left Image, Right Text */}
-                <section className="py-20 bg-muted/30">
+                <section className="py-20 bg-primary/10">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div className="order-2 lg:order-1">
@@ -117,20 +125,16 @@ export default function AboutPage() {
                                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                                     {t.aboutPage.story.journey.description1}
                                 </p>
-                                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                                <p className="text-lg text-muted-foreground leading-relaxed">
                                     {t.aboutPage.story.journey.description2}
                                 </p>
-                                <Button variant="outline" className="group">
-                                    {t.aboutPage.story.journey.button}
-                                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
-                                </Button>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* Story Section 2 - Right Image, Left Text */}
-                <section className="py-20">
+                <section className="py-20 bg-primary/10">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div>
@@ -138,13 +142,9 @@ export default function AboutPage() {
                                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                                     {t.aboutPage.story.innovation.description1}
                                 </p>
-                                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                                <p className="text-lg text-muted-foreground leading-relaxed">
                                     {t.aboutPage.story.innovation.description2}
                                 </p>
-                                <Button variant="outline" className="group">
-                                    {t.aboutPage.story.innovation.button}
-                                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
-                                </Button>
                             </div>
                             <div>
                                 <img
@@ -158,7 +158,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* Vision/Mission Section */}
-                <section className="py-20 bg-gradient-to-br from-indigo-50 to-purple-100 dark:from-indigo-950/20 dark:to-purple-950/20">
+                <section className="py-20">
                     <div className="container mx-auto px-4 text-center">
                         <h2 className="text-4xl font-bold text-foreground mb-8">{t.aboutPage.mission.title}</h2>
                         <div className="max-w-4xl mx-auto">
@@ -171,70 +171,6 @@ export default function AboutPage() {
                             <p className="text-xl text-muted-foreground leading-relaxed">
                                 {t.aboutPage.mission.description3}
                             </p>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Stats Section */}
-                <section className="py-20">
-                    <div className="container mx-auto px-4">
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl font-bold text-foreground mb-4">{t.aboutPage.stats.title}</h2>
-                            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                                {t.aboutPage.stats.subtitle}
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                            {/* Stat 1 */}
-                            <Card className="text-center hover:shadow-lg transition-shadow duration-300">
-                                <CardContent className="pt-8 pb-6">
-                                    <div className="text-4xl font-bold text-blue-600 mb-2">10+</div>
-                                    <p className="text-muted-foreground">Years Experience</p>
-                                </CardContent>
-                            </Card>
-
-                            {/* Stat 2 */}
-                            <Card className="text-center hover:shadow-lg transition-shadow duration-300">
-                                <CardContent className="pt-8 pb-6">
-                                    <div className="text-4xl font-bold text-green-600 mb-2">100+</div>
-                                    <p className="text-muted-foreground">Happy Clients</p>
-                                </CardContent>
-                            </Card>
-
-                            {/* Stat 3 */}
-                            <Card className="text-center hover:shadow-lg transition-shadow duration-300">
-                                <CardContent className="pt-8 pb-6">
-                                    <div className="text-4xl font-bold text-purple-600 mb-2">24/7</div>
-                                    <p className="text-muted-foreground">Support Available</p>
-                                </CardContent>
-                            </Card>
-
-                            {/* Stat 4 */}
-                            <Card className="text-center hover:shadow-lg transition-shadow duration-300">
-                                <CardContent className="pt-8 pb-6">
-                                    <div className="text-4xl font-bold text-orange-600 mb-2">500+</div>
-                                    <p className="text-muted-foreground">Projects Delivered</p>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </div>
-                </section>
-
-                {/* CTA Section */}
-                <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">
-                    <div className="container mx-auto px-4 text-center">
-                        <h2 className="text-4xl font-bold text-white mb-6">{t.aboutPage.cta.title}</h2>
-                        <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                            {t.aboutPage.cta.description}
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Button size="lg" variant="secondary" className="text-blue-600 hover:text-blue-700">
-                                {t.aboutPage.cta.startProject}
-                            </Button>
-                            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-blue-600">
-                                {t.aboutPage.cta.contactUs}
-                            </Button>
                         </div>
                     </div>
                 </section>

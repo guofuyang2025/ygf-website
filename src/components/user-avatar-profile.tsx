@@ -18,7 +18,7 @@ export function UserAvatarProfile({
 
   return (
     <div className='flex items-center gap-2'>
-      <Avatar className={className}>
+      <Avatar className={`${className} bg-primary text-black hover:bg-black hover:text-primary dark:bg-primary dark:text-white dark:hover:bg-primary dark:hover:text-primary transition-colors duration-200`}>
         <AvatarImage src={avatarUrl} alt={fullName} />
         <AvatarFallback className='rounded-lg'>
           {fullName.slice(0, 2).toUpperCase() || 'CN'}

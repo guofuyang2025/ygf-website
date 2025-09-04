@@ -1,6 +1,6 @@
 'use client'
 
-import Header from '@/features/home/Header'
+import Header from '@/components/layout/public-header'
 import Footer from '@/components/layout/Footer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -20,23 +20,26 @@ export default function ContactPage() {
     return (
         <>
             <Header />
-            <main className="min-h-screen bg-background py-12">
-                <div className="container mx-auto px-4">
-                    {/* Page Header */}
-                    <div className="text-center mb-12">
-                        <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <main className="min-h-screen bg-background">
+                {/* Page Header */}
+                <section className="py-20 bg-primary/80">
+                    <div className="container mx-auto px-4 text-center">
+                        <h1 className="text-4xl md:text-5xl font-bold text-white dark:text-black mb-6 [text-shadow:_0_4px_8px_rgb(0_0_0_/_0.4)] dark:[text-shadow:_0_4px_8px_rgb(255_255_255_/_0.4)]">
                             Contact Us
                         </h1>
-                        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                        <p className="text-xl text-white dark:text-black max-w-2xl mx-auto [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
                             Have a question or want to work together? We'd love to hear from you.
                             Send us a message and we'll respond as soon as possible.
                         </p>
                     </div>
+                </section>
 
-                                         {/* Main Content */}
-                     <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-8 lg:gap-12 max-w-6xl mx-auto">
-                         {/* Contact Form - Left Column */}
-                         <Card className="p-6">
+                <div className="container mx-auto px-4 py-12">
+
+                    {/* Main Content */}
+                    <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-8 lg:gap-12 max-w-6xl mx-auto">
+                        {/* Contact Form - Left Column */}
+                        <Card className="p-6">
                             <CardHeader className="pb-6">
                                 <CardTitle className="text-2xl font-semibold flex items-center gap-2">
                                     <MessageCircle className="w-6 h-6 text-blue-600" />
@@ -154,9 +157,9 @@ export default function ContactPage() {
                                 </CardContent>
                             </Card>
 
-                            
 
-                            
+
+
                         </div>
                     </div>
                 </div>

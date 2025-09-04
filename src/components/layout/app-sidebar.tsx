@@ -36,7 +36,6 @@ import {
   IconBell,
   IconChevronRight,
   IconChevronsDown,
-  IconCreditCard,
   IconLogout,
   IconPhotoUp,
   IconUserCircle
@@ -186,10 +185,6 @@ export default function AppSidebar() {
                   >
                     <IconUserCircle className='mr-2 h-4 w-4' />
                     Profile
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <IconCreditCard className='mr-2 h-4 w-4' />
-                    Billing
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <IconBell className='mr-2 h-4 w-4' />

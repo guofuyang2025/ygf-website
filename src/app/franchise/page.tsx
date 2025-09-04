@@ -1,6 +1,6 @@
 'use client'
 
-import Header from '@/features/home/Header'
+import Header from '@/components/layout/public-header'
 import Footer from '@/components/layout/Footer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -22,12 +22,12 @@ export default function FranchisePage() {
             <Header />
             <main className="min-h-screen bg-background">
                 {/* Hero Section */}
-                <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-950/20 dark:to-indigo-950/20">
+                <section className="py-20 bg-primary/80">
                     <div className="container mx-auto px-4 text-center">
-                        <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+                        <h1 className="text-5xl md:text-6xl font-bold text-white dark:text-black mb-6 [text-shadow:_0_4px_8px_rgb(0_0_0_/_0.4)] dark:[text-shadow:_0_4px_8px_rgb(255_255_255_/_0.4)]">
                             Franchise Opportunities
                         </h1>
-                        <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                        <p className="text-xl text-white dark:text-black max-w-3xl mx-auto leading-relaxed [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
                             Grow with us and join our successful network. Partner with a proven business model
                             and become part of our expanding franchise family.
                         </p>
@@ -38,16 +38,16 @@ export default function FranchisePage() {
                 <section className="py-20">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                            {/* First Card - Dark Background */}
-                            <Card className="bg-neutral-900 text-white border-0">
+                            {/* First Card - Theme Background */}
+                            <Card className="bg-primary/20 text-foreground border-0">
                                 <CardHeader className="pb-4">
-                                    <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
                                         <Building2 className="w-6 h-6 text-white" />
                                     </div>
                                     <CardTitle className="text-xl font-semibold">Why Partner With Us?</CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    <p className="text-gray-300 leading-relaxed">
+                                    <p className="text-foreground leading-relaxed">
                                         Join a network of successful entrepreneurs who have built thriving businesses
                                         with our proven system. We provide comprehensive support, training, and
                                         marketing strategies to ensure your success.
@@ -55,8 +55,8 @@ export default function FranchisePage() {
                                 </CardContent>
                             </Card>
 
-                            {/* Second Card - Image */}
-                            <Card className="overflow-hidden">
+                            {/* Second Card - Theme Background */}
+                            <Card className="overflow-hidden bg-primary/20">
                                 <div className="relative">
                                     <img
                                         src="https://picsum.photos/300/200?random=1"
@@ -70,15 +70,15 @@ export default function FranchisePage() {
                                     </div>
                                 </div>
                                 <CardContent className="p-4">
-                                    <p className="text-muted-foreground">
+                                    <p className="text-foreground">
                                         Our business model has been tested and refined across multiple markets,
                                         ensuring consistent results for all franchise partners.
                                     </p>
                                 </CardContent>
                             </Card>
 
-                            {/* Third Card - Image */}
-                            <Card className="overflow-hidden">
+                            {/* Third Card - Theme Background */}
+                            <Card className="overflow-hidden bg-primary/20">
                                 <div className="relative">
                                     <img
                                         src="https://picsum.photos/300/200?random=2"
@@ -92,7 +92,7 @@ export default function FranchisePage() {
                                     </div>
                                 </div>
                                 <CardContent className="p-4">
-                                    <p className="text-muted-foreground">
+                                    <p className="text-foreground">
                                         Expand your business across the country with our established brand recognition
                                         and nationwide marketing campaigns.
                                     </p>
@@ -258,7 +258,7 @@ export default function FranchisePage() {
                 </section>
 
                 {/* Contact Form Section */}
-                <section className="py-20">
+                <section className="py-20 bg-primary/20">
                     <div className="container mx-auto px-4">
                         <div className="max-w-4xl mx-auto">
                             <div className="text-center mb-12">
@@ -271,7 +271,7 @@ export default function FranchisePage() {
                                 </p>
                             </div>
 
-                            <Card className="p-8">
+                            <Card className="p-8 bg-white dark:bg-black">
                                 <CardHeader className="pb-6">
                                     <CardTitle className="text-2xl font-semibold flex items-center gap-2">
                                         <HeadphonesIcon className="w-6 h-6 text-blue-600" />
