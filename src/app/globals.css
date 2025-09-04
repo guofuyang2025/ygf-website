@@ -4,9 +4,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@import './theme.css';
-
 :root {
+
+  --theme-primary: #0f52ba;
+  --theme-primary-light: #4a7fd1;
+  --theme-primary-dark: #0a3a8a;
+  --theme-primary-lighter: #7ba3e0;
+  --theme-primary-darker: #072a66;
+
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -14,31 +19,31 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: var(--theme-primary);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  --secondary-foreground: var(--theme-primary);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent: var(--theme-primary-light);
+  --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --ring: var(--theme-primary);
+  --chart-1: var(--theme-primary);
+  --chart-2: var(--theme-primary-light);
+  --chart-3: var(--theme-primary-lighter);
+  --chart-4: var(--theme-primary-dark);
+  --chart-5: var(--theme-primary-darker);
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary: var(--theme-primary);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-accent: var(--theme-primary-light);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-ring: var(--theme-primary);
 }
 
 .dark {
@@ -48,31 +53,31 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.269 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  --primary: var(--theme-primary-light);
+  --primary-foreground: oklch(0.145 0 0);
   --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
+  --secondary-foreground: var(--theme-primary-light);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.371 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --accent: var(--theme-primary);
+  --accent-foreground: oklch(0.145 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
+  --ring: var(--theme-primary-light);
+  --chart-1: var(--theme-primary-light);
+  --chart-2: var(--theme-primary);
+  --chart-3: var(--theme-primary-lighter);
+  --chart-4: var(--theme-primary-dark);
+  --chart-5: var(--theme-primary-darker);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-primary: var(--theme-primary-light);
+  --sidebar-primary-foreground: oklch(0.145 0 0);
+  --sidebar-accent: var(--theme-primary);
+  --sidebar-accent-foreground: oklch(0.145 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.439 0 0);
+  --sidebar-ring: var(--theme-primary-light);
 }
 
 @theme inline {
@@ -117,12 +122,12 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
-/* View Transition Wave Effect */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
@@ -130,29 +135,25 @@
 }
 
 ::view-transition-old(root) {
-  /* Ensure the outgoing view (old theme) is beneath */
   z-index: 0;
 }
 
 ::view-transition-new(root) {
-  /* Ensure the incoming view (new theme) is always on top */
   z-index: 1;
 }
 
 @keyframes reveal {
   from {
-    /* Use CSS variables for the origin, defaulting to center if not set */
     clip-path: circle(0% at var(--x, 50%) var(--y, 50%));
     opacity: 0.7;
   }
+
   to {
-    /* Use CSS variables for the origin, defaulting to center if not set */
     clip-path: circle(150% at var(--x, 50%) var(--y, 50%));
     opacity: 1;
   }
 }
 
 ::view-transition-new(root) {
-  /* Apply the reveal animation */
   animation: reveal 0.4s ease-in-out forwards;
 }
