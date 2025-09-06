@@ -50,21 +50,21 @@ async function FeaturedProducts() {
                     <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                         <div className="aspect-video overflow-hidden">
                             <img
-                                src={item.image || `https://picsum.photos/300/200?random=${item.id}`}
-                                alt={item.data.name}
+                                src={item.image_url || `https://picsum.photos/300/200?random=${item.id}`}
+                                alt={item.name}
                                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                             />
                         </div>
                         <CardHeader className="pb-3">
-                            <CardTitle className="text-lg">{item.data.name}</CardTitle>
+                            <CardTitle className="text-lg">{item.name}</CardTitle>
                             <CardDescription className="line-clamp-2">
-                                {item.data.description}
+                                {item.description}
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="pt-0">
-                            {item.data.price && (
+                            {item.price && (
                                 <p className="text-lg font-semibold text-green-600">
-                                    ${item.data.price.toFixed(2)}
+                                    ${item.price.toFixed(2)}
                                 </p>
                             )}
                         </CardContent>

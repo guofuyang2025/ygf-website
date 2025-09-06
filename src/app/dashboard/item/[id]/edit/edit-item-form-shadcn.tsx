@@ -20,7 +20,7 @@ export default function EditItemFormShadcn({ item }: EditItemFormShadcnProps) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [imageFile, setImageFile] = useState<File | null>(null);
-  const [imagePreview, setImagePreview] = useState<string>(item.image || '');
+  const [imagePreview, setImagePreview] = useState<string>(item.image_url || '');
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -31,10 +31,10 @@ export default function EditItemFormShadcn({ item }: EditItemFormShadcnProps) {
 
   useEffect(() => {
     setFormData({
-      name: item.data.name || '',
-      description: item.data.description || '',
-      price: item.data.price?.toString() || '',
-      category: item.data.category || ''
+      name: item.name || '',
+      description: item.description || '',
+      price: item.price?.toString() || '',
+      category: '' // Remove category since it's not in the new schema
     });
   }, [item]);
 
@@ -49,9 +49,8 @@ export default function EditItemFormShadcn({ item }: EditItemFormShadcnProps) {
         name: formData.name,
         description: formData.description,
         price: parseFloat(formData.price),
-        category: formData.category,
       }));
-      
+
       if (imageFile) {
         formDataToSend.append('image', imageFile);
       }
@@ -153,22 +152,6 @@ export default function EditItemFormShadcn({ item }: EditItemFormShadcnProps) {
             />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="category">Category *</Label>
-            <Select value={formData.category} onValueChange={(value) => handleInputChange('category', value)}>
-              <SelectTrigger>
-                <SelectValue placeholder="Select a category" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="electronics">Electronics</SelectItem>
-                <SelectItem value="clothing">Clothing</SelectItem>
-                <SelectItem value="books">Books</SelectItem>
-                <SelectItem value="home">Home & Garden</SelectItem>
-                <SelectItem value="sports">Sports & Outdoors</SelectItem>
-                <SelectItem value="other">Other</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
 
           <div className="space-y-2">
             <Label>Image Upload</Label>
@@ -179,7 +162,7 @@ export default function EditItemFormShadcn({ item }: EditItemFormShadcnProps) {
               onChange={handleImageUpload}
               className="hidden"
             />
-            
+
             {!imagePreview ? (
               <Button
                 type="button"
@@ -208,7 +191,7 @@ export default function EditItemFormShadcn({ item }: EditItemFormShadcnProps) {
                 </Button>
               </div>
             )}
-            
+
             <p className="text-sm text-muted-foreground">
               Supported formats: JPG, PNG, GIF. Max size: 5MB
             </p>

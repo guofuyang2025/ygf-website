@@ -126,12 +126,12 @@ export default function OverViewLayout({
           <div className='col-span-4'>{bar_stats}</div>
           <div className='col-span-4 md:col-span-3'>
             {/* sales arallel routes */}
-            {sales}
-          </div>
-          <div className='col-span-4'>{area_stats}</div>
-          <div className='col-span-4 md:col-span-3'>{pie_stats}</div>
-        </div>
+        {sales}
       </div>
-    </PageContainer>
+      <div className='col-span-4'>{area_stats}</div>
+      <div className='col-span-4 md:col-span-3'>{pie_stats}</div>
+    </div> */}
+      </div >
+    </PageContainer >
   );
 }

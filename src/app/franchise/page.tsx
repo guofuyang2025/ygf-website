@@ -269,23 +269,23 @@ export default function FranchisePage() {
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                                 The Process
-                        </h2>
+                            </h2>
                             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                                 Our streamlined franchise process ensures a smooth experience for all potential partners.
-                                    </p>
-                                </div>
+                            </p>
+                        </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                             <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/20">
                                 <CardContent>
                                     <div className="flex justify-center mb-4">
                                         <FileText className="w-8 h-8 text-blue-600" />
-                                </div>
+                                    </div>
                                     <div className="mb-3">
                                         <span className="inline-flex items-center justify-center w-8 h-8 bg-primary/80 text-white rounded-full text-sm font-semibold">
                                             1
                                         </span>
-                            </div>
+                                    </div>
                                     <h3 className="text-lg font-semibold text-foreground mb-3">
                                         Step 1 - Enquire
                                     </h3>
@@ -318,12 +318,12 @@ export default function FranchisePage() {
                                 <CardContent>
                                     <div className="flex justify-center mb-4">
                                         <Users className="w-8 h-8 text-purple-600" />
-                                </div>
+                                    </div>
                                     <div className="mb-3">
                                         <span className="inline-flex items-center justify-center w-8 h-8 bg-primary/80 text-white rounded-full text-sm font-semibold">
                                             3
                                         </span>
-                            </div>
+                                    </div>
                                     <h3 className="text-lg font-semibold text-foreground mb-3">
                                         Step 3 - Online Interview
                                     </h3>
@@ -337,12 +337,12 @@ export default function FranchisePage() {
                                 <CardContent>
                                     <div className="flex justify-center mb-4">
                                         <Award className="w-8 h-8 text-orange-600" />
-                                </div>
+                                    </div>
                                     <div className="mb-3">
                                         <span className="inline-flex items-center justify-center w-8 h-8 bg-primary/80 text-white rounded-full text-sm font-semibold">
                                             4
                                         </span>
-                                </div>
+                                    </div>
                                     <h3 className="text-lg font-semibold text-foreground mb-3">
                                         Step 4 - Meet Our Founder
                                     </h3>
