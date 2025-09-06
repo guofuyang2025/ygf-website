@@ -51,11 +51,11 @@ export function UserNav() {
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem onClick={() => router.push('/dashboard/profile')}>
-              Profile
+            <DropdownMenuItem onClick={() => router.push('/dashboard/overview')}>
+              Dashbosrd
             </DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuItem>New Team</DropdownMenuItem>
+            {/* <DropdownMenuItem>Settings</DropdownMenuItem>
+            <DropdownMenuItem>New Team</DropdownMenuItem> */}
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={handleSignOut}>

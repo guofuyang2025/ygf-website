@@ -177,7 +177,7 @@ export default function AppSidebar() {
                     )}
                   </div>
                 </DropdownMenuLabel>
-                <DropdownMenuSeparator />
+                {/* <DropdownMenuSeparator />
 
                 <DropdownMenuGroup>
                   <DropdownMenuItem
@@ -191,7 +191,7 @@ export default function AppSidebar() {
                     Notifications
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
-                <DropdownMenuSeparator />
+                <DropdownMenuSeparator /> */}
                 <DropdownMenuItem onClick={async () => {
                   await signOut();
                   router.push('/auth/sign-in');
