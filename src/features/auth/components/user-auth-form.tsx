@@ -9,6 +9,7 @@ import {
   FormMessage
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import { createClient } from '@/lib/supabase';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useSearchParams } from 'next/navigation';
 import { useTransition } from 'react';
@@ -26,8 +27,10 @@ export default function UserAuthForm() {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl');
   const [loading, startTransition] = useTransition();
+  const supabase = createClient();
+
   const defaultValues = {
-    email: 'demo@gmail.com'
+    email: ''
   };
   const form = useForm<UserFormValue>({
     resolver: zodResolver(formSchema),
@@ -35,9 +38,19 @@ export default function UserAuthForm() {
   });
 
   const onSubmit = async (data: UserFormValue) => {
-    startTransition(() => {
-      console.log('continue with email clicked');
-      toast.success('Signed In Successfully!');
+    startTransition(async () => {
+      const { error } = await supabase.auth.signInWithOtp({
+        email: data.email,
+        options: {
+          emailRedirectTo: `${window.location.origin}/auth/callback`,
+        },
+      });
+
+      if (error) {
+        toast.error(error.message);
+      } else {
+        toast.success('Check your email for the magic link!');
+      }
     });
   };
 
@@ -72,7 +85,7 @@ export default function UserAuthForm() {
             className='mt-2 ml-auto w-full'
             type='submit'
           >
-            Continue With Email
+            {loading ? 'Sending magic link...' : 'Send Magic Link'}
           </Button>
         </form>
       </Form>

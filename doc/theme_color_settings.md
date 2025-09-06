@@ -1,6 +1,6 @@
 # 主题色系统指南
 
-## 🎨 主题色配置
+## 主题色配置
 
 ### 主要主题色
 - **主色调**: `#0f52ba` (深蓝色)
@@ -19,7 +19,7 @@
 }
 ```
 
-## 🔧 使用方法
+## 使用方法
 
 ### 1. 直接使用CSS变量
 ```css
@@ -61,7 +61,7 @@ function MyButton({ className, ...props }) {
 }
 ```
 
-## 🌈 颜色应用场景
+## 颜色应用场景
 
 ### 主要应用
 - **按钮**: `--theme-primary` (主按钮)
@@ -81,7 +81,7 @@ function MyButton({ className, ...props }) {
 - **侧边栏强调**: `--sidebar-accent`
 - **侧边栏边框**: `--sidebar-border`
 
-## 🎯 如何更改主题色
+## 如何更改主题色
 
 ### 方法1: 修改CSS变量
 在 `src/app/globals.css` 中更改 `--theme-primary` 的值：
@@ -104,7 +104,7 @@ function MyButton({ className, ...props }) {
 }
 ```
 
-## 📱 深色模式适配
+## 深色模式适配
 
 ### 自动适配
 深色模式下的主题色会自动调整：
