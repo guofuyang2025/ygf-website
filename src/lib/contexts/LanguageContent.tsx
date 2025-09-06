@@ -44,6 +44,7 @@ type Strings = {
     hero: {
       title: string
       subtitle: string
+      extraText: string
       ctaButton: string
     }
     brand: {
@@ -150,19 +151,20 @@ const en: Strings = {
   },
   homePage: {
     hero: {
-      title: 'Welcome to Our Digital Solutions',
-      subtitle: 'Transform your business with cutting-edge technology and innovative solutions.',
+      title: 'Yangguofu Australia',
+      subtitle: '"Global No.1 Malatang, now in Australia"',
+      extraText: 'Fresh, authentic, and made your way.',
       ctaButton: 'Learn More',
     },
     brand: {
       title: 'About Our Brand',
-      description: 'We are a leading provider of digital transformation solutions, helping businesses thrive in the digital age.',
-      ctaButton: 'Our Story',
+      description: 'At Yang Guo Fu Malatang, our mission is to share the authentic taste of modern Malatang with the world. \nIn Australia, we are bringing a new standard of Asian fast-casual dining — authentic flavors, fresh daily ingredients, and a fully customizable experience.',
+      ctaButton: 'Franchise With Us',
     },
     products: {
       title: 'Our Products',
-      description: 'Discover our suite of products designed to meet your digital needs. From web applications to AI-powered tools, we have you covered.',
-      ctaButton: 'View All Products',
+      description: 'Choose from over 60 fresh ingredients\n Three signature soup bases: Classic Bone Broth, Tomato, Dry Mix Mala\nNearly 7,000 stores worldwide, now growing in Australia',
+      ctaButton: 'Explore Our Menu',
     },
     testimonials: {
       title: 'What Our Clients Say',
@@ -179,32 +181,32 @@ const en: Strings = {
     body: 'This is a placeholder About page for the template.',
     hero: {
       title: 'About Us',
-      subtitle: 'Building the future of digital experiences with cutting-edge technology and innovative solutions',
-      description: 'We are a passionate team of developers, designers, and innovators dedicated to creating exceptional web applications that transform how people interact with technology. Our mission is to deliver seamless, scalable, and beautiful solutions that empower businesses and delight users.',
+      subtitle: 'Our Story – From Harbin to the World',
+      description: 'Yangguofu (YGF) is the pioneer and global leader of modern Malatang.\nFounded in 2000 as a small food stall in Harbin, our founders created the world\'s first "drinkable soup malatang" — a bold fusion of Sichuan spices and hearty Northeastern beef bone broth.\nFrom one humble stall, YGF grew into a nationwide sensation. By 2010, we surpassed 1,000 stores across China, and today, YGF has nearly 7,000 restaurants in more than 20 countries, introducing authentic Malatang to a global audience.',
     },
     team: {
-      title: 'Meet Our Team',
-      subtitle: 'The brilliant minds behind our success, working together to bring your vision to life',
+      title: 'Our Team',
+      subtitle: 'Meet the leadership team behind YGF Australia',
     },
     story: {
       journey: {
-        title: 'Our Journey Begins',
-        description1: 'Founded in 2020, we started as a small team with a big dream: to revolutionize how businesses approach digital transformation. What began as late-night coding sessions has grown into a thriving company that serves clients worldwide.',
-        description2: 'Our first project was a simple e-commerce platform, but it taught us invaluable lessons about user experience, scalability, and the importance of clean, maintainable code. From there, we\'ve never looked back.',
+        title: 'Our Global Contributions',
+        description1: '• Innovator – Creator of the drinkable soup Malatang.\n• Global Promoter – Elevating Malatang from a street food to a global culinary icon.\n• Industry Standard Setter – Pioneering modern logistics, supply chains, and industry standards.',
+        description2: '',
         button: 'Learn More',
       },
       innovation: {
-        title: 'Innovation at Our Core',
-        description1: 'Innovation isn\'t just a buzzword for us—it\'s the foundation of everything we do. We constantly explore emerging technologies, experiment with new approaches, and push the boundaries of what\'s possible in web development.',
-        description2: 'From implementing cutting-edge AI features to optimizing performance for millions of users, we\'re always looking for ways to make our solutions faster, smarter, and more intuitive.',
+        title: 'Yangguofu in Australia',
+        description1: 'In May 2025, YGF Australia became the exclusive master franchisee of YGF Malatang.\nOur leadership team brings over 15 years of Australian F&B industry expertise, including key members who helped establish Spicy World Australia.',
+        description2: 'Today, YGF operates 10 stores nationwide. By the end of 2025, we will open three more — including a AUD $2 million flagship store on Gouger Street, Adelaide\'s Chinatown, the largest Malatang restaurant in the Southern Hemisphere.\nOur flagship location will combine authentic YGF flavors with rich cultural and Australian design elements, representing a new generation of modern Malatang.',
         button: 'Explore Our Work',
       },
     },
     mission: {
-      title: 'Our Mission',
-      description1: 'To empower businesses with innovative digital solutions that drive growth, enhance user experiences, and create lasting value in an ever-evolving digital landscape.',
-      description2: 'We believe that technology should be accessible, intuitive, and transformative—helping organizations of all sizes achieve their goals and exceed their expectations.',
-      description3: 'Through collaboration, creativity, and technical excellence, we\'re building the digital future, one project at a time.',
+      title: 'Looking Ahead',
+      description1: '• November 2025: Marion (South Australia)\n• End of 2025: Gouger Street Adelaide flagship + Brisbane CBD\n• First Half 2026: Two more stores in SA\n• Mid-2026: Sydney flagship\n• By 2028: 30 YGF stores across Australia',
+      description2: '',
+      description3: '',
     },
     stats: {
       title: 'By The Numbers',
@@ -260,17 +262,18 @@ const zh: Strings = {
     hero: {
       title: '欢迎来到我们的数字解决方案',
       subtitle: '用尖端技术和创新解决方案推动您的业务发展。',
+      extraText: '体验来自世界各地的正宗风味',
       ctaButton: '了解更多',
     },
     brand: {
       title: '关于我们的品牌',
-      description: '我们是一家领先的数字转型解决方案提供商，帮助企业在数字时代蓬勃发展。',
-      ctaButton: '我们的故事',
+      description: '在杨国福麻辣烫，我们的使命是与世界分享现代麻辣烫的正宗味道。成立于2000年，杨国福从哈尔滨的一个小摊发展成为麻辣烫餐饮的全球领导者，在20多个国家拥有近7000家餐厅。\n在澳大利亚，我们正在带来亚洲快休闲餐饮的新标准——正宗风味、每日新鲜食材和完全可定制的体验。我们为我们的传统、作为可饮用汤麻辣烫创造者的创新以及我们品牌所代表的充满活力的社区感到自豪。',
+      ctaButton: '加盟我们',
     },
     products: {
       title: '我们的产品',
-      description: '探索我们的一套产品，旨在满足您的数字需求。从Web应用程序到AI驱动的工具，我们应有尽有。',
-      ctaButton: '查看所有产品',
+      description: '从60多种新鲜食材中选择\n三种招牌汤底：经典骨汤、番茄、干拌麻辣\n全球近7000家门店，现正在澳大利亚扩张',
+      ctaButton: '探索我们的菜单',
     },
     testimonials: {
       title: '客户怎么说',
@@ -287,32 +290,32 @@ const zh: Strings = {
     body: '这是模板的关于我们占位页面。',
     hero: {
       title: '关于我们',
-      subtitle: '用尖端技术和创新解决方案构建数字体验的未来',
-      description: '我们是一个充满激情的开发者、设计师和创新者团队，致力于创建卓越的Web应用程序，改变人们与技术互动的方式。我们的使命是提供无缝、可扩展和美观的解决方案，赋能企业并让用户满意。',
+      subtitle: '我们的故事 – 从哈尔滨到世界',
+      description: '杨国福（YGF）是现代麻辣烫的先驱和全球领导者。\n成立于2000年，作为哈尔滨的一个小摊，我们的创始人创造了世界上第一个"可饮用汤麻辣烫"——四川香料和丰盛的东北牛骨汤的大胆融合。\n从一个简陋的摊位，杨国福发展成了全国性的轰动。到2010年，我们在中国超过了1000家门店，今天，杨国福在20多个国家拥有近7000家餐厅，向全球观众介绍正宗的麻辣烫。',
     },
     team: {
-      title: '认识我们的团队',
-      subtitle: '成功背后的杰出人才，共同努力实现您的愿景',
+      title: '我们的团队',
+      subtitle: '认识杨国福澳大利亚背后的领导团队',
     },
     story: {
       journey: {
-        title: '我们的旅程开始',
-        description1: '成立于2020年，我们从一个拥有大梦想的小团队开始：彻底改变企业处理数字化转型的方式。从深夜编码会议开始，已经发展成为为全球客户服务的蓬勃发展的公司。',
-        description2: '我们的第一个项目是一个简单的电子商务平台，但它教会了我们关于用户体验、可扩展性和干净、可维护代码重要性的宝贵经验。从那时起，我们从未回头。',
+        title: '我们的全球贡献',
+        description1: '• 创新者 – 可饮用汤麻辣烫的创造者。\n• 全球推广者 – 将麻辣烫从街头食品提升为全球烹饪标志。\n• 行业标准制定者 – 开创现代物流、供应链和行业标准。',
+        description2: '',
         button: '了解更多',
       },
       innovation: {
-        title: '创新是我们的核心',
-        description1: '创新对我们来说不仅仅是一个流行词——它是我们所做一切的基础。我们不断探索新兴技术，尝试新方法，推动Web开发可能性的边界。',
-        description2: '从实施尖端AI功能到为数百万用户优化性能，我们一直在寻找方法使我们的解决方案更快、更智能、更直观。',
+        title: '杨国福在澳大利亚',
+        description1: '2025年5月，杨国福澳大利亚成为杨国福麻辣烫的独家总加盟商。\n我们的领导团队带来了超过15年的澳大利亚餐饮行业专业知识，包括帮助建立Spicy World Australia的关键成员。',
+        description2: '今天，杨国福在全国运营10家门店。到2025年底，我们将再开设三家——包括在阿德莱德唐人街Gouger Street的200万澳元旗舰店，这是南半球最大的麻辣烫餐厅。\n我们的旗舰店将结合正宗的杨国福风味与丰富的文化和澳大利亚设计元素，代表新一代现代麻辣烫。',
         button: '探索我们的工作',
       },
     },
     mission: {
-      title: '我们的使命',
-      description1: '通过创新的数字解决方案赋能企业，推动增长，增强用户体验，在不断发展的数字环境中创造持久价值。',
-      description2: '我们相信技术应该是可访问的、直观的和变革性的——帮助各种规模的组织实现目标并超越期望。',
-      description3: '通过协作、创造力和技术卓越，我们正在构建数字未来，一次一个项目。',
+      title: '展望未来',
+      description1: '• 2025年11月：马里昂（南澳大利亚）\n• 2025年底：阿德莱德Gouger Street旗舰店 + 布里斯班CBD\n• 2026年上半年：南澳再开两家门店\n• 2026年中：悉尼旗舰店\n• 到2028年：澳大利亚30家杨国福门店',
+      description2: '',
+      description3: '',
     },
     stats: {
       title: '数据说话',

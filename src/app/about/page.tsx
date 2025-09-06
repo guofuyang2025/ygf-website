@@ -22,7 +22,7 @@ export default function AboutPage() {
                         <p className="text-xl md:text-2xl text-white dark:text-black mb-8 max-w-3xl mx-auto [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
                             {t.aboutPage.hero.subtitle}
                         </p>
-                        <p className="text-lg text-white dark:text-black max-w-4xl mx-auto leading-relaxed [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
+                        <p className="text-lg text-white dark:text-black max-w-4xl mx-auto leading-relaxed whitespace-pre-line [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
                             {t.aboutPage.hero.description}
                         </p>
                     </div>
@@ -43,17 +43,17 @@ export default function AboutPage() {
                             <Card className="text-center hover:shadow-lg transition-shadow duration-300">
                                 <CardHeader className="pb-4">
                                     <Avatar className="w-24 h-24 mx-auto mb-4">
-                                        <AvatarImage src="https://i.pravatar.cc/150?img=11" alt="Alice Johnson" />
-                                        <AvatarFallback className="text-lg">AJ</AvatarFallback>
+                                        <AvatarImage src="https://i.pravatar.cc/150?img=11" alt="Founder" />
+                                        <AvatarFallback className="text-lg">F</AvatarFallback>
                                     </Avatar>
                                     <div>
-                                        <h3 className="text-xl font-semibold text-foreground">Alice Johnson</h3>
-                                        <p className="text-muted-foreground">Chief Executive Officer</p>
+                                        <h3 className="text-xl font-semibold text-foreground">Founder</h3>
+                                        <p className="text-muted-foreground">Yang Guo Fu Malatang</p>
                                     </div>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-sm text-muted-foreground leading-relaxed">
-                                        Visionary leader with 15+ years of experience in tech innovation and strategic growth. Passionate about building teams that create exceptional products.
+                                        Visionary leader who created the world's first "drinkable soup malatang" and built YGF from a small Harbin food stall into a global brand with nearly 7,000 restaurants worldwide.
                                     </p>
                                 </CardContent>
                             </Card>
@@ -62,17 +62,17 @@ export default function AboutPage() {
                             <Card className="text-center hover:shadow-lg transition-shadow duration-300">
                                 <CardHeader className="pb-4">
                                     <Avatar className="w-24 h-24 mx-auto mb-4">
-                                        <AvatarImage src="https://i.pravatar.cc/150?img=12" alt="Michael Chen" />
-                                        <AvatarFallback className="text-lg">MC</AvatarFallback>
+                                        <AvatarImage src="https://i.pravatar.cc/150?img=12" alt="Co-Founder" />
+                                        <AvatarFallback className="text-lg">CF</AvatarFallback>
                                     </Avatar>
                                     <div>
-                                        <h3 className="text-xl font-semibold text-foreground">Michael Chen</h3>
-                                        <p className="text-muted-foreground">Lead Developer</p>
+                                        <h3 className="text-xl font-semibold text-foreground">Co-Founder</h3>
+                                        <p className="text-muted-foreground">YGF Australia</p>
                                     </div>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-sm text-muted-foreground leading-relaxed">
-                                        Full-stack developer extraordinaire specializing in React, Node.js, and cloud architecture. Loves solving complex problems with elegant code.
+                                        Strategic partner bringing over 15 years of Australian F&B industry expertise, including key experience in establishing Spicy World Australia.
                                     </p>
                                 </CardContent>
                             </Card>
@@ -81,17 +81,17 @@ export default function AboutPage() {
                             <Card className="text-center hover:shadow-lg transition-shadow duration-300">
                                 <CardHeader className="pb-4">
                                     <Avatar className="w-24 h-24 mx-auto mb-4">
-                                        <AvatarImage src="https://i.pravatar.cc/150?img=13" alt="Sarah Williams" />
-                                        <AvatarFallback className="text-lg">SW</AvatarFallback>
+                                        <AvatarImage src="https://i.pravatar.cc/150?img=13" alt="Marketing Manager" />
+                                        <AvatarFallback className="text-lg">MM</AvatarFallback>
                                     </Avatar>
                                     <div>
-                                        <h3 className="text-xl font-semibold text-foreground">Sarah Williams</h3>
-                                        <p className="text-muted-foreground">UX Designer</p>
+                                        <h3 className="text-xl font-semibold text-foreground">Marketing Manager</h3>
+                                        <p className="text-muted-foreground">YGF Australia</p>
                                     </div>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-sm text-muted-foreground leading-relaxed">
-                                        Creative designer focused on user-centered design principles. Transforms complex ideas into intuitive, beautiful user experiences.
+                                        Marketing expert driving brand awareness and customer engagement across Australia, building the YGF community and expanding our market presence.
                                     </p>
                                 </CardContent>
                             </Card>
@@ -122,10 +122,10 @@ export default function AboutPage() {
                             </div>
                             <div className="order-1 lg:order-2">
                                 <h2 className="text-3xl font-bold text-foreground mb-6">{t.aboutPage.story.journey.title}</h2>
-                                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                                <p className="text-lg text-muted-foreground mb-6 leading-relaxed whitespace-pre-line">
                                     {t.aboutPage.story.journey.description1}
                                 </p>
-                                <p className="text-lg text-muted-foreground leading-relaxed">
+                                <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
                                     {t.aboutPage.story.journey.description2}
                                 </p>
                             </div>
@@ -139,10 +139,10 @@ export default function AboutPage() {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div>
                                 <h2 className="text-3xl font-bold text-foreground mb-6">{t.aboutPage.story.innovation.title}</h2>
-                                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                                <p className="text-lg text-muted-foreground mb-6 leading-relaxed whitespace-pre-line">
                                     {t.aboutPage.story.innovation.description1}
                                 </p>
-                                <p className="text-lg text-muted-foreground leading-relaxed">
+                                <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
                                     {t.aboutPage.story.innovation.description2}
                                 </p>
                             </div>
@@ -162,13 +162,13 @@ export default function AboutPage() {
                     <div className="container mx-auto px-4 text-center">
                         <h2 className="text-4xl font-bold text-foreground mb-8">{t.aboutPage.mission.title}</h2>
                         <div className="max-w-4xl mx-auto">
-                            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+                            <p className="text-xl text-muted-foreground mb-6 leading-relaxed whitespace-pre-line">
                                 {t.aboutPage.mission.description1}
                             </p>
-                            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+                            <p className="text-xl text-muted-foreground mb-6 leading-relaxed whitespace-pre-line">
                                 {t.aboutPage.mission.description2}
                             </p>
-                            <p className="text-xl text-muted-foreground leading-relaxed">
+                            <p className="text-xl text-muted-foreground leading-relaxed whitespace-pre-line">
                                 {t.aboutPage.mission.description3}
                             </p>
                         </div>

@@ -3,10 +3,64 @@
 import Header from '@/components/layout/public-header'
 import Footer from '@/components/layout/Footer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Building2, Users, Target, TrendingUp, Award, HeadphonesIcon } from 'lucide-react'
-import ContactEmail from '@/components/form/contact-email'
+import { Building2, Users, Target, TrendingUp, Award, HeadphonesIcon, MapPin, FileText, CheckCircle } from 'lucide-react'
+import CareersEmail, { type CareersEmailRef } from '@/components/form/careers-email'
+import { useRef, useState } from 'react'
 
 export default function FranchisePage() {
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+    const [submitMessage, setSubmitMessage] = useState('')
+    const careersEmailRef = useRef<CareersEmailRef>(null)
+    const formRef = useRef<HTMLFormElement>(null)
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        setIsSubmitting(true)
+        setSubmitStatus('idle')
+        setSubmitMessage('')
+
+        try {
+            const formData = new FormData(e.currentTarget)
+
+            // Get resume file from the component ref
+            const resumeFile = careersEmailRef.current?.getResumeFile()
+            if (resumeFile) {
+                formData.append('resume', resumeFile)
+            }
+
+            const response = await fetch('/api/email/careers', { method: 'POST', body: formData })
+            const result = await response.json()
+
+            if (response.ok) {
+                setSubmitStatus('success')
+                setSubmitMessage(result.message || 'Franchise inquiry submitted successfully!')
+                // Reset form safely
+                if (formRef.current) {
+                    formRef.current.reset()
+                }
+                careersEmailRef.current?.resetForm()
+            } else {
+                setSubmitStatus('error')
+                setSubmitMessage(result.message || result.error || 'Failed to submit franchise inquiry')
+            }
+        } catch (error) {
+            console.error('Error submitting franchise inquiry:', error)
+            setSubmitStatus('error')
+            setSubmitMessage('An unexpected error occurred. Please try again.')
+        } finally {
+            setIsSubmitting(false)
+        }
+    }
+
+    const positions = [
+        { value: 'franchise-info', label: 'Franchise Information' },
+        { value: 'investment-details', label: 'Investment Details' },
+        { value: 'territory-availability', label: 'Territory Availability' },
+        { value: 'training-schedule', label: 'Training Schedule' },
+        { value: 'other', label: 'Other' },
+    ]
+
     return (
         <>
             <Header />
@@ -18,73 +72,108 @@ export default function FranchisePage() {
                             Franchise Opportunities
                         </h1>
                         <p className="text-xl text-white dark:text-black max-w-3xl mx-auto leading-relaxed [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
-                            Grow with us and join our successful network. Partner with a proven business model
-                            and become part of our expanding franchise family.
+                            Company Description
+                            At Yang Guo Fu Malatang, our mission is to share the authentic taste of modern Malatang with the world. Founded in 2000, YGF has grown from a small Harbin food stall into the global leader of Malatang dining, with nearly 7,000 restaurants in over 20 countries.
+                            In Australia, we are bringing a new standard of Asian fast-casual dining — authentic flavors, fresh daily ingredients, and a fully customizable experience. We are proud of our heritage, our innovation as the creator of drinkable soup Malatang, and the vibrant community our brand represents.
                         </p>
                     </div>
                 </section>
 
-                {/* Features Section */}
+                {/* Job Description Section */}
+                <section className="py-20 bg-primary/20">
+                    <div className="container mx-auto px-4">
+                        <div className="max-w-6xl mx-auto">
+                            <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
+                                Job Description – Your Role as a Franchise Partner
+                            </h2>
+                            <Card className="p-8 bg-white dark:bg-black">
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                                    <div>
+                                        <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                                            As a Yang Guo Fu Franchise Partner, you are more than a business owner — you are an ambassador of our brand. Your role is hands-on, dynamic, and deeply rewarding. One day you may be on the floor, guiding your team to deliver the perfect customer experience; the next, you may be engaging with the local community to introduce Malatang culture to new audiences.
+                                        </p>
+                                        <p className="text-lg text-muted-foreground leading-relaxed">
+                                            You'll lead with passion, uphold the highest standards of quality and food safety, and ensure every guest enjoys a dining experience that is authentic, welcoming, and memorable. As a partner, you'll not only grow a profitable business but also help build the future of Yang Guo Fu in Australia.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <img
+                                            src="https://picsum.photos/400/300?random=10"
+                                            alt="Franchise Partner Role"
+                                            className="w-full rounded-lg shadow-lg"
+                                        />
+                                    </div>
+                                </div>
+                            </Card>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Qualifications Section */}
                 <section className="py-20">
                     <div className="container mx-auto px-4">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                            {/* First Card - Theme Background */}
-                            <Card className="bg-primary/20 text-foreground border-0">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                                Qualifications & Ideal Partner Profile
+                            </h2>
+                            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                                We are seeking passionate individuals who share our love for food, culture, and community.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
                                 <CardHeader className="pb-4">
-                                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                                        <Building2 className="w-6 h-6 text-white" />
+                                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
+                                        <Users className="w-6 h-6 text-white" />
                                     </div>
-                                    <CardTitle className="text-xl font-semibold">Why Partner With Us?</CardTitle>
+                                    <CardTitle className="text-lg font-semibold">Experience</CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    <p className="text-foreground leading-relaxed">
-                                        Join a network of successful entrepreneurs who have built thriving businesses
-                                        with our proven system. We provide comprehensive support, training, and
-                                        marketing strategies to ensure your success.
+                                    <p className="text-muted-foreground leading-relaxed">
+                                        Experience in hospitality, retail, or managing large teams
                                     </p>
                                 </CardContent>
                             </Card>
 
-                            {/* Second Card - Theme Background */}
-                            <Card className="overflow-hidden bg-primary/20">
-                                <div className="relative">
-                                    <img
-                                        src="https://picsum.photos/300/200?random=1"
-                                        alt="Proven Business Model"
-                                        className="w-full h-48 object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 flex items-end">
-                                        <div className="p-4 text-white">
-                                            <h3 className="text-lg font-semibold">Proven Business Model</h3>
-                                        </div>
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
+                                <CardHeader className="pb-4">
+                                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
+                                        <TrendingUp className="w-6 h-6 text-white" />
                                     </div>
-                                </div>
-                                <CardContent className="p-4">
-                                    <p className="text-foreground">
-                                        Our business model has been tested and refined across multiple markets,
-                                        ensuring consistent results for all franchise partners.
+                                    <CardTitle className="text-lg font-semibold">Business Acumen</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-muted-foreground leading-relaxed">
+                                        Strong business and financial understanding
                                     </p>
                                 </CardContent>
                             </Card>
 
-                            {/* Third Card - Theme Background */}
-                            <Card className="overflow-hidden bg-primary/20">
-                                <div className="relative">
-                                    <img
-                                        src="https://picsum.photos/300/200?random=2"
-                                        alt="Nationwide Reach"
-                                        className="w-full h-48 object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 flex items-end">
-                                        <div className="p-4 text-white">
-                                            <h3 className="text-lg font-semibold">Nationwide Reach</h3>
-                                        </div>
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
+                                <CardHeader className="pb-4">
+                                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
+                                        <Award className="w-6 h-6 text-white" />
                                     </div>
-                                </div>
-                                <CardContent className="p-4">
-                                    <p className="text-foreground">
-                                        Expand your business across the country with our established brand recognition
-                                        and nationwide marketing campaigns.
+                                    <CardTitle className="text-lg font-semibold">Leadership</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-muted-foreground leading-relaxed">
+                                        A commitment to hands-on leadership — being actively involved in your restaurant daily
+                                    </p>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
+                                <CardHeader className="pb-4">
+                                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
+                                        <MapPin className="w-6 h-6 text-white" />
+                                    </div>
+                                    <CardTitle className="text-lg font-semibold">Flexibility</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-muted-foreground leading-relaxed">
+                                        Willingness to embrace opportunities in both metropolitan and regional areas of Australia
                                     </p>
                                 </CardContent>
                             </Card>
@@ -92,172 +181,190 @@ export default function FranchisePage() {
                     </div>
                 </section>
 
-                {/* Info Section */}
-                <section className="py-20 bg-muted/30">
+                {/* Franchise Support Section */}
+                <section className="py-20 bg-primary/20">
                     <div className="container mx-auto px-4">
-                        <div className="max-w-4xl mx-auto text-center">
-                            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
-                                Building Success Together
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                                Franchise Support
                             </h2>
-                            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-                                <p>
-                                    Our franchise program has transformed the lives of hundreds of entrepreneurs,
-                                    providing them with the tools, knowledge, and support needed to build successful
-                                    businesses. We believe in creating lasting partnerships that benefit both our
-                                    company and our franchisees.
-                                </p>
-                                <p>
-                                    With over 15 years of industry experience, we've developed a comprehensive
-                                    system that addresses every aspect of running a successful business. From
-                                    initial setup to ongoing operations, our franchisees receive continuous
-                                    support and guidance.
-                                </p>
-                                <p>
-                                    The success of our franchise network is built on mutual trust, shared values,
-                                    and a commitment to excellence. We're not just looking for business partners
-                                    – we're looking for long-term relationships that will help us grow together.
-                                </p>
-                            </div>
+                            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                                Our franchise agreements are designed as true partnerships, built on long-term success.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                            <Card className="overflow-hidden">
+                                <div className="relative">
+                                    <img
+                                        src="https://picsum.photos/300/200?random=11"
+                                        alt="Training & Operations"
+                                        className="w-full h-48 object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-black/20 flex items-end">
+                                        <div className="p-4 text-white">
+                                            <h3 className="text-lg font-semibold">Training & Operations</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <CardContent className="p-4">
+                                    <p className="text-muted-foreground">
+                                        Comprehensive training & operations manuals
+                                    </p>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="overflow-hidden">
+                                <div className="relative">
+                                    <img
+                                        src="https://picsum.photos/300/200?random=12"
+                                        alt="Supply Chain & Logistics"
+                                        className="w-full h-48 object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-black/20 flex items-end">
+                                        <div className="p-4 text-white">
+                                            <h3 className="text-lg font-semibold">Supply Chain & Logistics</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <CardContent className="p-4">
+                                    <p className="text-muted-foreground">
+                                        Centralized supply chain & logistics
+                                    </p>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="overflow-hidden">
+                                <div className="relative">
+                                    <img
+                                        src="https://picsum.photos/300/200?random=13"
+                                        alt="Marketing Campaigns"
+                                        className="w-full h-48 object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-black/20 flex items-end">
+                                        <div className="p-4 text-white">
+                                            <h3 className="text-lg font-semibold">Marketing Campaigns</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <CardContent className="p-4">
+                                    <p className="text-muted-foreground">
+                                        National & international marketing campaigns
+                                    </p>
+                                </CardContent>
+                            </Card>
+                        </div>
+
+                        <div className="max-w-4xl mx-auto text-center mt-12">
+                            <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
+                                Becoming a YGF Franchise Partner is a journey that requires dedication and resilience, but the rewards are significant — both financially and personally. Together, we will bring authentic Malatang to every corner of Australia.
+                            </p>
                         </div>
                     </div>
                 </section>
 
-                {/* Benefits Section */}
+                {/* Application Process Section */}
                 <section className="py-20">
                     <div className="container mx-auto px-4">
-                        <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-16">
-                            What You'll Receive as a Franchisee
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                                The Process
                         </h2>
+                            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                                Our streamlined franchise process ensures a smooth experience for all potential partners.
+                                    </p>
+                                </div>
 
-                        <div className="space-y-20 max-w-6xl mx-auto">
-                            {/* Comprehensive Training */}
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                                <div className="order-2 lg:order-1">
-                                    <h3 className="text-2xl font-bold text-foreground mb-6">Comprehensive Training</h3>
-                                    <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                                        Our intensive training program covers every aspect of running your franchise,
-                                        from day-to-day operations to advanced business strategies. You'll learn from
-                                        industry experts and successful franchisees who have walked the same path.
-                                    </p>
-                                    <p className="text-lg text-muted-foreground leading-relaxed">
-                                        Training includes hands-on experience, comprehensive manuals, video tutorials,
-                                        and ongoing support to ensure you're always up-to-date with the latest
-                                        industry practices and business techniques.
-                                    </p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/20">
+                                <CardContent>
+                                    <div className="flex justify-center mb-4">
+                                        <FileText className="w-8 h-8 text-blue-600" />
                                 </div>
-                                <div className="order-1 lg:order-2">
-                                    <img
-                                        src="https://picsum.photos/400/300?random=3"
-                                        alt="Comprehensive Training"
-                                        className="w-full rounded-lg shadow-lg"
-                                    />
-                                </div>
+                                    <div className="mb-3">
+                                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary/80 text-white rounded-full text-sm font-semibold">
+                                            1
+                                        </span>
                             </div>
+                                    <h3 className="text-lg font-semibold text-foreground mb-3">
+                                        Step 1 - Enquire
+                                    </h3>
+                                    <p className="text-foreground text-sm leading-relaxed">
+                                        Make an online enquiry and fill out the questionnaire.
+                                    </p>
+                                </CardContent>
+                            </Card>
 
-                            {/* Marketing Support */}
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                                <div>
-                                    <img
-                                        src="https://picsum.photos/400/300?random=4"
-                                        alt="Marketing Support"
-                                        className="w-full rounded-lg shadow-lg"
-                                    />
-                                </div>
-                                <div>
-                                    <h3 className="text-2xl font-bold text-foreground mb-6">Marketing Support</h3>
-                                    <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                                        We provide comprehensive marketing support including brand materials,
-                                        digital marketing campaigns, social media strategies, and local advertising
-                                        guidance. Our marketing team works closely with each franchisee to develop
-                                        customized campaigns for their specific market.
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/20">
+                                <CardContent>
+                                    <div className="flex justify-center mb-4">
+                                        <HeadphonesIcon className="w-8 h-8 text-green-600" />
+                                    </div>
+                                    <div className="mb-3">
+                                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary/80 text-white rounded-full text-sm font-semibold">
+                                            2
+                                        </span>
+                                    </div>
+                                    <h3 className="text-lg font-semibold text-foreground mb-3">
+                                        Step 2 - Interview
+                                    </h3>
+                                    <p className="text-foreground text-sm leading-relaxed">
+                                        Our franchise recruitment team will contact you by phone for an initial interview.
                                     </p>
-                                    <p className="text-lg text-muted-foreground leading-relaxed">
-                                        From grand opening events to ongoing promotional activities, we ensure
-                                        your business gets the visibility it needs to attract customers and
-                                        build a strong local presence.
-                                    </p>
-                                </div>
-                            </div>
+                                </CardContent>
+                            </Card>
 
-                            {/* Growth Opportunities */}
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                                <div className="order-2 lg:order-1">
-                                    <h3 className="text-2xl font-bold text-foreground mb-6">Exclusive Growth Opportunities</h3>
-                                    <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                                        As part of our franchise network, you'll have access to exclusive growth
-                                        opportunities including multi-unit ownership, territory expansion, and
-                                        special market development programs. We believe in rewarding success and
-                                        providing pathways for ambitious franchisees to scale their operations.
-                                    </p>
-                                    <p className="text-lg text-muted-foreground leading-relaxed">
-                                        Our franchisees also benefit from exclusive supplier relationships,
-                                        bulk purchasing discounts, and access to proprietary business tools and
-                                        technologies that give them a competitive edge in their markets.
-                                    </p>
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/20">
+                                <CardContent>
+                                    <div className="flex justify-center mb-4">
+                                        <Users className="w-8 h-8 text-purple-600" />
                                 </div>
-                                <div className="order-1 lg:order-2">
-                                    <img
-                                        src="https://picsum.photos/400/300?random=5"
-                                        alt="Growth Opportunities"
-                                        className="w-full rounded-lg shadow-lg"
-                                    />
-                                </div>
+                                    <div className="mb-3">
+                                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary/80 text-white rounded-full text-sm font-semibold">
+                                            3
+                                        </span>
                             </div>
-                        </div>
-                    </div>
-                </section>
+                                    <h3 className="text-lg font-semibold text-foreground mb-3">
+                                        Step 3 - Online Interview
+                                    </h3>
+                                    <p className="text-foreground text-sm leading-relaxed">
+                                        Online interview with our Director of Franchise.
+                                    </p>
+                                </CardContent>
+                            </Card>
 
-                {/* Additional Info Section */}
-                <section className="py-20 bg-muted/30">
-                    <div className="container mx-auto px-4">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-                            <div>
-                                <h2 className="text-3xl font-bold text-foreground mb-6">
-                                    Join Our Growing Network
-                                </h2>
-                                <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
-                                    <p>
-                                        Our franchise network spans across 25 states with over 200 successful
-                                        locations. Each franchisee brings unique perspectives and local market
-                                        knowledge that contributes to our collective success and continuous
-                                        improvement.
-                                    </p>
-                                    <p>
-                                        We're committed to maintaining the highest standards of quality and
-                                        service across all our locations. Our franchisees are our ambassadors,
-                                        representing our brand values and commitment to customer satisfaction
-                                        in their communities.
-                                    </p>
-                                    <p>
-                                        The investment required to join our franchise network includes the
-                                        initial franchise fee, startup costs, and working capital. We provide
-                                        detailed financial projections and support to help you secure the
-                                        necessary funding for your business venture.
-                                    </p>
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/20">
+                                <CardContent>
+                                    <div className="flex justify-center mb-4">
+                                        <Award className="w-8 h-8 text-orange-600" />
                                 </div>
-                            </div>
-                            <div>
-                                <img
-                                    src="https://picsum.photos/400/300?random=6"
-                                    alt="Franchise Network"
-                                    className="w-full rounded-lg shadow-lg"
-                                />
-                            </div>
+                                    <div className="mb-3">
+                                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary/80 text-white rounded-full text-sm font-semibold">
+                                            4
+                                        </span>
+                                </div>
+                                    <h3 className="text-lg font-semibold text-foreground mb-3">
+                                        Step 4 - Meet Our Founder
+                                    </h3>
+                                    <p className="text-foreground text-sm leading-relaxed">
+                                        Online brief meeting with Steven Marks (Founder and co-CEO).
+                                    </p>
+                                </CardContent>
+                            </Card>
                         </div>
                     </div>
                 </section>
 
                 {/* Contact Form Section */}
-                <section className="py-20 bg-primary/20">
+                <section id="franchise-form" className="py-20 bg-primary/20">
                     <div className="container mx-auto px-4">
                         <div className="max-w-4xl mx-auto">
                             <div className="text-center mb-12">
                                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                                    Ready to Join Our Franchise Network?
+                                    Enquire Today
                                 </h2>
                                 <p className="text-xl text-muted-foreground">
-                                    Fill out the form below and our franchise development team will contact you
-                                    within 24 hours to discuss your opportunities.
+                                    Thank you for your interest in partnering with Yangguofu. Please complete the form below and our Franchise Development Team will contact you shortly.
                                 </p>
                             </div>
 
@@ -265,21 +372,35 @@ export default function FranchisePage() {
                                 <CardHeader className="pb-6">
                                     <CardTitle className="text-2xl font-semibold flex items-center gap-2">
                                         <HeadphonesIcon className="w-6 h-6 text-blue-600" />
-                                        Franchise Inquiry
+                                        Become a Yangguofu Franchise Partner
                                     </CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    <ContactEmail
-                                        subjectOptions={[
-                                            { value: 'franchise-info', label: 'Franchise Information' },
-                                            { value: 'investment-details', label: 'Investment Details' },
-                                            { value: 'territory-availability', label: 'Territory Availability' },
-                                            { value: 'training-schedule', label: 'Training Schedule' },
-                                            { value: 'other', label: 'Other' },
-                                        ]}
-                                        buttonLabel="Send Franchise Inquiry"
-                                        messagePlaceholder="Tell us about your interest in franchising and any specific questions you have..."
-                                    />
+                                    <form onSubmit={handleSubmit} className="space-y-6" ref={formRef}>
+                                        {/* Submit Status Messages */}
+                                        {submitStatus === 'success' && (
+                                            <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+                                                <p className="text-green-800 dark:text-green-200 text-sm">
+                                                    {submitMessage}
+                                                </p>
+                                            </div>
+                                        )}
+
+                                        {submitStatus === 'error' && (
+                                            <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+                                                <p className="text-red-800 dark:text-red-200 text-sm">
+                                                    {submitMessage}
+                                                </p>
+                                            </div>
+                                        )}
+
+                                        <CareersEmail
+                                            buttonLabel={isSubmitting ? 'Submitting...' : 'Send Franchise Inquiry'}
+                                            positions={positions}
+                                            isSubmitting={isSubmitting}
+                                            ref={careersEmailRef}
+                                        />
+                                    </form>
                                 </CardContent>
                             </Card>
                         </div>
