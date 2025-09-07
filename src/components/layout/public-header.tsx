@@ -3,6 +3,12 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 import { UserNav } from './user-nav'
 import { ModeToggle } from './ThemeToggle/theme-toggle'
 import { useLanguage } from '@/lib/contexts/LanguageContext'
@@ -11,7 +17,9 @@ import { useAuth } from '@/lib/contexts/AuthContext'
 import { useState, useEffect } from 'react'
 import {
     Globe,
-    LogIn
+    LogIn,
+    Menu,
+    X
 } from 'lucide-react'
 import Image from 'next/image'
 
@@ -20,6 +28,7 @@ export default function PublicHeader() {
     const t = useI18n()
     const { user } = useAuth()
     const [mounted, setMounted] = useState(false)
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     // 防止水合错误
     useEffect(() => {
@@ -41,6 +50,37 @@ export default function PublicHeader() {
                         <div className="flex items-center gap-2">
                             <UserNav />
                             <ModeToggle />
+                            {/* 手机端菜单按钮 */}
+                            <DropdownMenu open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                                <DropdownMenuTrigger asChild>
+                                    <Button variant="ghost" size="sm" className="md:hidden text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-white/10">
+                                        {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent align="end" className="w-56">
+                                    <DropdownMenuItem asChild>
+                                        <Link href="/about" className="w-full">{t.header.about}</Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem asChild>
+                                        <Link href="/products" className="w-full">{t.header.products}</Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem asChild>
+                                        <Link href="/store" className="w-full">{t.header.store}</Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem asChild>
+                                        <Link href="/membership" className="w-full">{t.header.membership}</Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem asChild>
+                                        <Link href="/franchise" className="w-full">{t.header.franchise}</Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem asChild>
+                                        <Link href="/careers" className="w-full">{t.header.careers}</Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem asChild>
+                                        <Link href="/contact" className="w-full">{t.header.contact}</Link>
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                         </div>
                     </div>
                 </div>
@@ -102,6 +142,38 @@ export default function PublicHeader() {
 
                         <UserNav />
                         <ModeToggle />
+
+                        {/* 手机端菜单按钮 */}
+                        <DropdownMenu open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                            <DropdownMenuTrigger asChild>
+                                <Button variant="ghost" size="sm" className="md:hidden text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-white/10">
+                                    {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end" className="w-56">
+                                <DropdownMenuItem asChild>
+                                    <Link href="/about" className="w-full">{t.header.about}</Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem asChild>
+                                    <Link href="/products" className="w-full">{t.header.products}</Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem asChild>
+                                    <Link href="/store" className="w-full">{t.header.store}</Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem asChild>
+                                    <Link href="/membership" className="w-full">{t.header.membership}</Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem asChild>
+                                    <Link href="/franchise" className="w-full">{t.header.franchise}</Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem asChild>
+                                    <Link href="/careers" className="w-full">{t.header.careers}</Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem asChild>
+                                    <Link href="/contact" className="w-full">{t.header.contact}</Link>
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                     </div>
                 </div>
             </div>
