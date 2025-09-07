@@ -219,7 +219,7 @@ export default function HomePage() {
                   key={index}
                   name={testimonial.name}
                   feedback={testimonial.feedback}
-                  avatarSrc={`https://i.pravatar.cc/100?img=${index + 1}`}
+                  avatarSrc={testimonial.avatarSrc}
                   rating={testimonial.rating}
                 />
               ))}
