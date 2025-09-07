@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+ 
 import { Separator } from '@/components/ui/separator';
 import PublicHeader from '@/components/layout/public-header';
 import Footer from '@/components/layout/Footer';
@@ -9,7 +9,8 @@ import {
     SignatureSoupBases,
     SpecialCombos,
     ProductGrid,
-    ProductGridSkeleton
+    ProductGridSkeleton,
+    IngredientsSupplyChain
 } from './components';
 
 // 服务器端组件：获取数据
@@ -52,9 +53,13 @@ export default function ProductsPage() {
                     <Separator className="my-12" />
 
                     {/* 产品网格部分 */}
-                    <Suspense fallback={<ProductGridSkeleton />}>
+                    {/* <Suspense fallback={<ProductGridSkeleton />}>
                         <ProductGridServer />
-                    </Suspense>
+                    </Suspense> */}
+
+                    {/* Ingredients supply chain */}
+                    <IngredientsSupplyChain />
+                
                 </main>
 
                 {/* 页脚 */}

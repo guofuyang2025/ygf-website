@@ -29,14 +29,14 @@ export const navItems: NavItem[] = [
   //   isActive: false,
   //   items: [] // No child items
   // },
-  {
-    title: 'Item',
-    url: '/dashboard/item',
-    icon: 'product',
-    shortcut: ['i', 'i'],
-    isActive: false,
-    items: [] // No child items
-  },
+  // {
+  //   title: 'Item',
+  //   url: '/dashboard/item',
+  //   icon: 'product',
+  //   shortcut: ['i', 'i'],
+  //   isActive: false,
+  //   items: [] // No child items
+  // },
   {
     title: 'Notifications',
     url: '/dashboard/notification',
@@ -52,7 +52,8 @@ export const navItems: NavItem[] = [
     icon: 'billing',
     shortcut: ['m', 'b'],
     isActive: false,
-    items: []
+    items: [],
+    adminOnly: true // Only visible to admin users
   },
   {
     title: 'Profile',

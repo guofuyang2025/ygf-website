@@ -214,7 +214,7 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-              {t.homePage.testimonials.items.map((testimonial, index) => (
+              {t.homePage.testimonials.items.map((testimonial: any, index: number) => (
                 <TestimonialCard
                   key={index}
                   name={testimonial.name}

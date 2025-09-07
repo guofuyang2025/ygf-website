@@ -2,386 +2,13 @@
 
 import { useLanguage } from './LanguageContext'
 
-type Strings = {
-  header: {
-    siteTitle: string
-    login: string
-    about: string
-    products: string
-    contact: string
-    franchise: string
-    careers: string
-    language: string
-  }
-  profileMenu: {
-    profile: string
-    signOut: string
-  }
-  banner: {
-    title: string
-    subtitle: string
-  }
-  introduction: {
-    title: string
-    body: string
-  }
-  product: {
-    title: string
-    cardTitle: (id: number) => string
-    cardBody: string
-  }
-  footer: {
-    text: string
-  }
-  loginPage: {
-    title: string
-  }
-  profilePage: {
-    title: string
-  }
-  // 新增首页内容
-  homePage: {
-    hero: {
-      title: string
-      subtitle: string
-      extraText: string
-      ctaButton: string
-    }
-    brand: {
-      title: string
-      description: string
-      ctaButton: string
-    }
-    products: {
-      title: string
-      description: string
-      ctaButton: string
-    }
-    testimonials: {
-      title: string
-      subtitle: string
-      items: Array<{
-        name: string
-        feedback: string
-        rating: number
-      }>
-    }
-  }
-  aboutPage: {
-    title: string
-    body: string
-    hero: {
-      title: string
-      subtitle: string
-      description: string
-    }
-    team: {
-      title: string
-      subtitle: string
-    }
-    story: {
-      journey: {
-        title: string
-        description1: string
-        description2: string
-        button: string
-      }
-      innovation: {
-        title: string
-        description1: string
-        description2: string
-        button: string
-      }
-    }
-    mission: {
-      title: string
-      description1: string
-      description2: string
-      description3: string
-    }
-    stats: {
-      title: string
-      subtitle: string
-    }
-    cta: {
-      title: string
-      description: string
-      startProject: string
-      contactUs: string
-    }
-  }
-  productsPage: {
-    hero: {
-      title: string
-      subtitle: string
-    }
-    signatureSoupBases: {
-      title: string
-      subtitle: string
-      signatureRecipe: string
-    }
-    freshIngredients: {
-      title: string
-      subtitle: string
-      freshDaily: string
-    }
-    specialCombos: {
-      title: string
-      subtitle: string
-      description: string
-      limitedTime: string
-      chefsChoice: string
-    }
-    soupBases: {
-      classicBoneBroth: {
-        name: string
-        description: string
-      }
-      tomatoBase: {
-        name: string
-        description: string
-      }
-      dryMixMala: {
-        name: string
-        description: string
-      }
-    }
-  }
-  contactPage: {
-    hero: {
-      title: string
-      subtitle: string
-    }
-    form: {
-      title: string
-      subtitle: string
-      sendMessage: string
-      subjectOptions: {
-        general: string
-        support: string
-        partnership: string
-        feedback: string
-        other: string
-      }
-    }
-    contactInfo: {
-      title: string
-      officeAddress: string
-      phoneNumber: string
-      emailAddress: string
-      address: string
-      phone: string
-      email: string
-    }
-  }
-  careersPage: {
-    hero: {
-      title: string
-      subtitle: string
-    }
-    whyWorkWithUs: {
-      title: string
-      subtitle: string
-      globalBrand: {
-        title: string
-        description: string
-      }
-      supportiveEnvironment: {
-        title: string
-        description: string
-      }
-      careerDevelopment: {
-        title: string
-        description: string
-      }
-      employeeBenefits: {
-        title: string
-        description: string
-      }
-    }
-    currentOpenings: {
-      title: string
-      subtitle: string
-      positions: {
-        frontOfHouse: {
-          title: string
-          description: string
-        }
-        kitchenStaff: {
-          title: string
-          description: string
-        }
-        shiftLeaders: {
-          title: string
-          description: string
-        }
-        headOffice: {
-          title: string
-          description: string
-        }
-      }
-      location: string
-      schedule: string
-      experience: string
-      australiaWide: string
-      partTimeFullTime: string
-      fullTime: string
-      entryLevel: string
-      years2Plus: string
-      years3Plus: string
-    }
-    benefits: {
-      title: string
-      comprehensiveTraining: {
-        title: string
-        description1: string
-        description2: string
-      }
-      marketingSupport: {
-        title: string
-        description1: string
-        description2: string
-      }
-      growthOpportunities: {
-        title: string
-        description1: string
-        description2: string
-      }
-    }
-    application: {
-      title: string
-      subtitle: string
-      formTitle: string
-      submitButton: string
-      submittingButton: string
-    }
-  }
-  franchisePage: {
-    hero: {
-      title: string
-      subtitle: string
-    }
-    jobDescription: {
-      title: string
-      description1: string
-      description2: string
-    }
-    qualifications: {
-      title: string
-      subtitle: string
-      experience: {
-        title: string
-        description: string
-      }
-      businessAcumen: {
-        title: string
-        description: string
-      }
-      leadership: {
-        title: string
-        description: string
-      }
-      flexibility: {
-        title: string
-        description: string
-      }
-    }
-    franchiseSupport: {
-      title: string
-      subtitle: string
-      trainingOperations: {
-        title: string
-        description: string
-      }
-      supplyChain: {
-        title: string
-        description: string
-      }
-      marketingCampaigns: {
-        title: string
-        description: string
-      }
-      description: string
-    }
-    process: {
-      title: string
-      subtitle: string
-      steps: {
-        enquire: {
-          title: string
-          description: string
-        }
-        interview: {
-          title: string
-          description: string
-        }
-        onlineInterview: {
-          title: string
-          description: string
-        }
-        meetFounder: {
-          title: string
-          description: string
-        }
-      }
-    }
-    application: {
-      title: string
-      subtitle: string
-      formTitle: string
-      submitButton: string
-      submittingButton: string
-    }
-  }
-  membershipPage: {
-    hero: {
-      title: string
-      subtitle: string
-    }
-    benefits: {
-      title: string
-      pointsSystem: {
-        title: string
-        description1: string
-        description2: string
-      }
-      exclusiveAccess: {
-        title: string
-        description1: string
-        description2: string
-      }
-      personalizedExperience: {
-        title: string
-        description1: string
-        description2: string
-      }
-    }
-    application: {
-      title: string
-      subtitle: string
-      formTitle: string
-      formFields: {
-        firstName: string
-        lastName: string
-        email: string
-        phone: string
-        membershipType: string
-        message: string
-      }
-      membershipTypes: {
-        basic: string
-        premium: string
-        vip: string
-      }
-      submitButton: string
-      submittingButton: string
-    }
-  }
-}
+type Strings = any
 
 const en: Strings = {
   header: {
-    siteTitle: 'YangGuoFu',
+
+    siteTitle: 'Yangguofu Malatang',
+
     login: 'Login',
     about: 'About Us',
     products: 'Products',
@@ -396,19 +23,19 @@ const en: Strings = {
   },
   banner: {
     title: 'Welcome',
-    subtitle: 'This is a placeholder banner.',
+    subtitle: 'Welcome to Yangguofu Malatang',
   },
   introduction: {
     title: 'Introduction',
-    body: 'Placeholder introduction content for the template.',
+    body: 'Yangguofu Malatang is a restaurant chain that specializes in麻辣烫. It was founded in 2000, and is headquartered in Harbin, China.',
   },
   product: {
     title: 'Products',
     cardTitle: (id: number) => `Product ${id}`,
-    cardBody: 'Placeholder product description.',
+    cardBody: 'Yangguofu Malatang products are unique and delicious.',
   },
   footer: {
-    text: 'Footer placeholder',
+    text: 'Yangguofu Malatang',
   },
   loginPage: {
     title: 'Login',
@@ -445,7 +72,7 @@ const en: Strings = {
   },
   aboutPage: {
     title: 'About Us',
-    body: 'This is a placeholder About page for the template.',
+    body: 'Yangguofu Malatang is a restaurant chain that specializes in麻辣烫. It was founded in 2000, and is headquartered in Harbin, China.',
     hero: {
       title: 'About Us',
       subtitle: 'Our Story – From Harbin to the World',
@@ -757,7 +384,9 @@ const en: Strings = {
 
 const zh: Strings = {
   header: {
-    siteTitle: '杨国福',
+
+    siteTitle: '杨国福麻辣烫',
+
     login: '登录',
     about: '关于我们',
     products: '产品',
@@ -772,19 +401,19 @@ const zh: Strings = {
   },
   banner: {
     title: '欢迎',
-    subtitle: '这是一个占位横幅。',
+    subtitle: '欢迎来到杨国福麻辣烫',
   },
   introduction: {
     title: '简介',
-    body: '模板的占位介绍内容。',
+    body: '杨国福麻辣烫是一家专注于麻辣烫的餐饮品牌，成立于2000年，总部位于哈尔滨。杨国福麻辣烫以其独特的口味和优质的服务而闻名，深受广大消费者的喜爱。',
   },
   product: {
     title: '产品',
     cardTitle: (id: number) => `产品 ${id}`,
-    cardBody: '占位产品描述。',
+    cardBody: '杨国福麻辣烫的产品以其独特的口味和优质的服务而闻名，深受广大消费者的喜爱。',
   },
   footer: {
-    text: '页脚占位符',
+    text: '杨国福麻辣烫',
   },
   loginPage: {
     title: '登录',
@@ -821,7 +450,7 @@ const zh: Strings = {
   },
   aboutPage: {
     title: '关于我们',
-    body: '这是模板的关于我们占位页面。',
+    body: '杨国福麻辣烫是一家专注于麻辣烫的餐饮品牌，成立于2000年，总部位于哈尔滨。杨国福麻辣烫以其独特的口味和优质的服务而闻名，深受广大消费者的喜爱。',
     hero: {
       title: '关于我们',
       subtitle: '我们的故事 – 从哈尔滨到世界',
