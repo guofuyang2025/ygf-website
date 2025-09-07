@@ -18,7 +18,7 @@ This project has been migrated from Clerk to Supabase authentication with Google
    - For production: Your actual domain
 3. Add redirect URLs:
    - `http://localhost:3000/auth/callback`
-   - `http://localhost:3000/dashboard/overview`
+   - `http://localhost:3000/dashboard/item`
 
 ### 3. Enable Google OAuth
 
