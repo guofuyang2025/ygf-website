@@ -98,7 +98,7 @@ export default function FranchisePage() {
                                     </div>
                                     <div>
                                         <img
-                                            src="https://picsum.photos/400/300?random=10"
+                                            src="/franchise/ygf.png"
                                             alt="Franchise Partner Role"
                                             className="w-full rounded-lg shadow-lg"
                                         />
@@ -197,7 +197,7 @@ export default function FranchisePage() {
                             <Card className="overflow-hidden">
                                 <div className="relative">
                                     <img
-                                        src="https://picsum.photos/300/200?random=11"
+                                        src="/franchise/training.png"
                                         alt="Training & Operations"
                                         className="w-full h-48 object-cover"
                                     />
@@ -217,7 +217,7 @@ export default function FranchisePage() {
                             <Card className="overflow-hidden">
                                 <div className="relative">
                                     <img
-                                        src="https://picsum.photos/300/200?random=12"
+                                        src="/franchise/supply.png"
                                         alt="Supply Chain & Logistics"
                                         className="w-full h-48 object-cover"
                                     />
@@ -237,7 +237,7 @@ export default function FranchisePage() {
                             <Card className="overflow-hidden">
                                 <div className="relative">
                                     <img
-                                        src="https://picsum.photos/300/200?random=13"
+                                        src="/franchise/marketing.png"
                                         alt="Marketing Campaigns"
                                         className="w-full h-48 object-cover"
                                     />

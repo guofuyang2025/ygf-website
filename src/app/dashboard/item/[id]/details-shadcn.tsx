@@ -1,6 +1,5 @@
 'use client';
 
-import { getItemByIdWithParsedData } from "@/db/items";
 import { notFound } from "next/navigation";
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -21,8 +20,18 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
+interface ItemData {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  image_url: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
 interface DetailsShadcnProps {
-  item: Awaited<ReturnType<typeof getItemByIdWithParsedData>>;
+  item: ItemData;
 }
 
 export default function DetailsShadcn({ item }: DetailsShadcnProps) {

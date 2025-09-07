@@ -115,7 +115,7 @@ export default function AboutPage() {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div className="order-2 lg:order-1">
                                 <img
-                                    src="https://picsum.photos/400/300?random=1"
+                                    src="/about/mainbuilding.png"
                                     alt="Our Journey Begins"
                                     className="rounded-lg shadow-lg w-full h-auto"
                                 />
@@ -148,7 +148,7 @@ export default function AboutPage() {
                             </div>
                             <div>
                                 <img
-                                    src="https://picsum.photos/400/300?random=2"
+                                    src="/about/ygf_au.png"
                                     alt="Innovation at Our Core"
                                     className="rounded-lg shadow-lg w-full h-auto"
                                 />

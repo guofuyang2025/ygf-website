@@ -303,14 +303,14 @@ export default function CareersPage() {
                 </section>
 
                 {/* Benefits Section */}
-                <section className="py-20">
+                {/* <section className="py-20">
                     <div className="container mx-auto px-4">
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-16">
-                            What You'll Receive as a Franchisee
+                            Why work with us?
                         </h2>
 
                         <div className="space-y-20 max-w-6xl mx-auto">
-                            {/* Comprehensive Training */}
+                            
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 <div className="order-2 lg:order-1">
                                     <h3 className="text-2xl font-bold text-foreground mb-6">Comprehensive Training</h3>
@@ -334,7 +334,7 @@ export default function CareersPage() {
                                 </div>
                             </div>
 
-                            {/* Marketing Support */}
+                            
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 <div>
                                     <img
@@ -359,7 +359,7 @@ export default function CareersPage() {
                                 </div>
                             </div>
 
-                            {/* Growth Opportunities */}
+                            
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 <div className="order-2 lg:order-1">
                                     <h3 className="text-2xl font-bold text-foreground mb-6">Exclusive Growth Opportunities</h3>
@@ -385,7 +385,7 @@ export default function CareersPage() {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 {/* Additional Info Section */}
                 <section className="py-20 bg-muted/30">
@@ -418,7 +418,7 @@ export default function CareersPage() {
                             </div>
                             <div>
                                 <img
-                                    src="https://picsum.photos/400/300?random=6"
+                                    src="/career/training.png"
                                     alt="Franchise Network"
                                     className="w-full rounded-lg shadow-lg"
                                 />
