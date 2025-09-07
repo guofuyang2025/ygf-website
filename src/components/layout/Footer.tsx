@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Left Section: Company Name & Description */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h2 className="text-2xl font-bold text-white mb-2">
-              NovaTech Solutions
+              YangGuoFu
             </h2>
             <p className="text-sm leading-relaxed max-w-xs text-white/90">
               Empowering businesses with modern software solutions.
@@ -82,7 +82,7 @@ export default function Footer() {
           
           <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
             <p className="text-white/80">
-              © 2025 NovaTech Solutions. All rights reserved.
+              © 2025 YangGuoFu. All rights reserved.
             </p>
             <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2">
               <Link href="#" className="hover:text-white text-white/80 transition-colors">

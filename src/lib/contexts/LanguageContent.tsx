@@ -381,7 +381,7 @@ type Strings = {
 
 const en: Strings = {
   header: {
-    siteTitle: 'Site Title',
+    siteTitle: 'YangGuoFu',
     login: 'Login',
     about: 'About Us',
     products: 'Products',
@@ -757,7 +757,7 @@ const en: Strings = {
 
 const zh: Strings = {
   header: {
-    siteTitle: '站点标题',
+    siteTitle: '杨国福',
     login: '登录',
     about: '关于我们',
     products: '产品',
@@ -794,8 +794,8 @@ const zh: Strings = {
   },
   homePage: {
     hero: {
-      title: '欢迎来到我们的数字解决方案',
-      subtitle: '用尖端技术和创新解决方案推动您的业务发展。',
+      title: '杨国福麻辣烫',
+      subtitle: '全球第一麻辣烫来到澳大利亚',
       extraText: '体验来自世界各地的正宗风味',
       ctaButton: '了解更多',
     },
@@ -878,7 +878,7 @@ const zh: Strings = {
       freshDaily: '每日新鲜',
     },
     specialCombos: {
-      title: '特色组合和季节风味',
+      title: '特色套餐和季节风味',
       subtitle: '限时主厨特色菜，融合正宗麻辣烫与当地澳大利亚灵感。',
       description: '体验我们主厨创造的独特风味组合，采用季节性食材和创新烹饪技术，将传统麻辣烫与现代澳大利亚烹饪影响相结合。',
       limitedTime: '限时',
@@ -902,10 +902,10 @@ const zh: Strings = {
   contactPage: {
     hero: {
       title: '联系我们',
-      subtitle: '有问题或想合作吗？我们很乐意听到您的消息。给我们发消息，我们会尽快回复。',
+      subtitle: '有问题或想合作吗？我们很乐意听到您的消息，我们会尽快回复。',
     },
     form: {
-      title: '给我们发消息',
+      title: '联系我们',
       subtitle: '填写下面的表格，我们会在24小时内回复您。',
       sendMessage: '发送消息',
       subjectOptions: {
@@ -933,7 +933,7 @@ const zh: Strings = {
     },
     whyWorkWithUs: {
       title: '为什么与我们合作？',
-      subtitle: '在杨国福麻辣烫，我们相信我们的人员是我们成功的心脏。在全球拥有近7000家餐厅，我们正在将正宗的麻辣烫带到澳大利亚——我们正在寻找充满激情、精力充沛、以客户为中心的个人加入我们的团队。',
+      subtitle: '在杨国福麻辣烫，我们相信员工是我们成功的心脏。在全球拥有近7000家餐厅，我们正在将正宗的麻辣烫带到澳大利亚——我们正在寻找充满激情、精力充沛、以客户为中心的个人加入我们的团队。',
       globalBrand: {
         title: '全球品牌',
         description: '成为全球品牌的一部分，在澳大利亚有令人兴奋的扩张计划',
@@ -1088,7 +1088,7 @@ const zh: Strings = {
   membershipPage: {
     hero: {
       title: '加入我们的会员计划',
-      subtitle: '解锁独家福利，赚取奖励，作为我们社区的重要成员享受优质体验。',
+      subtitle: '解锁独家福利，赚取奖励，作为我们的会员享受优质体验。',
     },
     benefits: {
       title: '作为会员您将获得什么',
@@ -1098,14 +1098,14 @@ const zh: Strings = {
         description2: '特殊奖励积分活动定期举行，让您在假期、产品发布和会员感谢日期间有机会获得额外奖励。',
       },
       exclusiveAccess: {
-        title: '独家会员访问',
-        description1: '在向公众开放之前，抢先获得新产品、限量版商品和特殊系列。会员还收到虚拟活动、研讨会和产品演示的独家邀请。',
+        title: '新品抢先体验',
+        description1: '在向公众开放之前，抢先获得新产品体验邀请。会员还收到虚拟活动、研讨会和产品演示的独家邀请。',
         description2: '我们的仅限会员社区论坛提供了一个与其他会员联系、分享经验和从我们的团队和爱好者那里获得内部提示的空间。',
       },
       personalizedExperience: {
         title: '个性化体验',
-        description1: '根据您的偏好和购买历史接收个性化产品推荐。我们的AI驱动系统学习您的口味，建议您可能喜欢的商品，让购物更愉快和高效。',
-        description2: '会员还可以获得个性化造型咨询、定制产品套装和符合他们兴趣和生活方式的定制内容。',
+        description1: '根据您的偏好和购买历史接收个性化产品推荐，推荐您可能喜欢的商品，让点餐更愉快和高效。',
+        description2: '会员还可以获得个性化点餐咨询、定制套餐和符合他们兴趣和生活方式的定制内容。',
       },
     },
     application: {
