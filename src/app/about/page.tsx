@@ -5,6 +5,7 @@ import Footer from '@/components/layout/Footer'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { useI18n } from '@/lib/contexts/LanguageContent'
+import PageBanner from '@/components/layout/PageBanner'
 
 export default function AboutPage() {
     const t = useI18n()
@@ -14,19 +15,7 @@ export default function AboutPage() {
             <Header />
             <main className="min-h-screen bg-background">
                 {/* Hero Section */}
-                <section className="py-20 bg-primary/80">
-                    <div className="container mx-auto px-4 text-center">
-                        <h1 className="text-5xl md:text-6xl font-bold text-white dark:text-black mb-6 [text-shadow:_0_4px_8px_rgb(0_0_0_/_0.4)] dark:[text-shadow:_0_4px_8px_rgb(255_255_255_/_0.4)]">
-                            {t.aboutPage.hero.title}
-                        </h1>
-                        <p className="text-xl md:text-2xl text-white dark:text-black mb-8 max-w-3xl mx-auto [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
-                            {t.aboutPage.hero.subtitle}
-                        </p>
-                        <p className="text-lg text-white dark:text-black max-w-4xl mx-auto leading-relaxed whitespace-pre-line [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
-                            {t.aboutPage.hero.description}
-                        </p>
-                    </div>
-                </section>
+                <PageBanner title={t.aboutPage.hero.title} subtitle={t.aboutPage.hero.subtitle} />
 
                 {/* Team Section */}
                 <section className="py-20">

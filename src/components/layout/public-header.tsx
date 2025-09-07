@@ -13,6 +13,7 @@ import {
     Globe,
     LogIn
 } from 'lucide-react'
+import Image from 'next/image'
 
 export default function PublicHeader() {
     const { language, toggleLanguage } = useLanguage()
@@ -52,10 +53,12 @@ export default function PublicHeader() {
             <div className="container mx-auto px-4">
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-primary rounded-lg"></div>
-                        <Link href="/" className="text-xl font-bold text-primary dark:text-white hover:text-primary/80 dark:hover:text-white/80 transition-colors">
-                            {t.header.siteTitle}
+                        <Link href="/" className="block h-full">
+                            <Image src="/logo.png" alt="Yangguofu Malatang" className='h-full object-cover' width={200} height={100} />
                         </Link>
+                        {/* <Link href="/" className="text-xl font-bold text-primary dark:text-white hover:text-primary/80 dark:hover:text-white/80 transition-colors">
+                            {t.header.siteTitle}
+                        </Link> */}
                         <Separator orientation="vertical" className="h-4 bg-primary/20 dark:bg-white/20" />
                         <nav className="hidden md:flex items-center gap-2">
                             <Button variant="ghost" size="sm" asChild className="text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white data-[state=open]:bg-primary/10 dark:data-[state=open]:bg-white/10">
@@ -65,7 +68,10 @@ export default function PublicHeader() {
                                 <Link href="/products">{t.header.products}</Link>
                             </Button>
                             <Button variant="ghost" size="sm" asChild className="text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white data-[state=open]:bg-primary/10 dark:data-[state=open]:bg-white/10">
-                                <Link href="/contact">{t.header.contact}</Link>
+                                <Link href="/store">{t.header.store}</Link>
+                            </Button>
+                            <Button variant="ghost" size="sm" asChild className="text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white data-[state=open]:bg-primary/10 dark:data-[state=open]:bg-white/10">
+                                <Link href="/membership">{t.header.membership}</Link>
                             </Button>
                             <Button variant="ghost" size="sm" asChild className="text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white data-[state=open]:bg-primary/10 dark:data-[state=open]:bg-white/10">
                                 <Link href="/franchise">{t.header.franchise}</Link>
@@ -74,7 +80,7 @@ export default function PublicHeader() {
                                 <Link href="/careers">{t.header.careers}</Link>
                             </Button>
                             <Button variant="ghost" size="sm" asChild className="text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white data-[state=open]:bg-primary/10 dark:data-[state=open]:bg-white/10">
-                                <Link href="/membership">Membership</Link>
+                                <Link href="/contact">{t.header.contact}</Link>
                             </Button>
                         </nav>
                     </div>

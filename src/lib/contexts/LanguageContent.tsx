@@ -10,6 +10,8 @@ const en: Strings = {
     login: 'Login',
     about: 'About Us',
     products: 'Products',
+    store: 'Store',
+    membership: 'Membership',
     contact: 'Contact Us',
     franchise: 'Franchise',
     careers: 'Careers',
@@ -62,9 +64,9 @@ const en: Strings = {
       title: 'What Our Clients Say',
       subtitle: 'Hear from our satisfied customers about their experience with our services.',
       items: [
-        { name: 'John Doe', feedback: 'Excellent service and results! Highly recommend.', rating: 5 },
-        { name: 'Jane Smith', feedback: 'Great communication and attention to detail. Very professional.', rating: 4 },
-        { name: 'Peter Jones', feedback: 'Impressed with the speed and quality of the project. Will work with them again.', rating: 5 },
+        { name: 'Jay Chou', feedback: 'Yangguofu Malatang, Oh Yeah!', rating: 5, avatarSrc: '/tmp/avatar_1.png' },
+        { name: 'JJ Lin', feedback: 'Yangguofu Malatang, Oh Yeah!', rating: 4, avatarSrc: '/tmp/avatar_2.png' },
+        { name: 'Wang Lihong', feedback: 'Yangguofu Malatang, Oh Yeah!', rating: 5, avatarSrc: '/tmp/avatar_3.png' },
       ],
     },
   },
@@ -170,9 +172,9 @@ const en: Strings = {
       officeAddress: 'Office Address',
       phoneNumber: 'Phone Number',
       emailAddress: 'Email Address',
-      address: '123 Innovation Drive\nTech District, Silicon Valley\nCA 94025, United States',
-      phone: '+1 (555) 123-4567\nMon-Fri 9:00 AM - 6:00 PM PST',
-      email: 'hello@yourcompany.com\nsupport@yourcompany.com',
+      address: '9/1-3 Metro Pde, Mawson Lakes SA 5095, Australia',
+      phone: '+61 (4) 0000 0000',
+      email: 'guofuyang2025@gmail.com',
     },
   },
   careersPage: {
@@ -378,6 +380,12 @@ const en: Strings = {
       submittingButton: 'Submitting Application...',
     },
   },
+  storePage: {
+    hero: {
+      title: 'Store',
+      subtitle: 'We have multiple stores, welcome to visit.',
+    },
+  },
 }
 
 const zh: Strings = {
@@ -386,6 +394,8 @@ const zh: Strings = {
     login: '登录',
     about: '关于我们',
     products: '产品',
+    store: '店铺',
+    membership: '会员',
     contact: '联系我们',
     franchise: '加盟',
     careers: '职业机会',
@@ -438,9 +448,9 @@ const zh: Strings = {
       title: '客户怎么说',
       subtitle: '听听我们满意客户的意见。',
       items: [
-        { name: '张三', feedback: '出色的服务和结果！强烈推荐。', rating: 5 },
-        { name: '李四', feedback: '出色的沟通和关注细节。非常专业。', rating: 4 },
-        { name: '王五', feedback: '对项目的速度和质量印象深刻。会再次合作。', rating: 5 },
+        { name: '周杰伦', feedback: '杨国福麻辣烫，哎呦不错哦', rating: 5, avatarSrc: '/tmp/avatar_1.png' },
+        { name: '林俊杰', feedback: '圈圈圓圓圈圈天天年年天天的我吃杨国福麻辣烫', rating: 4, avatarSrc: '/tmp/avatar_2.png' },
+        { name: '王力宏', feedback: '遥远的中国有一碗杨国福麻辣烫', rating: 5, avatarSrc: '/tmp/avatar_3.png' },
       ],
     },
   },
@@ -512,17 +522,17 @@ const zh: Strings = {
     soupBases: {
       classicBoneBroth: {
         name: '经典骨汤',
-        description: '浓郁、鲜美、慢炖风味',
+        description: '以新鲜大骨与多种蔬菜文火慢炖数小时，汤色乳白醇厚，入口鲜美绵长，既能衬托各种食材的原味，又带来滋补与满足感，是最受欢迎的基础之选。',
       },
       tomatoBase: {
         name: '番茄汤底',
-        description: '新鲜、酸甜、更清淡的选择',
+        description: '选用新鲜番茄熬煮，酸甜平衡，汤汁清爽而不油腻，入口柔和却层次分明，不仅能缓解辣味的刺激，还能带来暖胃与开胃的双重享受。',
       },
       dryMixMala: {
         name: '干拌麻辣',
-        description: '大胆、芳香、无汤的麻辣',
+        description: '采用花椒、辣椒与秘制香料翻炒拌匀，辣中带麻、香气浓烈，食材裹满调料却不带汤水，更凸显劲道口感与麻辣的直接冲击，是重口味爱好者的必点选择。',
       },
-    },
+    }
   },
   contactPage: {
     hero: {
@@ -546,9 +556,9 @@ const zh: Strings = {
       officeAddress: '办公地址',
       phoneNumber: '电话号码',
       emailAddress: '电子邮件地址',
-      address: '创新大道123号\n科技区，硅谷\n加利福尼亚州94025，美国',
-      phone: '+1 (555) 123-4567\n周一至周五 上午9:00 - 下午6:00 PST',
-      email: 'hello@yourcompany.com\nsupport@yourcompany.com',
+      address: '9/1-3 Metro Pde, Mawson Lakes SA 5095, Australia',
+      phone: '+61 (4) 0000 0000',
+      email: 'guofuyang2025@gmail.com',
     },
   },
   careersPage: {
@@ -752,6 +762,12 @@ const zh: Strings = {
       },
       submitButton: '加入会员计划',
       submittingButton: '提交申请中...',
+    },
+  },
+  storePage: {
+    hero: {
+      title: '店铺',
+      subtitle: '我们拥有多家店铺，欢迎您前来品尝。',
     },
   },
 }
