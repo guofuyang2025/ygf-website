@@ -42,10 +42,10 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(redirectUrl)
   }
 
-  // If user is signed in and the current path is /auth, redirect to /dashboard/overview
+  // If user is signed in and the current path is /auth, redirect to /dashboard/item
   if (user && request.nextUrl.pathname.startsWith('/auth')) {
     const redirectUrl = request.nextUrl.clone()
-    redirectUrl.pathname = '/dashboard/overview'
+    redirectUrl.pathname = '/dashboard/item'
     return NextResponse.redirect(redirectUrl)
   }
 
