@@ -16,11 +16,23 @@ export interface ProfileUpdateData {
 }
 
 export interface Item {
-  id: number
-  inserted_at: string
+  id: string // uuid
+  name: string
+  price: number
+  description: string
+  image_url: string | null
+  created_at: string
   updated_at: string
-  data: any // JSONB data
-  image: string | null
+}
+
+export interface Membership {
+  id: string // uuid
+  point: number | null
+  description: string | null
+  verify: boolean | null
+  created_at: string | null
+  updated_at: string | null
+  reviewed: boolean | null
 }
 
 export interface Database {
@@ -31,14 +43,23 @@ export interface Database {
         Insert: Omit<Profile, 'id'> & { id?: string }
         Update: Partial<ProfileUpdateData>
       }
-      item: {
+      ygf_products: {
         Row: Item
-        Insert: Omit<Item, 'id' | 'inserted_at' | 'updated_at'> & { 
-          id?: number
-          inserted_at?: string
+        Insert: Omit<Item, 'id' | 'created_at' | 'updated_at'> & {
+          id?: string
+          created_at?: string
           updated_at?: string
         }
-        Update: Partial<Omit<Item, 'id' | 'inserted_at' | 'updated_at'>>
+        Update: Partial<Omit<Item, 'id' | 'created_at' | 'updated_at'>>
+      }
+      ygf_membership: {
+        Row: Membership
+        Insert: Omit<Membership, 'id' | 'created_at' | 'updated_at'> & {
+          id?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Update: Partial<Omit<Membership, 'id' | 'created_at' | 'updated_at'>>
       }
     }
   }

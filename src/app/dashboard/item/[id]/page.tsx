@@ -27,7 +27,7 @@ type pageProps = {
 export default async function Page(props: pageProps) {
   const searchParams = await props.searchParams;
   const params = await props.params;
-  
+
   // Validate and fetch item data
   const id = parseInt(params.id, 10);
   if (isNaN(id)) {

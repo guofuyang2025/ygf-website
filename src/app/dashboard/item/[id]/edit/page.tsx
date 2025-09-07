@@ -16,12 +16,8 @@ type EditItemPageProps = {
 
 export default async function EditItemPage({ params }: EditItemPageProps) {
   const { id } = await params;
-  const idInt = parseInt(id, 10);
-  if (isNaN(idInt)) {
-    notFound();
-  }
 
-  const item = await getItemByIdWithParsedData(idInt);
+  const item = await getItemByIdWithParsedData(id);
   if (!item) {
     notFound();
   }
@@ -32,7 +28,7 @@ export default async function EditItemPage({ params }: EditItemPageProps) {
         <div className='flex items-start justify-between'>
           <Heading
             title='Edit Item'
-            description={`Edit details for "${item.data.name}"`}
+            description={`Edit details for "${item.name}"`}
           />
         </div>
         <Separator />

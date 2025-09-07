@@ -9,9 +9,8 @@ export async function POST(request: NextRequest) {
             console.error('Missing RESEND_API_KEY environment variable')
             // In development, return success to allow testing
             if (process.env.NODE_ENV === 'development') {
-                console.log('Development mode: Simulating careers email send')
-                return NextResponse.json({ 
-                    success: true, 
+                return NextResponse.json({
+                    success: true,
                     id: 'dev-simulated',
                     message: 'Careers email would be sent in production (RESEND_API_KEY not set)'
                 })
@@ -90,28 +89,19 @@ export async function POST(request: NextRequest) {
             resumeFileName: resumeData?.fileName,
         }
 
-        // Log application (for development/debugging)
-        console.log('Career application received:', {
-            name: `${applicationData.firstName} ${applicationData.lastName}`,
-            email: applicationData.email,
-            position: applicationData.position,
-            hasResume: !!resumeData,
-            timestamp: new Date().toISOString()
-        })
 
         const html = generateCareersEmailHtml(applicationData)
 
         const attachments = resumeData
             ? [
-                  {
-                      filename: resumeData.fileName,
-                      content: resumeData.base64,
-                      content_type: resumeData.fileType,
-                  },
-              ]
+                {
+                    filename: resumeData.fileName,
+                    content: resumeData.base64,
+                    content_type: resumeData.fileType,
+                },
+            ]
             : undefined
 
-        console.log('Sending careers email via Resend:', { from: fromAddress, to: toAddress, position })
 
         const resendResponse = await fetch('https://api.resend.com/emails', {
             method: 'POST',
@@ -132,15 +122,14 @@ export async function POST(request: NextRequest) {
         if (!resendResponse.ok) {
             const err = await resendResponse.text()
             console.error('Resend API error:', { status: resendResponse.status, error: err })
-            return NextResponse.json({ 
-                error: 'Failed to send email', 
+            return NextResponse.json({
+                error: 'Failed to send email',
                 details: err,
                 status: resendResponse.status
             }, { status: 502 })
         }
 
         const data = await resendResponse.json()
-        console.log('Careers email sent successfully:', { id: data?.id })
         return NextResponse.json({
             success: true,
             message: 'Application submitted successfully',
@@ -161,7 +150,6 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET() {
-    // TODO: Implement if you want to retrieve applications (admin only)
     return NextResponse.json(
         { error: 'Method not allowed' },
         { status: 405 }

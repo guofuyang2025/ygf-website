@@ -54,14 +54,12 @@ export function SupabaseSignUp() {
 
   const handleFacebookSignUp = async () => {
     setFacebookLoading(true)
-    // TODO: Implement Facebook OAuth when configured
     toast.info('Facebook sign-up coming soon!')
     setFacebookLoading(false)
   }
 
   const handleXSignUp = async () => {
     setXLoading(true)
-    // TODO: Implement X/Twitter OAuth when configured
     toast.info('X sign-up coming soon!')
     setXLoading(false)
   }

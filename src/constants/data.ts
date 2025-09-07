@@ -13,22 +13,22 @@ export type Product = {
 
 //Info: The following data is used for the sidebar navigation and Cmd K bar.
 export const navItems: NavItem[] = [
-  {
-    title: 'Dashboard',
-    url: '/dashboard/overview',
-    icon: 'dashboard',
-    isActive: false,
-    shortcut: ['d', 'd'],
-    items: [] // Empty array as there are no child items for Dashboard
-  },
-  {
-    title: 'Product',
-    url: '/dashboard/product',
-    icon: 'product',
-    shortcut: ['p', 'p'],
-    isActive: false,
-    items: [] // No child items
-  },
+  // {
+  //   title: 'Dashboard',
+  //   url: '/dashboard/overview',
+  //   icon: 'dashboard',
+  //   isActive: false,
+  //   shortcut: ['d', 'd'],
+  //   items: [] // Empty array as there are no child items for Dashboard
+  // },
+  // {
+  //   title: 'Product',
+  //   url: '/dashboard/product',
+  //   icon: 'product',
+  //   shortcut: ['p', 'p'],
+  //   isActive: false,
+  //   items: [] // No child items
+  // },
   {
     title: 'Item',
     url: '/dashboard/item',
@@ -38,17 +38,27 @@ export const navItems: NavItem[] = [
     items: [] // No child items
   },
   {
-    title: 'Profile',
-    url: '/dashboard/profile',
-    icon: 'userPen',
-    shortcut: ['m', 'm'],
-    items: []
+    title: 'Notifications',
+    url: '/dashboard/notification',
+    icon: 'notification',
+    shortcut: ['n', 'n'],
+    isActive: false,
+    items: [],
+    adminOnly: true // Only visible to admin users
   },
   {
     title: 'Membership',
     url: '/dashboard/membership',
     icon: 'billing',
     shortcut: ['m', 'b'],
+    isActive: false,
+    items: []
+  },
+  {
+    title: 'Profile',
+    url: '/dashboard/profile',
+    icon: 'userPen',
+    shortcut: ['p', 'p'],
     items: []
   },
 ];

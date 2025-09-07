@@ -93,7 +93,7 @@ export default function HomePageShadcn() {
                                     </p>
                                     <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg overflow-hidden">
                                         <img
-                                            src="https://picsum.photos/400/250"
+                                            src="/home/brand.png"
                                             alt="品牌展示"
                                             className="w-full h-full object-cover"
                                         />
@@ -117,7 +117,7 @@ export default function HomePageShadcn() {
                                     </p>
                                     <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg overflow-hidden">
                                         <img
-                                            src="https://picsum.photos/400/250"
+                                            src="/home/product.png"
                                             alt="产品展示"
                                             className="w-full h-full object-cover"
                                         />
