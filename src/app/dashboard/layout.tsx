@@ -2,6 +2,7 @@ import KBar from '@/components/kbar';
 import AppSidebar from '@/components/layout/app-sidebar';
 import Header from '@/components/layout/header';
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
+import { MembershipNotifications } from '@/components/membership-notifications';
 import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 
@@ -27,6 +28,7 @@ export default async function DashboardLayout({
           {/* page main content */}
           {children}
           {/* page main content ends */}
+          <MembershipNotifications />
         </SidebarInset>
       </SidebarProvider>
     </KBar>

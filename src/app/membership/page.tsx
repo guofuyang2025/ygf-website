@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Gift, Percent, Star, Crown, UserPlus, CheckCircle } from 'lucide-react'
 import { useState } from 'react'
 import { useI18n } from '@/lib/contexts/LanguageContent'
+import { createClient } from '@/lib/supabase'
 
 export default function MembershipPage() {
     const t = useI18n()
@@ -60,8 +61,23 @@ export default function MembershipPage() {
         setSubmitMessage('')
 
         try {
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 2000))
+            const supabase = createClient()
+
+            // Create membership application with form data
+            const { data, error } = await supabase
+                .from('ygf_membership')
+                .insert({
+                    description: `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMembership Type: ${formData.membershipType}\nMessage: ${formData.message}`,
+                    point: 0,
+                    verify: false,
+                    reviewed: false
+                })
+                .select()
+                .single()
+
+            if (error) {
+                throw error
+            }
 
             setSubmitStatus('success')
             setSubmitMessage('Membership application submitted successfully! We will contact you within 24 hours.')
