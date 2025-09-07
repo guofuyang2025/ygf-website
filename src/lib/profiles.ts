@@ -3,7 +3,7 @@ import { Profile, ProfileUpdateData } from '@/types/database'
 
 export async function getProfile(userId: string): Promise<Profile | null> {
   const supabase = await createServerSupabaseClient()
-  
+
   const { data, error } = await supabase
     .from('profiles')
     .select('*')
@@ -20,7 +20,7 @@ export async function getProfile(userId: string): Promise<Profile | null> {
 
 export async function updateProfile(userId: string, updates: ProfileUpdateData): Promise<Profile | null> {
   const supabase = await createServerSupabaseClient()
-  
+
   const { data, error } = await supabase
     .from('profiles')
     .update(updates)
@@ -38,7 +38,7 @@ export async function updateProfile(userId: string, updates: ProfileUpdateData):
 
 export async function createProfile(profile: Omit<Profile, 'id'> & { id?: string }): Promise<Profile | null> {
   const supabase = await createServerSupabaseClient()
-  
+
   const { data, error } = await supabase
     .from('profiles')
     .insert(profile)
@@ -55,7 +55,7 @@ export async function createProfile(profile: Omit<Profile, 'id'> & { id?: string
 
 export async function getUserProfile(userId: string): Promise<Profile | null> {
   let profile = await getProfile(userId)
-  
+
   if (!profile) {
     // If profile doesn't exist, create a default one
     const defaultProfile = {
@@ -66,9 +66,10 @@ export async function getUserProfile(userId: string): Promise<Profile | null> {
       full_name: null,
       birthday: null
     }
-    
+
     profile = await createProfile(defaultProfile)
   }
-  
+
   return profile
 }
+
