@@ -124,7 +124,7 @@ export default function MembershipPage() {
                                 </div>
                                 <div className="order-1 lg:order-2">
                                     <Image
-                                        src="/placeholder.jpg"
+                                        src="/home/lunbo1.png"
                                         alt="Smart Points System"
                                         className="w-full rounded-lg shadow-lg"
                                         width={1000}
@@ -137,7 +137,7 @@ export default function MembershipPage() {
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 <div>
                                     <Image
-                                        src="/placeholder.jpg"
+                                        src="/home/lunbo2.png"
                                         alt="Exclusive Access"
                                         className="w-full rounded-lg shadow-lg"
                                         width={1000}
@@ -168,7 +168,7 @@ export default function MembershipPage() {
                                 </div>
                                 <div className="order-1 lg:order-2">
                                     <Image
-                                        src="/placeholder.jpg"
+                                        src="/home/lunbo3.png"
                                         alt="Personalized Experience"
                                         className="w-full rounded-lg shadow-lg"
                                         width={1000}
