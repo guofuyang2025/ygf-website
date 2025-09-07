@@ -1,28 +1,37 @@
 'use client';
 
-import { getItemByIdWithParsedData } from "@/db/items";
 import { notFound } from "next/navigation";
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  AlertDialog, 
-  AlertDialogAction, 
-  AlertDialogCancel, 
-  AlertDialogContent, 
-  AlertDialogDescription, 
-  AlertDialogFooter, 
-  AlertDialogHeader, 
-  AlertDialogTitle, 
-  AlertDialogTrigger 
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger
 } from '@/components/ui/alert-dialog';
 import { Edit, Delete, Loader2 } from 'lucide-react';
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
+interface ItemData {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  image_url: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
 interface DetailsShadcnProps {
-  item: Awaited<ReturnType<typeof getItemByIdWithParsedData>>;
+  item: ItemData;
 }
 
 export default function DetailsShadcn({ item }: DetailsShadcnProps) {
@@ -58,7 +67,7 @@ export default function DetailsShadcn({ item }: DetailsShadcnProps) {
     <div className="flex flex-col space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold text-foreground">
-          {item.data.name}
+          {item.name}
         </h1>
         <div className="flex gap-2">
           <Button
@@ -85,7 +94,7 @@ export default function DetailsShadcn({ item }: DetailsShadcnProps) {
                 <AlertDialogTitle>Are you sure?</AlertDialogTitle>
                 <AlertDialogDescription>
                   This action cannot be undone. This will permanently delete the item
-                  "{item.data.name}" and remove it from our servers.
+                  "{item.name}" and remove it from our servers.
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
@@ -119,32 +128,26 @@ export default function DetailsShadcn({ item }: DetailsShadcnProps) {
             <div className="space-y-4">
               <div>
                 <h3 className="font-semibold text-foreground mb-2">Name</h3>
-                <p className="text-muted-foreground">{item.data.name}</p>
+                <p className="text-muted-foreground">{item.name}</p>
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-2">Description</h3>
-                <p className="text-muted-foreground">{item.data.description}</p>
+                <p className="text-muted-foreground">{item.description}</p>
               </div>
             </div>
             <div className="space-y-4">
               <div>
                 <h3 className="font-semibold text-foreground mb-2">Price</h3>
                 <p className="text-2xl font-bold text-foreground">
-                  ${item.data.price?.toFixed(2) || '0.00'}
+                  ${item.price?.toFixed(2) || '0.00'}
                 </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">Category</h3>
-                <Badge variant="secondary" className="capitalize">
-                  {item.data.category || 'Uncategorized'}
-                </Badge>
               </div>
             </div>
           </div>
         </CardContent>
       </Card>
 
-      {item.image && (
+      {item.image_url && (
         <Card>
           <CardHeader>
             <CardTitle>Item Image</CardTitle>
@@ -152,8 +155,8 @@ export default function DetailsShadcn({ item }: DetailsShadcnProps) {
           <CardContent>
             <div className="aspect-video max-w-md">
               <img
-                src={item.image}
-                alt={item.data.name}
+                src={item.image_url}
+                alt={item.name}
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>

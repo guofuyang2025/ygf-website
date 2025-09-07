@@ -22,7 +22,7 @@ export default function ContactEmail(props: ContactEmailProps) {
     const [isSubmitting, setIsSubmitting] = React.useState(false)
     const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'success' | 'error'>('idle')
     const [submitMessage, setSubmitMessage] = React.useState('')
-    
+
     // Form state for controlled inputs
     const [formData, setFormData] = React.useState({
         firstName: '',
@@ -138,9 +138,9 @@ export default function ContactEmail(props: ContactEmailProps) {
 
             <FormControl fullWidth>
                 <InputLabel>Subject</InputLabel>
-                <Select 
-                    name="subject" 
-                    label="Subject" 
+                <Select
+                    name="subject"
+                    label="Subject"
                     required
                     value={formData.subject}
                     onChange={handleSelectChange}

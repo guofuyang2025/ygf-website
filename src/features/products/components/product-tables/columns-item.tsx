@@ -15,19 +15,27 @@ export const columns: ColumnDef<Item>[] = [
     header: 'ID'
   },
   {
-    accessorKey: 'inserted_at',
-    header: 'Inserted At'
+    accessorKey: 'name',
+    header: 'Name'
+  },
+  {
+    accessorKey: 'description',
+    header: 'Description'
+  },
+  {
+    accessorKey: 'price',
+    header: 'Price'
+  },
+  {
+    accessorKey: 'image_url',
+    header: 'Image'
+  },
+  {
+    accessorKey: 'created_at',
+    header: 'Created At'
   },
   {
     accessorKey: 'updated_at',
     header: 'Updated At'
-  },
-  {
-    accessorKey: 'data',
-    header: 'Data'
-  },
-  {
-    accessorKey: 'image',
-    header: 'Image'
   }
 ];

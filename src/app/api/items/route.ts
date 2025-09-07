@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
-    
+
     // Parse the JSON data
     const dataString = formData.get('data') as string;
     if (!dataString) {
@@ -16,11 +16,11 @@ export async function POST(request: NextRequest) {
     }
 
     const data = JSON.parse(dataString);
-    
+
     // Validate required fields
-    if (!data.name || !data.description || !data.price || !data.category) {
+    if (!data.name || !data.description || !data.price) {
       return NextResponse.json(
-        { error: 'Missing required fields: name, description, price, and category are required' },
+        { error: 'Missing required fields: name, description, and price are required' },
         { status: 400 }
       );
     }
@@ -58,13 +58,10 @@ export async function POST(request: NextRequest) {
     }
 
     const item = await createItem({
-      data: {
-        name: data.name,
-        description: data.description,
-        price: data.price,
-        category: data.category,
-      },
-      image: imageUrl || undefined,
+      name: data.name,
+      description: data.description,
+      price: data.price,
+      image_url: imageUrl || undefined,
     });
 
     if (!item) {

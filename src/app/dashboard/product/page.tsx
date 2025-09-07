@@ -30,7 +30,7 @@ export default async function Page(props: pageProps) {
   return (
     <PageContainer scrollable={false}>
       <div className='flex flex-1 flex-col space-y-4'>
-        <div className='flex items-start justify-between'>
+        {/* <div className='flex items-start justify-between'>
           <Heading
             title='Products'
             description='Manage products (Server side table functionalities.)'
@@ -50,7 +50,7 @@ export default async function Page(props: pageProps) {
           }
         >
           <ProductListingPage />
-        </Suspense>
+        </Suspense> */}
       </div>
     </PageContainer>
   );

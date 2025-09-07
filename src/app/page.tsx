@@ -54,16 +54,16 @@ export default function HomePage() {
   // 轮播图图片数据
   const carouselImages = [
     {
-      src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=1080&fit=crop",
-      alt: "Business Technology"
+      src: "/home/lunbo1.png",
+      alt: "轮播图1 - 美食展示"
     },
     {
-      src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&h=1080&fit=crop",
-      alt: "Team Collaboration"
+      src: "/home/lunbo2.png",
+      alt: "轮播图2 - 美食展示"
     },
     {
-      src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&h=1080&fit=crop",
-      alt: "Digital Solutions"
+      src: "/home/lunbo3.png",
+      alt: "轮播图3 - 美食展示"
     }
   ]
 
@@ -104,9 +104,13 @@ export default function HomePage() {
               <h1 className="text-5xl md:text-7xl font-bold text-white dark:text-black mb-6 [text-shadow:_0_4px_8px_rgb(var(--primary)_/_0.4)]">
                 {t.homePage.hero.title}
               </h1>
-              <p className="text-xl md:text-3xl text-white dark:text-black mb-8 max-w-4xl mx-auto [text-shadow:_0_2px_4px_rgb(var(--primary)_/_0.3)]">
+              <p className="text-xl md:text-3xl text-white dark:text-black mb-4 max-w-4xl mx-auto [text-shadow:_0_2px_4px_rgb(var(--primary)_/_0.3)]">
                 {t.homePage.hero.subtitle}
               </p>
+              <p className="text-lg md:text-xl text-white dark:text-black mb-8 max-w-3xl mx-auto [text-shadow:_0_2px_4px_rgb(var(--primary)_/_0.3)]">
+                {t.homePage.hero.extraText}
+              </p>
+
             </div>
           </div>
 
@@ -138,9 +142,9 @@ export default function HomePage() {
                   <div className="lg:w-2/3">
                     <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 overflow-hidden">
                       <img
-                        src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&h=600&fit=crop"
+                        src="/home/brand.png"
                         alt="Brand showcase"
-                        className="w-full h-full object-cover"
+                        className="w-full object-cover"
                       />
                     </div>
                   </div>
@@ -151,7 +155,7 @@ export default function HomePage() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="p-0 space-y-4">
-                      <p className="text-muted-foreground leading-relaxed text-base lg:text-lg">
+                      <p className="text-muted-foreground leading-relaxed text-base lg:text-lg whitespace-pre-line">
                         {t.homePage.brand.description}
                       </p>
                       <Button variant="outline" className="w-full" asChild>
@@ -170,9 +174,9 @@ export default function HomePage() {
                   <div className="lg:w-2/3">
                     <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 overflow-hidden">
                       <img
-                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop"
+                        src="/home/product.png"
                         alt="Product showcase"
-                        className="w-full h-full object-cover"
+                        className="w-full  object-cover"
                       />
                     </div>
                   </div>
@@ -183,7 +187,7 @@ export default function HomePage() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="p-0 space-y-4">
-                      <p className="text-muted-foreground leading-relaxed text-base lg:text-lg">
+                      <p className="text-muted-foreground leading-relaxed text-base lg:text-lg whitespace-pre-line">
                         {t.homePage.products.description}
                       </p>
                       <Button variant="outline" className="w-full" asChild>

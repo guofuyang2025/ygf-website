@@ -2,24 +2,29 @@ export interface ItemData {
   name: string
   description: string
   price: number
-  category: string
-  [key: string]: any // Allow additional properties
+  image_url?: string
 }
 
 export interface ItemWithData {
-  id: number
-  inserted_at: string
+  id: string
+  name: string
+  description: string
+  price: number
+  image_url: string | null
+  created_at: string
   updated_at: string
-  data: ItemData
-  image: string | null
 }
 
 export interface CreateItemData {
-  data: ItemData
-  image?: string
+  name: string
+  description: string
+  price: number
+  image_url?: string
 }
 
 export interface UpdateItemData {
-  data?: Partial<ItemData>
-  image?: string
+  name?: string
+  description?: string
+  price?: number
+  image_url?: string
 }

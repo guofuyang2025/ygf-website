@@ -6,11 +6,11 @@
 
 :root {
 
-  --theme-primary: #0f52ba;
-  --theme-primary-light: #4a7fd1;
-  --theme-primary-dark: #0a3a8a;
-  --theme-primary-lighter: #7ba3e0;
-  --theme-primary-darker: #072a66;
+  --theme-primary: #d85218;
+  --theme-primary-light: #be4211;
+  --theme-primary-dark: #b8390f;
+  --theme-primary-lighter: #f07642;
+  --theme-primary-darker: #a9400b;
 
   --radius: 0.625rem;
   --background: oklch(1 0 0);

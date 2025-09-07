@@ -75,11 +75,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <Separator className="my-8 bg-white/20" />
+        {/* <Separator className="my-8 bg-white/20" /> */}
 
         {/* Bottom Bar: Copyright, Links, Language Selector */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 text-sm">
-          {/* Copyright and Links */}
+        {/* <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 text-sm">
+          
           <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
             <p className="text-white/80">
               © 2025 NovaTech Solutions. All rights reserved.
@@ -100,13 +100,13 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Language Selector Placeholder */}
+          
           <div className="flex items-center gap-2 text-white/80">
             <Globe className="h-4 w-4" />
             <span>Australia - EN</span>
-            {/* A real language selector would have a dropdown here */}
+            
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

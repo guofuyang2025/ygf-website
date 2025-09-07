@@ -1,16 +1,33 @@
-import { Metadata } from 'next';
+import PageContainer from '@/components/layout/page-container';
+import { Heading } from '@/components/ui/heading';
+import { Separator } from '@/components/ui/separator';
+import { DataTableSkeleton } from '@/components/ui/table/data-table-skeleton';
+import ListingMembership from '@/features/membership/components/listing-membership';
+import { Suspense } from 'react';
 
-export const metadata: Metadata = {
-    title: 'Membership | Dashboard',
-    description: 'Membership management page.'
+export const metadata = {
+    title: 'Dashboard: Membership'
 };
 
 export default function MembershipPage() {
     return (
-        <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
-            <div className="flex items-center justify-between space-y-2">
-                <h2 className="text-3xl font-bold tracking-tight">Membership</h2>
+        <PageContainer scrollable={false}>
+            <div className='flex flex-1 flex-col space-y-4'>
+                <div className='flex items-start justify-between'>
+                    <Heading
+                        title='Membership Applications'
+                        description='Manage membership applications and approvals.'
+                    />
+                </div>
+                <Separator />
+                <Suspense
+                    fallback={
+                        <DataTableSkeleton columnCount={6} rowCount={8} filterCount={2} />
+                    }
+                >
+                    <ListingMembership />
+                </Suspense>
             </div>
-        </div>
+        </PageContainer>
     );
 }
