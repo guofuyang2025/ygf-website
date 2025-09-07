@@ -38,17 +38,27 @@ export const navItems: NavItem[] = [
     items: [] // No child items
   },
   {
-    title: 'Profile',
-    url: '/dashboard/profile',
-    icon: 'userPen',
-    shortcut: ['m', 'm'],
-    items: []
+    title: 'Notifications',
+    url: '/dashboard/notification',
+    icon: 'notification',
+    shortcut: ['n', 'n'],
+    isActive: false,
+    items: [],
+    adminOnly: true // Only visible to admin users
   },
   {
     title: 'Membership',
     url: '/dashboard/membership',
     icon: 'billing',
     shortcut: ['m', 'b'],
+    isActive: false,
+    items: []
+  },
+  {
+    title: 'Profile',
+    url: '/dashboard/profile',
+    icon: 'userPen',
+    shortcut: ['p', 'p'],
     items: []
   },
 ];

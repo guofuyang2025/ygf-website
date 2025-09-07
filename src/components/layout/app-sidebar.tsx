@@ -34,6 +34,7 @@ import { useMediaQuery } from '@/hooks/use-media-query';
 import { useAuth } from '@/lib/contexts/AuthContext';
 import { getUserProfileClient } from '@/lib/profiles-client';
 import { Profile } from '@/types/database';
+import { usePendingNotifications } from '@/hooks/use-pending-notifications';
 import {
   IconBell,
   IconChevronRight,
@@ -66,6 +67,7 @@ export default function AppSidebar() {
   const router = useRouter();
   const [profile, setProfile] = React.useState<Profile | null>(null);
   const [loading, setLoading] = React.useState(true);
+  const { count: notificationCount } = usePendingNotifications();
 
   const handleSwitchTenant = (_tenantId: string) => {
     // Tenant switching functionality would be implemented here
@@ -99,11 +101,11 @@ export default function AppSidebar() {
     if (!profile) return [];
 
     if (profile.role === 'admin') {
-      // Admin sees all three menu items
+      // Admin sees all menu items
       return navItems;
     } else {
-      // Visitor and membership only see Profile
-      return navItems.filter(item => item.title === 'Profile');
+      // Non-admin users see all items except admin-only ones
+      return navItems.filter(item => !item.adminOnly);
     }
   };
 
@@ -149,6 +151,11 @@ export default function AppSidebar() {
                         >
                           {item.icon && <Icon />}
                           <span>{item.title}</span>
+                          {item.title === 'Notifications' && notificationCount > 0 && (
+                            <span className="ml-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                              {notificationCount > 99 ? '99+' : notificationCount}
+                            </span>
+                          )}
                           <IconChevronRight className='ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90' />
                         </SidebarMenuButton>
                       </CollapsibleTrigger>
@@ -177,9 +184,14 @@ export default function AppSidebar() {
                       tooltip={item.title}
                       isActive={pathname === item.url}
                     >
-                      <Link href={item.url}>
+                      <Link href={item.url} className="relative">
                         <Icon />
                         <span>{item.title}</span>
+                        {item.title === 'Notifications' && notificationCount > 0 && (
+                          <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                            {notificationCount > 99 ? '99+' : notificationCount}
+                          </span>
+                        )}
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
