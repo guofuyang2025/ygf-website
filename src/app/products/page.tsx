@@ -46,7 +46,7 @@ function SignatureSoupBases() {
                     <Card key={base.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
                         <div className={`flex flex-col ${base.isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-0`}>
                             <div className="lg:w-1/2">
-                                <div className="aspect-video lg:aspect-square overflow-hidden">
+                                <div className="aspect-video lg:aspect-[3/2] overflow-hidden">
                                     <img
                                         src={base.image}
                                         alt={base.name}
@@ -54,14 +54,14 @@ function SignatureSoupBases() {
                                     />
                                 </div>
                             </div>
-                            <div className="lg:w-1/2 p-6 lg:p-8 flex flex-col justify-center">
-                                <CardHeader className="p-0 pb-4">
-                                    <CardTitle className="text-2xl lg:text-3xl font-semibold text-foreground">
+                            <div className="lg:w-1/2 p-4 lg:p-6 flex flex-col justify-center">
+                                <CardHeader className="p-0 pb-3">
+                                    <CardTitle className="text-xl lg:text-2xl font-semibold text-foreground">
                                         {base.name}
                                     </CardTitle>
                                 </CardHeader>
-                                <CardContent className="p-0 space-y-4">
-                                    <p className="text-muted-foreground leading-relaxed text-base lg:text-lg">
+                                <CardContent className="p-0 space-y-3">
+                                    <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">
                                         {base.description}
                                     </p>
                                     <Badge variant="outline" className="w-fit">
@@ -166,12 +166,12 @@ export default function ProductsPage() {
             <PublicHeader />
 
             {/* Hero Section */}
-            <section className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 py-20">
+            <section className="bg-primary/80 py-20">
                 <div className="container mx-auto px-4 text-center">
-                    <h1 className="text-5xl font-bold tracking-tight mb-6">
+                    <h1 className="text-5xl md:text-6xl font-bold text-white dark:text-black mb-6 [text-shadow:_0_4px_8px_rgb(0_0_0_/_0.4)] dark:[text-shadow:_0_4px_8px_rgb(255_255_255_/_0.4)]">
                         Our Signature Dishes
                     </h1>
-                    <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    <p className="text-xl text-white dark:text-black max-w-3xl mx-auto leading-relaxed [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
                         Explore our most popular dishes and menu highlights, crafted with passion and the finest ingredients
                     </p>
                 </div>
