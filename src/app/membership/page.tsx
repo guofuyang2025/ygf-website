@@ -12,6 +12,7 @@ import { Gift, Percent, Star, Crown, UserPlus, CheckCircle } from 'lucide-react'
 import { useState } from 'react'
 import { useI18n } from '@/lib/contexts/LanguageContent'
 import { createClient } from '@/lib/supabase'
+import Image from 'next/image'
 
 export default function MembershipPage() {
     const t = useI18n()
@@ -130,10 +131,12 @@ export default function MembershipPage() {
                                     </p>
                                 </div>
                                 <div className="order-1 lg:order-2">
-                                    <img
-                                        src="https://picsum.photos/400/300?random=12"
+                                    <Image
+                                        src="/placeholder.jpg"
                                         alt="Smart Points System"
                                         className="w-full rounded-lg shadow-lg"
+                                        width={1000}
+                                        height={1000}
                                     />
                                 </div>
                             </div>
@@ -141,10 +144,12 @@ export default function MembershipPage() {
                             {/* Exclusive Access */}
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 <div>
-                                    <img
-                                        src="https://picsum.photos/400/300?random=13"
+                                    <Image
+                                        src="/placeholder.jpg"
                                         alt="Exclusive Access"
                                         className="w-full rounded-lg shadow-lg"
+                                        width={1000}
+                                        height={1000}
                                     />
                                 </div>
                                 <div>
@@ -170,10 +175,12 @@ export default function MembershipPage() {
                                     </p>
                                 </div>
                                 <div className="order-1 lg:order-2">
-                                    <img
-                                        src="https://picsum.photos/400/300?random=14"
+                                    <Image
+                                        src="/placeholder.jpg"
                                         alt="Personalized Experience"
                                         className="w-full rounded-lg shadow-lg"
+                                        width={1000}
+                                        height={1000}
                                     />
                                 </div>
                             </div>

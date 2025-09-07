@@ -51,7 +51,7 @@ export function UserNav() {
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem onClick={() => router.push('/dashboard/overview')}>
+            <DropdownMenuItem onClick={() => router.push('/dashboard/profile')}>
               Dashbosrd
             </DropdownMenuItem>
             {/* <DropdownMenuItem>Settings</DropdownMenuItem>
