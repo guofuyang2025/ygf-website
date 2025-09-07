@@ -5,8 +5,11 @@ import Footer from '@/components/layout/Footer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react'
 import ContactEmail from '@/components/form/contact-email'
+import { useI18n } from '@/lib/contexts/LanguageContent'
 
 export default function ContactPage() {
+    const t = useI18n()
+
     return (
         <>
             <Header />
@@ -15,11 +18,10 @@ export default function ContactPage() {
                 <section className="py-20 bg-primary/80">
                     <div className="container mx-auto px-4 text-center">
                         <h1 className="text-4xl md:text-5xl font-bold text-white dark:text-black mb-6 [text-shadow:_0_4px_8px_rgb(0_0_0_/_0.4)] dark:[text-shadow:_0_4px_8px_rgb(255_255_255_/_0.4)]">
-                            Contact Us
+                            {t.contactPage.hero.title}
                         </h1>
                         <p className="text-xl text-white dark:text-black max-w-2xl mx-auto [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
-                            Have a question or want to work together? We'd love to hear from you.
-                            Send us a message and we'll respond as soon as possible.
+                            {t.contactPage.hero.subtitle}
                         </p>
                     </div>
                 </section>
@@ -33,22 +35,22 @@ export default function ContactPage() {
                             <CardHeader className="pb-6">
                                 <CardTitle className="text-2xl font-semibold flex items-center gap-2">
                                     <MessageCircle className="w-6 h-6 text-blue-600" />
-                                    Send us a Message
+                                    {t.contactPage.form.title}
                                 </CardTitle>
                                 <p className="text-muted-foreground">
-                                    Fill out the form below and we'll get back to you within 24 hours.
+                                    {t.contactPage.form.subtitle}
                                 </p>
                             </CardHeader>
                             <CardContent>
                                 <ContactEmail
                                     subjectOptions={[
-                                        { value: 'general', label: 'General Inquiry' },
-                                        { value: 'support', label: 'Technical Support' },
-                                        { value: 'partnership', label: 'Partnership' },
-                                        { value: 'feedback', label: 'Feedback' },
-                                        { value: 'other', label: 'Other' },
+                                        { value: 'general', label: t.contactPage.form.subjectOptions.general },
+                                        { value: 'support', label: t.contactPage.form.subjectOptions.support },
+                                        { value: 'partnership', label: t.contactPage.form.subjectOptions.partnership },
+                                        { value: 'feedback', label: t.contactPage.form.subjectOptions.feedback },
+                                        { value: 'other', label: t.contactPage.form.subjectOptions.other },
                                     ]}
-                                    buttonLabel="Send Message"
+                                    buttonLabel={t.contactPage.form.sendMessage}
                                     messagePlaceholder="Tell us more about your inquiry..."
                                 />
                             </CardContent>
@@ -59,7 +61,7 @@ export default function ContactPage() {
                             {/* Company Info Card */}
                             <Card className="p-6">
                                 <CardHeader className="pb-4">
-                                    <CardTitle className="text-xl font-semibold">Get in Touch</CardTitle>
+                                    <CardTitle className="text-xl font-semibold">{t.contactPage.contactInfo.title}</CardTitle>
                                 </CardHeader>
                                 <CardContent className="space-y-4">
                                     <div className="flex items-start gap-3">
@@ -67,11 +69,9 @@ export default function ContactPage() {
                                             <MapPin className="w-5 h-5 text-blue-600" />
                                         </div>
                                         <div>
-                                            <h3 className="font-medium text-foreground">Office Address</h3>
-                                            <p className="text-muted-foreground">
-                                                123 Innovation Drive<br />
-                                                Tech District, Silicon Valley<br />
-                                                CA 94025, United States
+                                            <h3 className="font-medium text-foreground">{t.contactPage.contactInfo.officeAddress}</h3>
+                                            <p className="text-muted-foreground whitespace-pre-line">
+                                                {t.contactPage.contactInfo.address}
                                             </p>
                                         </div>
                                     </div>
@@ -81,10 +81,9 @@ export default function ContactPage() {
                                             <Phone className="w-5 h-5 text-green-600" />
                                         </div>
                                         <div>
-                                            <h3 className="font-medium text-foreground">Phone Number</h3>
-                                            <p className="text-muted-foreground">
-                                                +1 (555) 123-4567<br />
-                                                <span className="text-sm">Mon-Fri 9:00 AM - 6:00 PM PST</span>
+                                            <h3 className="font-medium text-foreground">{t.contactPage.contactInfo.phoneNumber}</h3>
+                                            <p className="text-muted-foreground whitespace-pre-line">
+                                                {t.contactPage.contactInfo.phone}
                                             </p>
                                         </div>
                                     </div>
@@ -94,10 +93,9 @@ export default function ContactPage() {
                                             <Mail className="w-5 h-5 text-purple-600" />
                                         </div>
                                         <div>
-                                            <h3 className="font-medium text-foreground">Email Address</h3>
-                                            <p className="text-muted-foreground">
-                                                hello@yourcompany.com<br />
-                                                support@yourcompany.com
+                                            <h3 className="font-medium text-foreground">{t.contactPage.contactInfo.emailAddress}</h3>
+                                            <p className="text-muted-foreground whitespace-pre-line">
+                                                {t.contactPage.contactInfo.email}
                                             </p>
                                         </div>
                                     </div>

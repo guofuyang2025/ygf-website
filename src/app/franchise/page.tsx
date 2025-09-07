@@ -6,8 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Building2, Users, Target, TrendingUp, Award, HeadphonesIcon, MapPin, FileText, CheckCircle } from 'lucide-react'
 import CareersEmail, { type CareersEmailRef } from '@/components/form/careers-email'
 import { useRef, useState } from 'react'
+import { useI18n } from '@/lib/contexts/LanguageContent'
 
 export default function FranchisePage() {
+    const t = useI18n()
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
     const [submitMessage, setSubmitMessage] = useState('')
@@ -69,12 +71,10 @@ export default function FranchisePage() {
                 <section className="py-20 bg-primary/80">
                     <div className="container mx-auto px-4 text-center">
                         <h1 className="text-5xl md:text-6xl font-bold text-white dark:text-black mb-6 [text-shadow:_0_4px_8px_rgb(0_0_0_/_0.4)] dark:[text-shadow:_0_4px_8px_rgb(255_255_255_/_0.4)]">
-                            Franchise Opportunities
+                            {t.franchisePage.hero.title}
                         </h1>
-                        <p className="text-xl text-white dark:text-black max-w-3xl mx-auto leading-relaxed [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
-                            Company Description
-                            At Yang Guo Fu Malatang, our mission is to share the authentic taste of modern Malatang with the world. Founded in 2000, YGF has grown from a small Harbin food stall into the global leader of Malatang dining, with nearly 7,000 restaurants in over 20 countries.
-                            In Australia, we are bringing a new standard of Asian fast-casual dining — authentic flavors, fresh daily ingredients, and a fully customizable experience. We are proud of our heritage, our innovation as the creator of drinkable soup Malatang, and the vibrant community our brand represents.
+                        <p className="text-xl text-white dark:text-black max-w-3xl mx-auto leading-relaxed whitespace-pre-line [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
+                            {t.franchisePage.hero.subtitle}
                         </p>
                     </div>
                 </section>
@@ -84,16 +84,16 @@ export default function FranchisePage() {
                     <div className="container mx-auto px-4">
                         <div className="max-w-6xl mx-auto">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
-                                Job Description – Your Role as a Franchise Partner
+                                {t.franchisePage.jobDescription.title}
                             </h2>
                             <Card className="p-8 bg-white dark:bg-black">
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                     <div>
                                         <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                                            As a Yang Guo Fu Franchise Partner, you are more than a business owner — you are an ambassador of our brand. Your role is hands-on, dynamic, and deeply rewarding. One day you may be on the floor, guiding your team to deliver the perfect customer experience; the next, you may be engaging with the local community to introduce Malatang culture to new audiences.
+                                            {t.franchisePage.jobDescription.description1}
                                         </p>
                                         <p className="text-lg text-muted-foreground leading-relaxed">
-                                            You'll lead with passion, uphold the highest standards of quality and food safety, and ensure every guest enjoys a dining experience that is authentic, welcoming, and memorable. As a partner, you'll not only grow a profitable business but also help build the future of Yang Guo Fu in Australia.
+                                            {t.franchisePage.jobDescription.description2}
                                         </p>
                                     </div>
                                     <div>
@@ -114,10 +114,10 @@ export default function FranchisePage() {
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                                Qualifications & Ideal Partner Profile
+                                {t.franchisePage.qualifications.title}
                             </h2>
                             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                                We are seeking passionate individuals who share our love for food, culture, and community.
+                                {t.franchisePage.qualifications.subtitle}
                             </p>
                         </div>
 
@@ -127,11 +127,11 @@ export default function FranchisePage() {
                                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                                         <Users className="w-6 h-6 text-white" />
                                     </div>
-                                    <CardTitle className="text-lg font-semibold">Experience</CardTitle>
+                                    <CardTitle className="text-lg font-semibold">{t.franchisePage.qualifications.experience.title}</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-muted-foreground leading-relaxed">
-                                        Experience in hospitality, retail, or managing large teams
+                                        {t.franchisePage.qualifications.experience.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -141,11 +141,11 @@ export default function FranchisePage() {
                                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                                         <TrendingUp className="w-6 h-6 text-white" />
                                     </div>
-                                    <CardTitle className="text-lg font-semibold">Business Acumen</CardTitle>
+                                    <CardTitle className="text-lg font-semibold">{t.franchisePage.qualifications.businessAcumen.title}</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-muted-foreground leading-relaxed">
-                                        Strong business and financial understanding
+                                        {t.franchisePage.qualifications.businessAcumen.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -155,11 +155,11 @@ export default function FranchisePage() {
                                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                                         <Award className="w-6 h-6 text-white" />
                                     </div>
-                                    <CardTitle className="text-lg font-semibold">Leadership</CardTitle>
+                                    <CardTitle className="text-lg font-semibold">{t.franchisePage.qualifications.leadership.title}</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-muted-foreground leading-relaxed">
-                                        A commitment to hands-on leadership — being actively involved in your restaurant daily
+                                        {t.franchisePage.qualifications.leadership.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -169,11 +169,11 @@ export default function FranchisePage() {
                                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                                         <MapPin className="w-6 h-6 text-white" />
                                     </div>
-                                    <CardTitle className="text-lg font-semibold">Flexibility</CardTitle>
+                                    <CardTitle className="text-lg font-semibold">{t.franchisePage.qualifications.flexibility.title}</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-muted-foreground leading-relaxed">
-                                        Willingness to embrace opportunities in both metropolitan and regional areas of Australia
+                                        {t.franchisePage.qualifications.flexibility.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -186,10 +186,10 @@ export default function FranchisePage() {
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                                Franchise Support
+                                {t.franchisePage.franchiseSupport.title}
                             </h2>
                             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                                Our franchise agreements are designed as true partnerships, built on long-term success.
+                                {t.franchisePage.franchiseSupport.subtitle}
                             </p>
                         </div>
 
@@ -203,13 +203,13 @@ export default function FranchisePage() {
                                     />
                                     <div className="absolute inset-0 bg-black/20 flex items-end">
                                         <div className="p-4 text-white">
-                                            <h3 className="text-lg font-semibold">Training & Operations</h3>
+                                            <h3 className="text-lg font-semibold">{t.franchisePage.franchiseSupport.trainingOperations.title}</h3>
                                         </div>
                                     </div>
                                 </div>
                                 <CardContent className="p-4">
                                     <p className="text-muted-foreground">
-                                        Comprehensive training & operations manuals
+                                        {t.franchisePage.franchiseSupport.trainingOperations.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -223,13 +223,13 @@ export default function FranchisePage() {
                                     />
                                     <div className="absolute inset-0 bg-black/20 flex items-end">
                                         <div className="p-4 text-white">
-                                            <h3 className="text-lg font-semibold">Supply Chain & Logistics</h3>
+                                            <h3 className="text-lg font-semibold">{t.franchisePage.franchiseSupport.supplyChain.title}</h3>
                                         </div>
                                     </div>
                                 </div>
                                 <CardContent className="p-4">
                                     <p className="text-muted-foreground">
-                                        Centralized supply chain & logistics
+                                        {t.franchisePage.franchiseSupport.supplyChain.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -243,13 +243,13 @@ export default function FranchisePage() {
                                     />
                                     <div className="absolute inset-0 bg-black/20 flex items-end">
                                         <div className="p-4 text-white">
-                                            <h3 className="text-lg font-semibold">Marketing Campaigns</h3>
+                                            <h3 className="text-lg font-semibold">{t.franchisePage.franchiseSupport.marketingCampaigns.title}</h3>
                                         </div>
                                     </div>
                                 </div>
                                 <CardContent className="p-4">
                                     <p className="text-muted-foreground">
-                                        National & international marketing campaigns
+                                        {t.franchisePage.franchiseSupport.marketingCampaigns.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -257,7 +257,7 @@ export default function FranchisePage() {
 
                         <div className="max-w-4xl mx-auto text-center mt-12">
                             <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
-                                Becoming a YGF Franchise Partner is a journey that requires dedication and resilience, but the rewards are significant — both financially and personally. Together, we will bring authentic Malatang to every corner of Australia.
+                                {t.franchisePage.franchiseSupport.description}
                             </p>
                         </div>
                     </div>
@@ -268,10 +268,10 @@ export default function FranchisePage() {
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                                The Process
+                                {t.franchisePage.process.title}
                             </h2>
                             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                                Our streamlined franchise process ensures a smooth experience for all potential partners.
+                                {t.franchisePage.process.subtitle}
                             </p>
                         </div>
 
@@ -287,10 +287,10 @@ export default function FranchisePage() {
                                         </span>
                                     </div>
                                     <h3 className="text-lg font-semibold text-foreground mb-3">
-                                        Step 1 - Enquire
+                                        {t.franchisePage.process.steps.enquire.title}
                                     </h3>
                                     <p className="text-foreground text-sm leading-relaxed">
-                                        Make an online enquiry and fill out the questionnaire.
+                                        {t.franchisePage.process.steps.enquire.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -306,10 +306,10 @@ export default function FranchisePage() {
                                         </span>
                                     </div>
                                     <h3 className="text-lg font-semibold text-foreground mb-3">
-                                        Step 2 - Interview
+                                        {t.franchisePage.process.steps.interview.title}
                                     </h3>
                                     <p className="text-foreground text-sm leading-relaxed">
-                                        Our franchise recruitment team will contact you by phone for an initial interview.
+                                        {t.franchisePage.process.steps.interview.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -325,10 +325,10 @@ export default function FranchisePage() {
                                         </span>
                                     </div>
                                     <h3 className="text-lg font-semibold text-foreground mb-3">
-                                        Step 3 - Online Interview
+                                        {t.franchisePage.process.steps.onlineInterview.title}
                                     </h3>
                                     <p className="text-foreground text-sm leading-relaxed">
-                                        Online interview with our Director of Franchise.
+                                        {t.franchisePage.process.steps.onlineInterview.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -344,10 +344,10 @@ export default function FranchisePage() {
                                         </span>
                                     </div>
                                     <h3 className="text-lg font-semibold text-foreground mb-3">
-                                        Step 4 - Meet Our Founder
+                                        {t.franchisePage.process.steps.meetFounder.title}
                                     </h3>
                                     <p className="text-foreground text-sm leading-relaxed">
-                                        Online brief meeting with Steven Marks (Founder and co-CEO).
+                                        {t.franchisePage.process.steps.meetFounder.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -361,10 +361,10 @@ export default function FranchisePage() {
                         <div className="max-w-4xl mx-auto">
                             <div className="text-center mb-12">
                                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                                    Enquire Today
+                                    {t.franchisePage.application.title}
                                 </h2>
                                 <p className="text-xl text-muted-foreground">
-                                    Thank you for your interest in partnering with Yangguofu. Please complete the form below and our Franchise Development Team will contact you shortly.
+                                    {t.franchisePage.application.subtitle}
                                 </p>
                             </div>
 
@@ -372,7 +372,7 @@ export default function FranchisePage() {
                                 <CardHeader className="pb-6">
                                     <CardTitle className="text-2xl font-semibold flex items-center gap-2">
                                         <HeadphonesIcon className="w-6 h-6 text-blue-600" />
-                                        Become a Yangguofu Franchise Partner
+                                        {t.franchisePage.application.formTitle}
                                     </CardTitle>
                                 </CardHeader>
                                 <CardContent>
@@ -395,7 +395,7 @@ export default function FranchisePage() {
                                         )}
 
                                         <CareersEmail
-                                            buttonLabel={isSubmitting ? 'Submitting...' : 'Send Franchise Inquiry'}
+                                            buttonLabel={isSubmitting ? t.franchisePage.application.submittingButton : t.franchisePage.application.submitButton}
                                             positions={positions}
                                             isSubmitting={isSubmitting}
                                             ref={careersEmailRef}

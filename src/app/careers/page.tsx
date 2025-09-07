@@ -6,8 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Building2, Users, Target, TrendingUp, Award, HeadphonesIcon, MapPin, Clock } from 'lucide-react'
 import CareersEmail, { type CareersEmailRef } from '@/components/form/careers-email'
 import { useRef, useState } from 'react'
+import { useI18n } from '@/lib/contexts/LanguageContent'
 
 export default function CareersPage() {
+    const t = useI18n()
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
     const [submitMessage, setSubmitMessage] = useState('')
@@ -54,11 +56,11 @@ export default function CareersPage() {
     }
 
     const positions = [
-        { value: 'front-of-house', label: 'Front of House Team Member' },
-        { value: 'kitchen-staff', label: 'Kitchen Staff' },
-        { value: 'shift-leader', label: 'Shift Leader' },
-        { value: 'store-manager', label: 'Store Manager' },
-        { value: 'head-office', label: 'Head Office & Franchise Support' },
+        { value: 'front-of-house', label: t.careersPage.currentOpenings.positions.frontOfHouse.title },
+        { value: 'kitchen-staff', label: t.careersPage.currentOpenings.positions.kitchenStaff.title },
+        { value: 'shift-leader', label: t.careersPage.currentOpenings.positions.shiftLeaders.title },
+        { value: 'store-manager', label: t.careersPage.currentOpenings.positions.shiftLeaders.title },
+        { value: 'head-office', label: t.careersPage.currentOpenings.positions.headOffice.title },
         { value: 'other', label: 'Other' },
     ]
 
@@ -70,14 +72,10 @@ export default function CareersPage() {
                 <section className="py-20 bg-primary/80">
                     <div className="container mx-auto px-4 text-center">
                         <h1 className="text-5xl md:text-6xl font-bold text-white dark:text-black mb-6 [text-shadow:_0_4px_8px_rgb(0_0_0_/_0.4)] dark:[text-shadow:_0_4px_8px_rgb(255_255_255_/_0.4)]">
-                            Beyond Franchising – Partner With Us
+                            {t.careersPage.hero.title}
                         </h1>
-                        <p className="text-xl text-white dark:text-black max-w-3xl mx-auto leading-relaxed [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
-                            We welcome collaborations across industries, including:
-                            •Event & festival catering
-                            •Sponsorships & cross-promotions
-                            •University & student association partnerships
-                            •Food delivery & e-commerce collaborations
+                        <p className="text-xl text-white dark:text-black max-w-3xl mx-auto leading-relaxed whitespace-pre-line [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.3)] dark:[text-shadow:_0_2px_4px_rgb(255_255_255_/_0.3)]">
+                            {t.careersPage.hero.subtitle}
                         </p>
                     </div>
                 </section>
@@ -87,10 +85,10 @@ export default function CareersPage() {
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                                Why Work With Us?
+                                {t.careersPage.whyWorkWithUs.title}
                             </h2>
                             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                                At Yangguofu Malatang, we believe our people are the heart of our success. With nearly 7,000 restaurants worldwide, we're bringing authentic Malatang to Australia — and we're looking for passionate, energetic, and customer-focused individuals to join our team.
+                                {t.careersPage.whyWorkWithUs.subtitle}
                             </p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
@@ -99,11 +97,11 @@ export default function CareersPage() {
                                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                                         <Building2 className="w-6 h-6 text-white" />
                                     </div>
-                                    <CardTitle className="text-lg font-semibold">Global Brand</CardTitle>
+                                    <CardTitle className="text-lg font-semibold">{t.careersPage.whyWorkWithUs.globalBrand.title}</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-muted-foreground leading-relaxed">
-                                        Be part of a global brand with exciting expansion plans in Australia
+                                        {t.careersPage.whyWorkWithUs.globalBrand.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -113,11 +111,11 @@ export default function CareersPage() {
                                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                                         <Users className="w-6 h-6 text-white" />
                                     </div>
-                                    <CardTitle className="text-lg font-semibold">Supportive Environment</CardTitle>
+                                    <CardTitle className="text-lg font-semibold">{t.careersPage.whyWorkWithUs.supportiveEnvironment.title}</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-muted-foreground leading-relaxed">
-                                        Enjoy a supportive and multicultural work environment
+                                        {t.careersPage.whyWorkWithUs.supportiveEnvironment.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -127,11 +125,11 @@ export default function CareersPage() {
                                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                                         <TrendingUp className="w-6 h-6 text-white" />
                                     </div>
-                                    <CardTitle className="text-lg font-semibold">Career Development</CardTitle>
+                                    <CardTitle className="text-lg font-semibold">{t.careersPage.whyWorkWithUs.careerDevelopment.title}</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-muted-foreground leading-relaxed">
-                                        Gain career development opportunities, from team member to management
+                                        {t.careersPage.whyWorkWithUs.careerDevelopment.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -141,11 +139,11 @@ export default function CareersPage() {
                                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                                         <Award className="w-6 h-6 text-white" />
                                     </div>
-                                    <CardTitle className="text-lg font-semibold">Employee Benefits</CardTitle>
+                                    <CardTitle className="text-lg font-semibold">{t.careersPage.whyWorkWithUs.employeeBenefits.title}</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-muted-foreground leading-relaxed">
-                                        Employee discounts and staff meals
+                                        {t.careersPage.whyWorkWithUs.employeeBenefits.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -158,10 +156,10 @@ export default function CareersPage() {
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                                Current Openings
+                                {t.careersPage.currentOpenings.title}
                             </h2>
                             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                                We are hiring across Australia for roles including:
+                                {t.careersPage.currentOpenings.subtitle}
                             </p>
                         </div>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
@@ -170,10 +168,10 @@ export default function CareersPage() {
                                     <div className="flex items-start justify-between">
                                         <div className="flex-1">
                                             <CardTitle className="text-xl font-semibold mb-2">
-                                                Front of House Team Member
+                                                {t.careersPage.currentOpenings.positions.frontOfHouse.title}
                                             </CardTitle>
                                             <p className="text-muted-foreground mb-4">
-                                                Welcoming guests, taking orders, and ensuring great service
+                                                {t.careersPage.currentOpenings.positions.frontOfHouse.description}
                                             </p>
                                         </div>
                                         <div className="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -185,15 +183,15 @@ export default function CareersPage() {
                                     <div className="flex items-center gap-4 text-sm text-muted-foreground">
                                         <div className="flex items-center gap-2">
                                             <MapPin className="w-4 h-4" />
-                                            Australia Wide
+                                            {t.careersPage.currentOpenings.australiaWide}
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <Clock className="w-4 h-4" />
-                                            Part-time/Full-time
+                                            {t.careersPage.currentOpenings.partTimeFullTime}
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <Users className="w-4 h-4" />
-                                            Entry Level
+                                            {t.careersPage.currentOpenings.entryLevel}
                                         </div>
                                     </div>
                                 </CardContent>
@@ -204,10 +202,10 @@ export default function CareersPage() {
                                     <div className="flex items-start justify-between">
                                         <div className="flex-1">
                                             <CardTitle className="text-xl font-semibold mb-2">
-                                                Kitchen Staff
+                                                {t.careersPage.currentOpenings.positions.kitchenStaff.title}
                                             </CardTitle>
                                             <p className="text-muted-foreground mb-4">
-                                                Preparing fresh ingredients and creating authentic Malatang dishes
+                                                {t.careersPage.currentOpenings.positions.kitchenStaff.description}
                                             </p>
                                         </div>
                                         <div className="w-12 h-12 bg-primary/20 dark:bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
@@ -219,15 +217,15 @@ export default function CareersPage() {
                                     <div className="flex items-center gap-4 text-sm text-muted-foreground">
                                         <div className="flex items-center gap-2">
                                             <MapPin className="w-4 h-4" />
-                                            Australia Wide
+                                            {t.careersPage.currentOpenings.australiaWide}
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <Clock className="w-4 h-4" />
-                                            Part-time/Full-time
+                                            {t.careersPage.currentOpenings.partTimeFullTime}
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <Users className="w-4 h-4" />
-                                            Entry Level
+                                            {t.careersPage.currentOpenings.entryLevel}
                                         </div>
                                     </div>
                                 </CardContent>
@@ -238,10 +236,10 @@ export default function CareersPage() {
                                     <div className="flex items-start justify-between">
                                         <div className="flex-1">
                                             <CardTitle className="text-xl font-semibold mb-2">
-                                                Shift Leaders & Store Managers
+                                                {t.careersPage.currentOpenings.positions.shiftLeaders.title}
                                             </CardTitle>
                                             <p className="text-muted-foreground mb-4">
-                                                Leading teams, managing operations, and driving success
+                                                {t.careersPage.currentOpenings.positions.shiftLeaders.description}
                                             </p>
                                         </div>
                                         <div className="w-12 h-12 bg-primary/20 dark:bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
@@ -253,15 +251,15 @@ export default function CareersPage() {
                                     <div className="flex items-center gap-4 text-sm text-muted-foreground">
                                         <div className="flex items-center gap-2">
                                             <MapPin className="w-4 h-4" />
-                                            Australia Wide
+                                            {t.careersPage.currentOpenings.australiaWide}
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <Clock className="w-4 h-4" />
-                                            Full-time
+                                            {t.careersPage.currentOpenings.fullTime}
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <Users className="w-4 h-4" />
-                                            2+ years
+                                            {t.careersPage.currentOpenings.years2Plus}
                                         </div>
                                     </div>
                                 </CardContent>
@@ -272,10 +270,10 @@ export default function CareersPage() {
                                     <div className="flex items-start justify-between">
                                         <div className="flex-1">
                                             <CardTitle className="text-xl font-semibold mb-2">
-                                                Head Office & Franchise Support
+                                                {t.careersPage.currentOpenings.positions.headOffice.title}
                                             </CardTitle>
                                             <p className="text-muted-foreground mb-4">
-                                                Opportunities in HR, marketing, supply chain, and operations (Adelaide HQ)
+                                                {t.careersPage.currentOpenings.positions.headOffice.description}
                                             </p>
                                         </div>
                                         <div className="w-12 h-12 bg-primary/20 dark:bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
@@ -291,11 +289,11 @@ export default function CareersPage() {
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <Clock className="w-4 h-4" />
-                                            Full-time
+                                            {t.careersPage.currentOpenings.fullTime}
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <Users className="w-4 h-4" />
-                                            3+ years
+                                            {t.careersPage.currentOpenings.years3Plus}
                                         </div>
                                     </div>
                                 </CardContent>
@@ -435,11 +433,10 @@ export default function CareersPage() {
                         <div className="max-w-4xl mx-auto">
                             <div className="text-center mb-12">
                                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                                    Ready to Join Our Team?
+                                    {t.careersPage.application.title}
                                 </h2>
                                 <p className="text-xl text-muted-foreground">
-                                    Submit your application below and our HR team will contact you
-                                    within 48 hours to discuss your opportunities.
+                                    {t.careersPage.application.subtitle}
                                 </p>
                             </div>
 
@@ -447,7 +444,7 @@ export default function CareersPage() {
                                 <CardHeader className="pb-6">
                                     <CardTitle className="text-2xl font-semibold flex items-center gap-2">
                                         <HeadphonesIcon className="w-6 h-6 text-blue-600" />
-                                        Job Application
+                                        {t.careersPage.application.formTitle}
                                     </CardTitle>
                                 </CardHeader>
                                 <CardContent>
@@ -470,7 +467,7 @@ export default function CareersPage() {
                                         )}
 
                                         <CareersEmail
-                                            buttonLabel={isSubmitting ? 'Submitting...' : 'Submit Application'}
+                                            buttonLabel={isSubmitting ? t.careersPage.application.submittingButton : t.careersPage.application.submitButton}
                                             positions={positions}
                                             isSubmitting={isSubmitting}
                                             ref={careersEmailRef}
