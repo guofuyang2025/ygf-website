@@ -67,9 +67,7 @@ export default function PublicHeader() {
                                     <DropdownMenuItem asChild>
                                         <Link href="/store" className="w-full">{t.header.store}</Link>
                                     </DropdownMenuItem>
-                                    <DropdownMenuItem asChild>
-                                        <Link href="/membership" className="w-full">{t.header.membership}</Link>
-                                    </DropdownMenuItem>
+                                    
                                     <DropdownMenuItem asChild>
                                         <Link href="/franchise" className="w-full">{t.header.franchise}</Link>
                                     </DropdownMenuItem>
@@ -78,6 +76,9 @@ export default function PublicHeader() {
                                     </DropdownMenuItem>
                                     <DropdownMenuItem asChild>
                                         <Link href="/contact" className="w-full">{t.header.contact}</Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem asChild>
+                                        <Link href="/membership" className="w-full">{t.header.membership}</Link>
                                     </DropdownMenuItem>
                                 </DropdownMenuContent>
                             </DropdownMenu>
@@ -110,9 +111,7 @@ export default function PublicHeader() {
                             <Button variant="ghost" size="sm" asChild className="text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white data-[state=open]:bg-primary/10 dark:data-[state=open]:bg-white/10">
                                 <Link href="/store">{t.header.store}</Link>
                             </Button>
-                            <Button variant="ghost" size="sm" asChild className="text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white data-[state=open]:bg-primary/10 dark:data-[state=open]:bg-white/10">
-                                <Link href="/membership">{t.header.membership}</Link>
-                            </Button>
+                            
                             <Button variant="ghost" size="sm" asChild className="text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white data-[state=open]:bg-primary/10 dark:data-[state=open]:bg-white/10">
                                 <Link href="/franchise">{t.header.franchise}</Link>
                             </Button>
@@ -121,6 +120,9 @@ export default function PublicHeader() {
                             </Button>
                             <Button variant="ghost" size="sm" asChild className="text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white data-[state=open]:bg-primary/10 dark:data-[state=open]:bg-white/10">
                                 <Link href="/contact">{t.header.contact}</Link>
+                            </Button>
+                            <Button variant="ghost" size="sm" asChild className="text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white data-[state=open]:bg-primary/10 dark:data-[state=open]:bg-white/10">
+                                <Link href="/membership">{t.header.membership}</Link>
                             </Button>
                         </nav>
                     </div>

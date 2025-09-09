@@ -158,7 +158,7 @@ export default function HomePage() {
                       <p className="text-muted-foreground leading-relaxed text-base lg:text-lg whitespace-pre-line">
                         {t.homePage.brand.description}
                       </p>
-                      <Button variant="outline" className="w-full" asChild>
+                      <Button variant="outline" className="w-full dark:bg-primary/60 dark:text-white hover:dark:bg-primary/80" asChild>
                         <Link href="/about">
                           {t.homePage.brand.ctaButton}
                         </Link>
@@ -190,7 +190,7 @@ export default function HomePage() {
                       <p className="text-muted-foreground leading-relaxed text-base lg:text-lg whitespace-pre-line">
                         {t.homePage.products.description}
                       </p>
-                      <Button variant="outline" className="w-full" asChild>
+                      <Button variant="outline" className="w-full dark:bg-primary/60 dark:text-white hover:dark:bg-primary/80" asChild>
                         <Link href="/products">
                           {t.homePage.products.ctaButton}
                         </Link>

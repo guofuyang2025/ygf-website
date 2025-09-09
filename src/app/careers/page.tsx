@@ -200,7 +200,7 @@ export default function CareersPage() {
                                                 {t.careersPage.currentOpenings.positions.kitchenStaff.description}
                                             </p>
                                         </div>
-                                        <div className="w-12 h-12 bg-primary/20 dark:bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <div className="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                                             <Target className="w-6 h-6 text-primary" />
                                         </div>
                                     </div>
@@ -234,7 +234,7 @@ export default function CareersPage() {
                                                 {t.careersPage.currentOpenings.positions.shiftLeaders.description}
                                             </p>
                                         </div>
-                                        <div className="w-12 h-12 bg-primary/20 dark:bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <div className="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                                             <TrendingUp className="w-6 h-6 text-primary" />
                                         </div>
                                     </div>
@@ -268,7 +268,7 @@ export default function CareersPage() {
                                                 {t.careersPage.currentOpenings.positions.headOffice.description}
                                             </p>
                                         </div>
-                                        <div className="w-12 h-12 bg-primary/20 dark:bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <div className="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                                             <Building2 className="w-6 h-6 text-primary" />
                                         </div>
                                     </div>
