@@ -54,7 +54,7 @@ const en: Strings = {
     },
     brand: {
       title: 'About Our Brand',
-      description: 'At Yang Guo Fu Malatang, our mission is to share the authentic taste of modern Malatang with the world. \nIn Australia, we are bringing a new standard of Asian fast-casual dining — authentic flavors, fresh daily ingredients, and a fully customizable experience.',
+      description: 'As part of the world’s leading Malatang brand, YGF Australia continues to extend the influence of authentic Malatang worldwide. \nIn Australia, we establish a new benchmark in Asian fast- casual dining — authentic flavors, fresh ingredients every day, and a uniquely personalized dining journey.',
       ctaButton: 'Franchise With Us',
     },
     products: {
@@ -100,7 +100,7 @@ const en: Strings = {
     },
     mission: {
       title: 'Looking Ahead',
-      description1: '• November 2025: Marion (South Australia)\n• End of 2025: Gouger Street Adelaide flagship + Brisbane CBD\n• First Half 2026: Two more stores in SA\n• Mid-2026: Sydney flagship\n• By 2028: 30 YGF stores across Australia',
+      description1: '• November 2025: Marion store opens (South Australia)\n• Flagship on Gouger Street, Adelaide, plus Brisbane CBD launch\n• Continued growth with two new SA stores\n• Sydney flagship opening\n• 30 YGF stores nationwide, establishing YGF as the leading Malatang brand in Australia',
       description2: '',
       description3: '',
     },
@@ -264,47 +264,64 @@ const en: Strings = {
   franchisePage: {
     hero: {
       title: 'Franchise Opportunities',
-      subtitle: 'Company Description\nAt Yang Guo Fu Malatang, our mission is to share the authentic taste of modern Malatang with the world. Founded in 2000, YGF has grown from a small Harbin food stall into the global leader of Malatang dining, with nearly 7,000 restaurants in over 20 countries.\nIn Australia, we are bringing a new standard of Asian fast-casual dining — authentic flavors, fresh daily ingredients, and a fully customizable experience. We are proud of our heritage, our innovation as the creator of drinkable soup Malatang, and the vibrant community our brand represents.',
+      subtitle: 'As a YGF Australia Franchise Partner, you are more than an investor — you are joining the world’s largest and most recognized Malatang brand, with over 6,000 stores worldwide and rapid growth in Australia.',
+
     },
     jobDescription: {
-      title: 'Job Description – Your Role as a Franchise Partner',
-      description1: 'As a Yang Guo Fu Franchise Partner, you are more than a business owner — you are an ambassador of our brand. Your role is hands-on, dynamic, and deeply rewarding. One day you may be on the floor, guiding your team to deliver the perfect customer experience; the next, you may be engaging with the local community to introduce Malatang culture to new audiences.',
-      description2: 'You\'ll lead with passion, uphold the highest standards of quality and food safety, and ensure every guest enjoys a dining experience that is authentic, welcoming, and memorable. As a partner, you\'ll not only grow a profitable business but also help build the future of Yang Guo Fu in Australia.',
+      title: 'By partnering with us, you gain:',
+      description1: '• Proven Business Model – a globally successful, highly replicable system tailored for the Australian market.',
+      description2: '• Comprehensive Support – from site selection, store design, and staff training to supply chain and marketing campaigns.',
+      description3: '• Strong Brand Power – leverage the reputation of YGF, already renowned as the world’s No.1 Malatang brand.',
+      description4: '• Growing Market Demand – tap into the booming Asian fast- casual dining sector across Australia.',
+      description5: '• As a franchise partner, you will not only build a profitable business but also help shape the future of YGF in Australia, bringing authentic Malatang culture to new audiences nationwide.',
     },
     qualifications: {
       title: 'Qualifications & Ideal Partner Profile',
-      subtitle: 'We are seeking passionate individuals who share our love for food, culture, and community.',
+      subtitle: 'We are seeking ambitious business partners who are ready to grow with YGF Australia and share our vision of bringing authentic Malatang culture across the nation',
+      subtitle2: 'What we look for in a franchise partner:',
       experience: {
-        title: 'Experience',
-        description: 'Experience in hospitality, retail, or managing large teams',
+        title: 'Investment Capability',
+        description: 'Solid financial capacity and commitment to invest in building and operating a successful YGF store.',
       },
       businessAcumen: {
         title: 'Business Acumen',
-        description: 'Strong business and financial understanding',
+        description: 'Strong understanding of business operations, with the ability to make sound financial and strategic decisions.',
       },
       leadership: {
-        title: 'Leadership',
-        description: 'A commitment to hands-on leadership — being actively involved in your restaurant daily',
+        title: 'Brand Commitment',
+        description: 'Alignment with YGF’s values and dedication to maintaining our high standards of quality, service, and food safety.',
       },
       flexibility: {
-        title: 'Flexibility',
-        description: 'Willingness to embrace opportunities in both metropolitan and regional areas of Australia',
+        title: 'Growth Mindset',
+        description: 'Willingness to scale — from operating a single store to potentially managing multiple locations in the future.',
       },
     },
     franchiseSupport: {
       title: 'Franchise Support',
-      subtitle: 'Our franchise agreements are designed as true partnerships, built on long-term success.',
-      trainingOperations: {
-        title: 'Training & Operations',
-        description: 'Comprehensive training & operations manuals',
+      subtitle: 'At YGF Australia, we are committed to providing our franchise partners with comprehensive support at every stage of their journey. From selecting the right location to ensuring long-term operational excellence, our head office team is with you every step of the way.',
+      locationAdvisory: {
+        title: 'Location Advisory & Site Sourcing',
+        description: 'With access to strong real estate networks, YGF Australia assists franchisees in identifying high-potential locations, sourcing prime retail sites, and negotiating favorable lease terms.',
       },
-      supplyChain: {
-        title: 'Supply Chain & Logistics',
-        description: 'Centralized supply chain & logistics',
+      initialTraining: {
+        title: 'Initial Training',
+        description: 'Comprehensive training delivered to franchisees and their teams, covering store operations, food handling standards, service protocols, and compliance with Australian law.',
       },
-      marketingCampaigns: {
-        title: 'Marketing Campaigns',
-        description: 'National & international marketing campaigns',
+      designFitout: {
+        title: 'Design & Fit-Out',
+        description: 'We provide end-to-end design solutions, including store layout, interior design, branding, and supply of essential fit-out materials.',
+      },
+      preOpeningSupport: {
+        title: 'Pre-Opening & Launch Support',
+        description: 'Our experienced operations team provides on-site guidance for 4-6 weeks, assistance with recruitment & staff training, and hands-on operational support.',
+      },
+      marketingPromotion: {
+        title: 'Marketing & Promotion',
+        description: 'Franchisees benefit from national and local marketing initiatives, social media exposure, and grand opening campaign support.',
+      },
+      ongoingSupport: {
+        title: 'Ongoing Operational Support',
+        description: 'Long-term support including regular audits, continuous training, quality control, and compliance monitoring to ensure highest standards.',
       },
       description: 'Becoming a YGF Franchise Partner is a journey that requires dedication and resilience, but the rewards are significant — both financially and personally. Together, we will bring authentic Malatang to every corner of Australia.',
     },
@@ -660,6 +677,7 @@ const zh: Strings = {
     qualifications: {
       title: '资格和理想合作伙伴档案',
       subtitle: '我们正在寻找与我们一样热爱食物、文化和社区的热情个人。',
+      subtitle2: '我们的理想加盟合作伙伴具备以下关键特质：',
       experience: {
         title: '经验',
         description: '在酒店、零售或管理大型团队方面的经验',
@@ -679,18 +697,30 @@ const zh: Strings = {
     },
     franchiseSupport: {
       title: '加盟支持',
-      subtitle: '我们的加盟协议设计为真正的合作伙伴关系，建立在长期成功的基础上。',
-      trainingOperations: {
-        title: '培训和运营',
-        description: '全面的培训和运营手册',
+      subtitle: '在杨国福澳大利亚，我们致力于为加盟合作伙伴在旅程的每个阶段提供全面支持。从选择合适的位置到确保长期运营卓越，我们的总部团队与您一路同行。',
+      locationAdvisory: {
+        title: '选址咨询和场地采购',
+        description: '凭借强大的房地产网络，杨国福澳大利亚协助加盟商识别高潜力位置、采购优质零售场地并协商有利的租赁条款。',
       },
-      supplyChain: {
-        title: '供应链和物流',
-        description: '集中式供应链和物流',
+      initialTraining: {
+        title: '初期培训',
+        description: '为加盟商及其团队提供全面培训，涵盖店铺运营、食品处理标准、服务协议和澳大利亚法律合规。',
       },
-      marketingCampaigns: {
-        title: '营销活动',
-        description: '国家和国际营销活动',
+      designFitout: {
+        title: '设计和装修',
+        description: '我们提供端到端的设计解决方案，包括店铺布局、室内设计、品牌标识和基本装修材料供应。',
+      },
+      preOpeningSupport: {
+        title: '开业前和启动支持',
+        description: '我们经验丰富的运营团队提供4-6周的现场指导、招聘和员工培训协助，以及实际操作支持。',
+      },
+      marketingPromotion: {
+        title: '营销和推广',
+        description: '加盟商受益于国家和本地营销活动、社交媒体曝光和盛大开业活动支持。',
+      },
+      ongoingSupport: {
+        title: '持续运营支持',
+        description: '长期支持包括定期审计、持续培训、质量控制和合规监控，确保最高标准。',
       },
       description: '成为杨国福加盟合作伙伴是一个需要奉献和韧性的旅程，但回报是巨大的——无论是财务上还是个人上。我们将一起将正宗的麻辣烫带到澳大利亚的每个角落。',
     },
