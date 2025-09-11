@@ -8,6 +8,7 @@ import CareersEmail, { type CareersEmailRef } from '@/components/form/careers-em
 import { useRef, useState } from 'react'
 import { useI18n } from '@/lib/contexts/LanguageContent'
 import PageBanner from '@/components/layout/PageBanner'
+import { Separator } from '@/components/ui/separator'
 
 export default function CareersPage() {
     const t = useI18n()
@@ -150,7 +151,7 @@ export default function CareersPage() {
                 </section>
 
                 {/* Current Openings Section */}
-                <section className="py-20 bg-muted/30">
+                <section className="py-20 bg-black/5">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -424,9 +425,10 @@ export default function CareersPage() {
                         </div>
                     </div>
                 </section>
+                <Separator className="bg-black/10" />
 
                 {/* Contact Form Section */}
-                <section className="py-20 bg-primary/20">
+                <section className="py-20">
                     <div className="container mx-auto px-4">
                         <div className="max-w-4xl mx-auto">
                             <div className="text-center mb-12">
