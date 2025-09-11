@@ -8,10 +8,10 @@ export function SpecialCombos() {
     const t = useI18n()
 
     return (
-        <section className="py-8">
-            <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-foreground mb-4">{t.productsPage.specialCombos.title}</h2>
-                <p className="text-lg text-muted-foreground">{t.productsPage.specialCombos.subtitle}</p>
+        <section className="py-8 mr-5 ml-5">
+            <div className="text-center mb-10 mt-5">
+                <h2 className="text-3xl font-bold text-white mb-4">{t.productsPage.specialCombos.title}</h2>
+                <p className="text-lg text-white">{t.productsPage.specialCombos.subtitle}</p>
             </div>
 
             <Card className="hover:shadow-lg transition-shadow duration-300">

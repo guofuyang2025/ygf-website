@@ -63,10 +63,10 @@ export function IngredientsSupplyChain() {
     ]
 
     return (
-        <section className="py-8">
+        <section className="py-8 mr-5 ml-5">
             <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-foreground mb-4">甄选食材与供应链</h2>
-                <p className="text-lg text-muted-foreground">从源头把控品质，只为一碗好味道</p>
+                <h2 className="text-3xl font-bold text-foreground mt-7 mb-4">Ingredients Supply Chain</h2>
+                <p className="text-lg text-muted-foreground">From source control quality, just for a good taste</p>
             </div>
 
             <div className="w-full overflow-hidden rounded-md">
@@ -78,17 +78,17 @@ export function IngredientsSupplyChain() {
             </div>
 
             <div className="mt-8">
-                <h3 className="text-2xl font-semibold mb-4">核心食材简介</h3>
-                <p className="text-muted-foreground mb-6">严选产地，层层把控，风味更稳定</p>
+                <h3 className="text-2xl font-semibold mb-4">Core Ingredients Introduction</h3>
+                {/* <p className="text-muted-foreground mb-6">产地，层层把控，风味更稳定</p> */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {ingredients.map((ing) => (
                         <div key={ing.zh} className="space-y-2">
                             <div className="flex flex-wrap items-center gap-2">
-                                <Badge variant="secondary" className="whitespace-nowrap">{ing.zh}</Badge>
-                                <span className="text-sm text-muted-foreground">/ {ing.en}</span>
+                                <Badge variant="secondary" className="whitespace-nowrap">{ing.en}</Badge>
+                                {/* <span className="text-sm text-muted-foreground">/ {ing.en}</span> */}
                             </div>
                             <div className="space-y-1">
-                                <p className="text-sm text-muted-foreground leading-relaxed">{ing.descriptionZh}</p>
+                                {/* <p className="text-sm text-muted-foreground leading-relaxed">{ing.descriptionZh}</p> */}
                                 <p className="text-sm text-muted-foreground leading-relaxed">{ing.descriptionEn}</p>
                             </div>
                         </div>

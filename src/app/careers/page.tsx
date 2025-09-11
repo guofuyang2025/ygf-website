@@ -64,13 +64,19 @@ export default function CareersPage() {
         { value: 'head-office', label: t.careersPage.currentOpenings.positions.headOffice.title },
         { value: 'other', label: 'Other' },
     ]
+    const backgroundImage = [
+        {
+            src: "/about/title.png",
+            alt: "Background Image"
+        },
+    ]
 
     return (
         <>
             <Header />
             <main className="min-h-screen bg-background">
                 {/* Hero Section */}
-                <PageBanner title={t.careersPage.hero.title} subtitle={t.careersPage.hero.subtitle} />
+                <PageBanner title={t.careersPage.hero.title} subtitle={t.careersPage.hero.subtitle} backgroundImage={backgroundImage[0]} />
 
                 {/* Why Work With Us Section */}
                 <section className="py-20">

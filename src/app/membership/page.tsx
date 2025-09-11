@@ -92,13 +92,20 @@ export default function MembershipPage() {
             setIsSubmitting(false)
         }
     }
+    const backgroundImage = [
+        {
+            src: "/about/title.png",
+            alt: "Background Image"
+        },
+
+    ]
 
     return (
         <>
             <Header />
             <main className="min-h-screen bg-background">
                 {/* Hero Section */}
-                <PageBanner title={t.membershipPage.hero.title} subtitle={t.membershipPage.hero.subtitle} />
+                <PageBanner title={t.membershipPage.hero.title} subtitle={t.membershipPage.hero.subtitle} backgroundImage={backgroundImage[0]} />
 
 
 

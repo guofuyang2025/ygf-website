@@ -4,13 +4,13 @@ import { Button, TextField, FormControl, InputLabel, Select, MenuItem, Box, Typo
 import SendIcon from '@mui/icons-material/Send'
 import * as React from 'react'
 
-type SubjectOption = {
+type EnquiryTypeOption = {
     value: string
     label: string
 }
 
 export type ContactEmailProps = {
-    subjectOptions: SubjectOption[]
+    enquiryTypeOptions?: EnquiryTypeOption[]
     buttonLabel?: string
     messagePlaceholder?: string
     onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void
@@ -18,16 +18,28 @@ export type ContactEmailProps = {
 }
 
 export default function ContactEmail(props: ContactEmailProps) {
-    const { subjectOptions, buttonLabel = 'Send Message', messagePlaceholder, onSubmit, className } = props
+    const {
+        enquiryTypeOptions = [
+            { value: 'general', label: 'General enquiry' },
+            { value: 'contact', label: 'Contact request' },
+            { value: 'complaint', label: 'Complaint / Feedback' }
+        ],
+        buttonLabel = 'Send Message',
+        messagePlaceholder,
+        onSubmit,
+        className
+    } = props
+
     const [isSubmitting, setIsSubmitting] = React.useState(false)
     const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'success' | 'error'>('idle')
     const [submitMessage, setSubmitMessage] = React.useState('')
 
-    // Form state for controlled inputs
     const [formData, setFormData] = React.useState({
         firstName: '',
         lastName: '',
         email: '',
+        phone: '',
+        enquiryType: '',
         subject: '',
         message: ''
     })
@@ -39,10 +51,10 @@ export default function ContactEmail(props: ContactEmailProps) {
         }))
     }
 
-    const handleSelectChange = (event: any) => {
+    const handleEnquiryTypeChange = (event: any) => {
         setFormData(prev => ({
             ...prev,
-            subject: event.target.value
+            enquiryType: event.target.value
         }))
     }
 
@@ -51,6 +63,8 @@ export default function ContactEmail(props: ContactEmailProps) {
             firstName: '',
             lastName: '',
             email: '',
+            phone: '',
+            enquiryType: '',
             subject: '',
             message: ''
         })
@@ -69,6 +83,8 @@ export default function ContactEmail(props: ContactEmailProps) {
                     firstName: formData.firstName,
                     lastName: formData.lastName,
                     email: formData.email,
+                    phone: formData.phone,
+                    enquiryType: formData.enquiryType,
                     subject: formData.subject,
                     message: formData.message,
                 }
@@ -83,16 +99,16 @@ export default function ContactEmail(props: ContactEmailProps) {
 
                 if (response.ok) {
                     setSubmitStatus('success')
-                    setSubmitMessage('Message sent successfully!')
+                    setSubmitMessage('Enquiry sent successfully!')
                     resetForm()
                 } else {
                     setSubmitStatus('error')
-                    const errorMessage = result.error || result.message || 'Failed to send message'
+                    const errorMessage = result.error || result.message || 'Failed to send enquiry'
                     setSubmitMessage(errorMessage)
                     console.error('API Error:', result)
                 }
             } catch (error) {
-                console.error('Error sending message:', error)
+                console.error('Error making  Enquiry:', error)
                 setSubmitStatus('error')
                 setSubmitMessage('An unexpected error occurred. Please try again.')
             } finally {
@@ -124,7 +140,7 @@ export default function ContactEmail(props: ContactEmailProps) {
                     onChange={handleInputChange('lastName')}
                 />
             </Box>
-
+            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 2 }}>
             <TextField
                 name="email"
                 label="Email Address"
@@ -136,16 +152,30 @@ export default function ContactEmail(props: ContactEmailProps) {
                 onChange={handleInputChange('email')}
             />
 
-            <FormControl fullWidth>
-                <InputLabel>Subject</InputLabel>
+            <TextField
+                name="phone"
+                label="Phone Number"
+                type="tel"
+                placeholder="Enter your phone number"
+                required
+                fullWidth
+                value={formData.phone}
+                onChange={handleInputChange('phone')}
+            />
+            </Box>
+
+            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 2 }}>
+
+            <FormControl>
+                <InputLabel>Enquiry Type</InputLabel>
                 <Select
-                    name="subject"
-                    label="Subject"
+                    name="enquiryType"
+                    label="Enquiry Type"
                     required
-                    value={formData.subject}
-                    onChange={handleSelectChange}
+                    value={formData.enquiryType}
+                    onChange={handleEnquiryTypeChange}
                 >
-                    {subjectOptions.map((opt) => (
+                    {enquiryTypeOptions.map((opt) => (
                         <MenuItem key={opt.value} value={opt.value}>
                             {opt.label}
                         </MenuItem>
@@ -153,6 +183,15 @@ export default function ContactEmail(props: ContactEmailProps) {
                 </Select>
             </FormControl>
 
+            <TextField
+                name="subject"
+                label="Subject"
+                placeholder="Enter subject (optional)"
+                fullWidth
+                value={formData.subject}
+                onChange={handleInputChange('subject')}
+            />
+            </Box>
             <TextField
                 name="message"
                 label="Message"
@@ -191,5 +230,3 @@ export default function ContactEmail(props: ContactEmailProps) {
         </Box>
     )
 }
-
-

@@ -8,6 +8,7 @@ import FranchiseForm, { type FranchiseFormRef } from '@/components/form/franchis
 import { useRef, useState } from 'react'
 import { useI18n } from '@/lib/contexts/LanguageContent'
 import PageBanner from '@/components/layout/PageBanner'
+import { Separator } from '@/components/ui/separator'
 
 export default function FranchisePage() {
     const t = useI18n()
@@ -59,7 +60,7 @@ export default function FranchisePage() {
 
     const backgroundImage = [
         {
-            src: "/franchise/title.png",
+            src: "/about/title.png",
             alt: "Background Image"
         },
 
@@ -77,7 +78,7 @@ export default function FranchisePage() {
 
 
                 {/* Job Description Section */}
-                <section className="py-20 bg-primary/20">
+                <section className="py-20 bg-black/5">
                     <div className="container mx-auto px-4">
                         <div className="max-w-6xl mx-auto">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
@@ -131,7 +132,7 @@ export default function FranchisePage() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/5">
                                 <CardHeader className="pb-1">
                                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                                         <Users className="w-6 h-6 text-white" />
@@ -145,7 +146,7 @@ export default function FranchisePage() {
                                 </CardContent>
                             </Card>
 
-                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/5">
                                 <CardHeader className="pb-3">
                                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                                         <TrendingUp className="w-6 h-6 text-white" />
@@ -159,7 +160,7 @@ export default function FranchisePage() {
                                 </CardContent>
                             </Card>
 
-                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/5">
                                 <CardHeader className="pb-1">
                                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                                         <Award className="w-6 h-6 text-white" />
@@ -173,7 +174,7 @@ export default function FranchisePage() {
                                 </CardContent>
                             </Card>
 
-                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/5">
                                 <CardHeader className="pb-1">
                                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                                         <MapPin className="w-6 h-6 text-white" />
@@ -190,8 +191,10 @@ export default function FranchisePage() {
                     </div>
                 </section>
 
+                <Separator className="bg-black/10" />
+
                 {/* Franchise Support Section */}
-                <section className="py-20 bg-primary/20">
+                <section className="py-20">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -331,7 +334,7 @@ export default function FranchisePage() {
                         </div> */}
                     </div>
                 </section>
-
+                <Separator className="bg-black/10" />
                 {/* Application Process Section */}
                 <section className="py-20">
                     <div className="container mx-auto px-4">
@@ -345,7 +348,7 @@ export default function FranchisePage() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/20">
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/5">
                                 <CardContent>
                                     <div className="flex justify-center mb-4">
                                         <FileText className="w-8 h-8 text-blue-600" />
@@ -364,13 +367,13 @@ export default function FranchisePage() {
                                 </CardContent>
                             </Card>
 
-                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/20">
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/5">
                                 <CardContent>
                                     <div className="flex justify-center mb-4">
                                         <HeadphonesIcon className="w-8 h-8 text-green-600" />
                                     </div>
                                     <div className="mb-3">
-                                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary/80 text-white rounded-full text-sm font-semibold">
+                                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary text-white rounded-full text-sm font-semibold">
                                             2
                                         </span>
                                     </div>
@@ -383,13 +386,13 @@ export default function FranchisePage() {
                                 </CardContent>
                             </Card>
 
-                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/20">
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/5">
                                 <CardContent>
                                     <div className="flex justify-center mb-4">
                                         <Users className="w-8 h-8 text-purple-600" />
                                     </div>
                                     <div className="mb-3">
-                                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary/80 text-white rounded-full text-sm font-semibold">
+                                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary text-white rounded-full text-sm font-semibold">
                                             3
                                         </span>
                                     </div>
@@ -402,13 +405,13 @@ export default function FranchisePage() {
                                 </CardContent>
                             </Card>
 
-                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/20">
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/5">
                                 <CardContent>
                                     <div className="flex justify-center mb-4">
                                         <Award className="w-8 h-8 text-orange-600" />
                                     </div>
                                     <div className="mb-3">
-                                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary/80 text-white rounded-full text-sm font-semibold">
+                                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary text-white rounded-full text-sm font-semibold">
                                             4
                                         </span>
                                     </div>
@@ -423,9 +426,9 @@ export default function FranchisePage() {
                         </div>
                     </div>
                 </section>
-
+                <Separator className="bg-black/10" />
                 {/* Contact Form Section */}
-                <section id="franchise-form" className="py-20 bg-primary/20">
+                <section id="franchise-form" className="py-20">
                     <div className="container mx-auto px-4">
                         <div className="max-w-4xl mx-auto">
                             <div className="text-center mb-12">

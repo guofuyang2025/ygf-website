@@ -38,7 +38,7 @@ export default function PublicHeader() {
     // 在客户端水合完成前显示加载状态
     if (!mounted) {
         return (
-            <header className="sticky top-0 z-50 w-full border-b bg-white/50 dark:bg-black/50 backdrop-blur-md">
+            <header className="sticky top-0 z-50 w-full border-b bg-white/70 dark:bg-black/50 backdrop-blur-md">
                 <div className="container mx-auto px-4">
                     <div className="flex h-16 items-center justify-between">
                         <div className="flex items-center gap-2">
@@ -90,7 +90,7 @@ export default function PublicHeader() {
     }
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b bg-white/50 dark:bg-black/50 backdrop-blur-md">
+        <header className="sticky top-0 z-50 w-full border-b bg-white dark:bg-black/50 backdrop-blur-md">
             <div className="container mx-auto px-4">
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -128,10 +128,10 @@ export default function PublicHeader() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                        <Button variant="ghost" size="sm" onClick={toggleLanguage} className="text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white data-[state=open]:bg-primary/10 dark:data-[state=open]:bg-white/10">
+                        {/* <Button variant="ghost" size="sm" onClick={toggleLanguage} className="text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white data-[state=open]:bg-primary/10 dark:data-[state=open]:bg-white/10">
                             <Globe className="w-4 h-4 mr-2" />
                             {t.header.language}
-                        </Button>
+                        </Button> */}
 
                         {!user && (
                             <Button variant="ghost" size="sm" asChild className="text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white data-[state=open]:bg-primary/10 dark:data-[state=open]:bg-white/10">
@@ -143,7 +143,7 @@ export default function PublicHeader() {
                         )}
 
                         <UserNav />
-                        <ModeToggle />
+                        {/* <ModeToggle /> */}
 
                         {/* 手机端菜单按钮 */}
                         <DropdownMenu open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -163,9 +163,6 @@ export default function PublicHeader() {
                                     <Link href="/store" className="w-full">{t.header.store}</Link>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem asChild>
-                                    <Link href="/membership" className="w-full">{t.header.membership}</Link>
-                                </DropdownMenuItem>
-                                <DropdownMenuItem asChild>
                                     <Link href="/franchise" className="w-full">{t.header.franchise}</Link>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem asChild>
@@ -173,6 +170,9 @@ export default function PublicHeader() {
                                 </DropdownMenuItem>
                                 <DropdownMenuItem asChild>
                                     <Link href="/contact" className="w-full">{t.header.contact}</Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem asChild>
+                                    <Link href="/membership" className="w-full">{t.header.membership}</Link>
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>

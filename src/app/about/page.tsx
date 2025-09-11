@@ -9,26 +9,33 @@ import PageBanner from '@/components/layout/PageBanner'
 
 export default function AboutPage() {
     const t = useI18n()
+    const backgroundImage = [
+        {
+            src: "/about/title.png",
+            alt: "Background Image"
+        },
+
+    ]
 
     return (
         <>
             <Header />
             <main className="min-h-screen bg-background">
                 {/* Hero Section */}
-                <PageBanner title={t.aboutPage.hero.title} subtitle={t.aboutPage.hero.subtitle} />
+                <PageBanner title={t.aboutPage.hero.title} subtitle={t.aboutPage.hero.subtitle} backgroundImage={backgroundImage[0]} />
 
                 {/* Brand Story Section Title */}
-                <section className="py-12 bg-primary/10">
+                <section className="py-12 bg-white">
                     <div className="container mx-auto px-4 text-center">
-                        <h2 className="text-4xl font-bold text-foreground mb-4">Our Brand Story</h2>
-                        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                        <h2 className="text-4xl font-bold text-black mb-4">Our Brand Story</h2>
+                        <p className="text-xl text-black max-w-2xl mx-auto">
                             Discover the journey that shaped our company and the values that drive us forward
                         </p>
                     </div>
                 </section>
 
                 {/* Story Section 1 - Left Image, Right Text */}
-                <section className="py-20 bg-primary/10">
+                <section className="py-20 bg-white">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div className="order-2 lg:order-1">
@@ -52,7 +59,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* Story Section 2 - Right Image, Left Text */}
-                <section className="py-20 bg-primary/10">
+                <section className="py-20 bg-white">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div>
@@ -76,7 +83,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* Team Section */}
-                <section className="py-20">
+                <section className="py-20 bg-black/5">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-16">
                             <h2 className="text-4xl font-bold text-foreground mb-4">{t.aboutPage.team.title}</h2>

@@ -1,4 +1,4 @@
- 
+
 import { Separator } from '@/components/ui/separator';
 import PublicHeader from '@/components/layout/public-header';
 import Footer from '@/components/layout/Footer';
@@ -30,6 +30,13 @@ async function ProductGridServer() {
     }
 }
 
+const backgroundImage = [
+    {
+        src: "/products/title.png",
+        alt: "Background Image"
+    },
+]
+
 export default function ProductsPage() {
     return (
         <LanguageProvider>
@@ -41,26 +48,29 @@ export default function ProductsPage() {
                 <HeroSection />
 
                 {/* 主要内容 */}
-                <main className="container mx-auto px-4 py-8">
+                <main className="container mx-auto px-4 py-8 bg-black/5">
                     {/* 招牌汤底部分 */}
                     <SignatureSoupBases />
 
-                    <Separator className="my-12" />
-
+                    {/* <Separator className="my-10 bg-black/10" /> */}
+                </main>
+                <section className="bg-gradient-to-b from-black/90 from-95% to-black/70 to-100%">
                     {/* Special Combos Section */}
                     <SpecialCombos />
 
-                    <Separator className="my-12" />
+
+                    {/* <Separator className="my-12 bg-black/10" /> */}
 
                     {/* 产品网格部分 */}
                     {/* <Suspense fallback={<ProductGridSkeleton />}>
                         <ProductGridServer />
                     </Suspense> */}
+                </section>
+                {/* Ingredients supply chain */}
+                <section className="bg-gradient-to-b from-black/70 from-0% to-black/0 to-7%">
+                <IngredientsSupplyChain />
 
-                    {/* Ingredients supply chain */}
-                    <IngredientsSupplyChain />
-                
-                </main>
+</section>
 
                 {/* 页脚 */}
                 <Footer />

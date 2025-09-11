@@ -10,13 +10,18 @@ import PageBanner from '@/components/layout/PageBanner'
 
 export default function ContactPage() {
     const t = useI18n()
-
+    const backgroundImage = [
+        {
+            src: "/about/title.png",
+            alt: "Background Image"
+        },
+    ]
     return (
         <>
             <Header />
             <main className="min-h-screen bg-background">
                 {/* Page Header */}
-                <PageBanner title={t.contactPage.hero.title} subtitle={t.contactPage.hero.subtitle} />
+                <PageBanner title={t.contactPage.hero.title} subtitle={t.contactPage.hero.subtitle} backgroundImage={backgroundImage[0]} />
 
                 <div className="container mx-auto px-4 py-12">
 
@@ -34,17 +39,17 @@ export default function ContactPage() {
                                 </p>
                             </CardHeader>
                             <CardContent>
+
                                 <ContactEmail
-                                    subjectOptions={[
-                                        { value: 'general', label: t.contactPage.form.subjectOptions.general },
-                                        { value: 'support', label: t.contactPage.form.subjectOptions.support },
-                                        { value: 'partnership', label: t.contactPage.form.subjectOptions.partnership },
-                                        { value: 'feedback', label: t.contactPage.form.subjectOptions.feedback },
-                                        { value: 'other', label: t.contactPage.form.subjectOptions.other },
+                                    enquiryTypeOptions={[
+                                        { value: 'general', label: 'General enquiry' },
+                                        { value: 'contact', label: 'Contact request' },
+                                        { value: 'complaint', label: 'Complaint / Feedback' }
                                     ]}
                                     buttonLabel={t.contactPage.form.sendMessage}
                                     messagePlaceholder="Tell us more about your inquiry..."
                                 />
+
                             </CardContent>
                         </Card>
 

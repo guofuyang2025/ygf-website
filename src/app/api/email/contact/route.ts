@@ -9,6 +9,7 @@ export async function POST(request: NextRequest) {
             console.error('Missing RESEND_API_KEY environment variable')
             // In development, return success to allow testing
             if (process.env.NODE_ENV === 'development') {
+                console.log('Development mode: Simulating email send')
                 return NextResponse.json({
                     success: true,
                     id: 'dev-simulated',
@@ -19,17 +20,19 @@ export async function POST(request: NextRequest) {
         }
 
         const body = (await request.json()) as Partial<ContactEmailData>
-        const { firstName, lastName, email, subject, message, source } = body
+        const { firstName, lastName, email, phone, enquiryType, subject, message, source } = body
 
+        console.log('Received contact form data:', { firstName, lastName, email, phone, enquiryType, subject, hasMessage: !!message })
 
-        if (!firstName || !lastName || !email || !subject || !message) {
+        if (!firstName || !lastName || !email || !phone || !enquiryType || !message) {
             return NextResponse.json({
                 error: 'Missing required fields',
                 missing: {
                     firstName: !firstName,
                     lastName: !lastName,
                     email: !email,
-                    subject: !subject,
+                    phone: !phone,
+                    enquiryType: !enquiryType,
                     message: !message
                 }
             }, { status: 400 })
@@ -39,11 +42,14 @@ export async function POST(request: NextRequest) {
             firstName,
             lastName,
             email,
+            phone,
+            enquiryType,
             subject,
             message,
             source,
         })
 
+        console.log('Sending email via Resend:', { from: fromAddress, to: toAddress, enquiryType })
 
         const resendResponse = await fetch('https://api.resend.com/emails', {
             method: 'POST',
@@ -54,7 +60,7 @@ export async function POST(request: NextRequest) {
             body: JSON.stringify({
                 from: fromAddress,
                 to: [toAddress],
-                subject: `[Website] Franchise Enquiry: ${subject}`,
+                subject: `[Website] Contact Form: ${enquiryType}${subject ? ` - ${subject}` : ''}`,
                 html: emailHtml,
                 reply_to: email,
             }),
@@ -71,6 +77,7 @@ export async function POST(request: NextRequest) {
         }
 
         const data = await resendResponse.json()
+        console.log('Email sent successfully:', { id: data?.id })
         return NextResponse.json({ success: true, id: data?.id })
     } catch (error) {
         console.error('Error sending contact email:', error)
@@ -80,5 +87,3 @@ export async function POST(request: NextRequest) {
         }, { status: 500 })
     }
 }
-
-

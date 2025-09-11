@@ -47,14 +47,14 @@ const en: Strings = {
   },
   homePage: {
     hero: {
-      title: 'Yangguofu Australia',
-      subtitle: '"Global No.1 Malatang, now in Australia"',
+      title: 'YGF Australia',
+      subtitle: '"The World’s Very First Hot Pot"',
       extraText: 'Fresh, authentic, and made your way.',
       ctaButton: 'Learn More',
     },
     brand: {
       title: 'About Our Brand',
-      description: 'As part of the world’s leading Malatang brand, YGF Australia continues to extend the influence of authentic Malatang worldwide. \nIn Australia, we establish a new benchmark in Asian fast- casual dining — authentic flavors, fresh ingredients every day, and a uniquely personalized dining journey.',
+      description: 'As part of the world’s leading Malatang brand, YGF Australia continues to extend the influence of authentic Malatang worldwide.\n In Australia, we establish a new benchmark in Asian fast- casual dining — authentic flavors, fresh ingredients every day, and a uniquely personalized dining journey.',
       ctaButton: 'Franchise With Us',
     },
     products: {
@@ -158,9 +158,9 @@ const en: Strings = {
       subtitle: "Have a question or want to work together? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
     },
     form: {
-      title: 'Send us a Message',
+      title: 'Make an Enquiry',
       subtitle: "Fill out the form below and we'll get back to you within 24 hours.",
-      sendMessage: 'Send Message',
+      sendMessage: 'Send Enquiry',
       subjectOptions: {
         general: 'General Inquiry',
         support: 'Technical Support',
