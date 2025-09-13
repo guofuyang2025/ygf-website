@@ -11,6 +11,7 @@ import { useRef, useState } from 'react'
 import { useI18n } from '@/lib/contexts/LanguageContent'
 import PageBanner from '@/components/layout/PageBanner'
 import { Separator } from '@/components/ui/separator'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 export default function FranchisePage() {
     const t = useI18n()
@@ -29,10 +30,14 @@ export default function FranchisePage() {
         try {
             const formData = new FormData(e.currentTarget)
 
-            // Get resume file from the component ref
+            // Get files from the component ref
             const resumeFile = franchiseFormRef.current?.getResumeFile()
+            const receiptFile = franchiseFormRef.current?.getReceiptFile()
             if (resumeFile) {
                 formData.append('resume', resumeFile)
+            }
+            if (receiptFile) {
+                formData.append('receipt', receiptFile)
             }
 
             const response = await fetch('/api/email/franchise', { method: 'POST', body: formData })
@@ -277,6 +282,41 @@ export default function FranchisePage() {
                                 title={t.franchisePage.faq.sections.citizenshipEligibility.title}
                                 questions={t.franchisePage.faq.sections.citizenshipEligibility.questions}
                             />
+                        </div>
+                    </div>
+                </section>
+                <Separator className="bg-black/10" />
+
+                {/* Franchisee Stories Section */}
+                <section className="py-20">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                                {t.franchisePage.franchiseeStories.title}
+                            </h2>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                            {t.franchisePage.franchiseeStories.stories.map((story: { name: string, location: string, story: string }, index: number) => (
+                                <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
+                                    <CardHeader className="pb-4">
+                                        <Avatar className="w-24 h-24 mx-auto mb-4">
+                                            <AvatarImage src="https://i.pravatar.cc/150?img=11" alt="Founder" />
+                                            <AvatarFallback className="text-lg">F</AvatarFallback>
+                                        </Avatar>
+
+                                        <div>
+                                            <h3 className="text-xl font-semibold text-foreground">{story.name}</h3>
+                                            <p className="text-muted-foreground">{story.location}</p>
+                                        </div>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                            {story.story}
+                                        </p>
+                                    </CardContent>
+                                </Card>
+                            ))}
                         </div>
                     </div>
                 </section>

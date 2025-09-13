@@ -482,6 +482,21 @@ const en: Strings = {
         }
       }
     },
+    franchiseeStories: {
+      title: 'Franchisee Stories: Growth, Success & Freedom',
+      stories: [
+        {
+          name: 'Daniel Mesiti & Anthony Stahl',
+          location: 'Eastgardens, Chatswood Monsoon & Westfield, Top Ryde, Bankstown',
+          story: 'After struggling in our own business for over 5 years we looked to Franchising to improve our business and ourselves. We didn\'t understand at the time just how good a fit Boost would be. Boost continue to push themselves to improve and us as Partners. After 12 years we are still loving life and Boost! Being part of a healthy brand that aims to make its customers feel just a little bit better has changed our lives.'
+        },
+        {
+          name: 'Daniel Chams-Eddine & Diana Dolgov',
+          location: 'Helensvale',
+          story: 'We feel truly honoured and grateful to be part of the beautiful Boost Family from the very beginning of our journey. We take pride in being part of an Australian Icon. We love the brand, it\'s raw energy, vibe, unique buzz & promoting a fun, loving and healthy lifestyle. Over the past few years we have enjoyed being part of a family that embraces its passion for life and worked closely with us to achieving our ongoing success and accomplishments.'
+        }
+      ]
+    },
     application: {
       title: 'Enquire Today',
       subtitle: 'Thank you for your interest in partnering with Yangguofu. Please complete the form below and our Franchise Development Team will contact you shortly.',
@@ -1015,6 +1030,21 @@ const zh: Strings = {
           ]
         }
       }
+    },
+    franchiseeStories: {
+      title: '加盟商故事：成长、成功与自由',
+      stories: [
+        {
+          name: 'Daniel Mesiti & Anthony Stahl',
+          location: 'Eastgardens, Chatswood Monsoon & Westfield, Top Ryde, Bankstown',
+          story: '在经营自己的生意超过5年并遇到困难后，我们转向加盟来改善我们的生意和我们自己。当时我们并不了解Boost会是多么合适的选择。Boost继续推动自己改进，也推动我们作为合作伙伴改进。12年后，我们仍然热爱生活和Boost！成为这样一个健康品牌的一部分，致力于让客户感觉更好一点，这改变了我们的生活。'
+        },
+        {
+          name: 'Daniel Chams-Eddine & Diana Dolgov',
+          location: 'Helensvale',
+          story: '我们感到非常荣幸和感激能够从旅程的一开始就成为美丽Boost家庭的一部分。我们为成为澳大利亚标志性品牌的一部分而感到自豪。我们热爱这个品牌，它的原始能量、氛围、独特的活力以及推广有趣、充满爱意和健康的生活方式。在过去的几年里，我们享受成为这样一个家庭的成员，它拥抱对生活的热情，并与我们密切合作，实现我们持续的成功和成就。'
+        }
+      ]
     },
     application: {
       title: '今天咨询',

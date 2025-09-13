@@ -13,24 +13,37 @@ export type FranchiseFormProps = {
 
 export type FranchiseFormRef = {
     getResumeFile: () => File | null
+    getReceiptFile: () => File | null
     resetForm: () => void
 }
 
 const FranchiseForm = React.forwardRef<FranchiseFormRef, FranchiseFormProps>((props, ref) => {
     const { buttonLabel = 'Submit Franchise Application', isSubmitting = false, className } = props
     const [resumeFile, setResumeFile] = React.useState<File | null>(null)
+    const [receiptFile, setReceiptFile] = React.useState<File | null>(null)
     const [selectedHearAbout, setSelectedHearAbout] = React.useState('')
     const [selectedFunding, setSelectedFunding] = React.useState('')
 
-    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleResumeFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0]
         if (file) {
             setResumeFile(file)
         }
     }
 
-    const handleFileRemove = () => {
+    const handleReceiptFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0]
+        if (file) {
+            setReceiptFile(file)
+        }
+    }
+
+    const handleResumeFileRemove = () => {
         setResumeFile(null)
+    }
+
+    const handleReceiptFileRemove = () => {
+        setReceiptFile(null)
     }
 
     const handleHearAboutChange = (event: any) => {
@@ -41,15 +54,17 @@ const FranchiseForm = React.forwardRef<FranchiseFormRef, FranchiseFormProps>((pr
         setSelectedFunding(event.target.value)
     }
 
-    // Expose resumeFile to parent component
+    // Expose files to parent component
     React.useImperativeHandle(ref, () => ({
         getResumeFile: () => resumeFile,
+        getReceiptFile: () => receiptFile,
         resetForm: () => {
             setResumeFile(null)
+            setReceiptFile(null)
             setSelectedHearAbout('')
             setSelectedFunding('')
         }
-    }), [resumeFile, selectedHearAbout, selectedFunding])
+    }), [resumeFile, receiptFile, selectedHearAbout, selectedFunding])
 
     const hearAboutOptions = [
         { value: 'online', label: 'Online' },
@@ -182,53 +197,113 @@ const FranchiseForm = React.forwardRef<FranchiseFormRef, FranchiseFormProps>((pr
             {/* File Upload Section */}
             <Box>
                 <Typography variant="subtitle2" gutterBottom>
-                    Resume/CV
+                    Required Documents
                 </Typography>
-                <Paper
-                    variant="outlined"
-                    sx={{
-                        p: 2,
-                        textAlign: 'center',
-                        cursor: 'pointer',
-                        '&:hover': { backgroundColor: 'action.hover' },
-                    }}
-                    onClick={() => document.getElementById('resume-upload')?.click()}
-                >
-                    <input
-                        id="resume-upload"
-                        type="file"
-                        accept=".pdf,.doc,.docx,.txt"
-                        onChange={handleFileChange}
-                        style={{ display: 'none' }}
-                    />
-                    {resumeFile ? (
-                        <Box>
-                            <Typography variant="body2" color="primary">
-                                {resumeFile.name}
-                            </Typography>
-                            <Button
-                                size="small"
-                                color="error"
-                                onClick={(e) => {
-                                    e.stopPropagation()
-                                    handleFileRemove()
-                                }}
-                            >
-                                Remove
-                            </Button>
-                        </Box>
-                    ) : (
-                        <Box>
-                            <CloudUploadIcon sx={{ fontSize: 40, color: 'text.secondary', mb: 1 }} />
-                            <Typography variant="body2" color="text.secondary">
-                                Drag and drop your resume here, or click to browse
-                            </Typography>
-                            <Typography variant="caption" color="text.secondary">
-                                Accepted formats: PDF, DOC, DOCX, TXT (max 10MB)
-                            </Typography>
-                        </Box>
-                    )}
-                </Paper>
+                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 2 }}>
+                    {/* Application Fee Receipt Upload */}
+                    <Box>
+                        <Typography variant="body2" gutterBottom sx={{ fontWeight: 'medium' }}>
+                            Upload Application Fee Receipt
+                        </Typography>
+                        <Paper
+                            variant="outlined"
+                            sx={{
+                                p: 2,
+                                textAlign: 'center',
+                                cursor: 'pointer',
+                                '&:hover': { backgroundColor: 'action.hover' },
+                            }}
+                            onClick={() => document.getElementById('receipt-upload')?.click()}
+                        >
+                            <input
+                                id="receipt-upload"
+                                type="file"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                                onChange={handleReceiptFileChange}
+                                style={{ display: 'none' }}
+                            />
+                            {receiptFile ? (
+                                <Box>
+                                    <Typography variant="body2" color="primary">
+                                        {receiptFile.name}
+                                    </Typography>
+                                    <Button
+                                        size="small"
+                                        color="error"
+                                        onClick={(e) => {
+                                            e.stopPropagation()
+                                            handleReceiptFileRemove()
+                                        }}
+                                    >
+                                        Remove
+                                    </Button>
+                                </Box>
+                            ) : (
+                                <Box>
+                                    <CloudUploadIcon sx={{ fontSize: 40, color: 'text.secondary', mb: 1 }} />
+                                    <Typography variant="body2" color="text.secondary">
+                                        Upload receipt
+                                    </Typography>
+                                    <Typography variant="caption" color="text.secondary">
+                                        PDF, JPG, PNG (max 10MB)
+                                    </Typography>
+                                </Box>
+                            )}
+                        </Paper>
+                    </Box>
+
+                    {/* Resume/CV Upload */}
+                    <Box>
+                        <Typography variant="body2" gutterBottom sx={{ fontWeight: 'medium' }}>
+                            Resume/CV
+                        </Typography>
+                        <Paper
+                            variant="outlined"
+                            sx={{
+                                p: 2,
+                                textAlign: 'center',
+                                cursor: 'pointer',
+                                '&:hover': { backgroundColor: 'action.hover' },
+                            }}
+                            onClick={() => document.getElementById('resume-upload')?.click()}
+                        >
+                            <input
+                                id="resume-upload"
+                                type="file"
+                                accept=".pdf,.doc,.docx,.txt"
+                                onChange={handleResumeFileChange}
+                                style={{ display: 'none' }}
+                            />
+                            {resumeFile ? (
+                                <Box>
+                                    <Typography variant="body2" color="primary">
+                                        {resumeFile.name}
+                                    </Typography>
+                                    <Button
+                                        size="small"
+                                        color="error"
+                                        onClick={(e) => {
+                                            e.stopPropagation()
+                                            handleResumeFileRemove()
+                                        }}
+                                    >
+                                        Remove
+                                    </Button>
+                                </Box>
+                            ) : (
+                                <Box>
+                                    <CloudUploadIcon sx={{ fontSize: 40, color: 'text.secondary', mb: 1 }} />
+                                    <Typography variant="body2" color="text.secondary">
+                                        Upload resume/CV
+                                    </Typography>
+                                    <Typography variant="caption" color="text.secondary">
+                                        PDF, DOC, DOCX, TXT (max 10MB)
+                                    </Typography>
+                                </Box>
+                            )}
+                        </Paper>
+                    </Box>
+                </Box>
             </Box>
 
             <Button
