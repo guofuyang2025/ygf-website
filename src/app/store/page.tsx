@@ -4,6 +4,8 @@ import Header from '@/components/layout/public-header'
 import Footer from '@/components/layout/Footer'
 import { useI18n } from '@/lib/contexts/LanguageContent'
 import PageBanner from '@/components/layout/PageBanner'
+import StoreMap from '@/components/StoreMap'
+import LeafletStoreMap from '@/components/LeafletStoreMap'
 import { useState } from 'react'
 import {
     Box,
@@ -28,24 +30,32 @@ export default function StorePage() {
             address: 'Adelaide Chinatown',
             tag: 'Flagship',
             icon: <StarIcon fontSize="small" />,
+            coordinates: [-34.9285, 138.6007] as [number, number], // Adelaide CBD
+            imagePosition: { x: 45, y: 60 }, // Position on image (percentage)
         },
         {
             name: 'Marion Westfield (Opening Nov 2025)',
             address: 'Westfield Marion, Adelaide',
             tag: 'Opening Nov 2025',
             icon: <ScheduleIcon fontSize="small" />,
+            coordinates: [-35.0189, 138.5708] as [number, number], // Marion area
+            imagePosition: { x: 50, y: 65 }, // Position on image (percentage)
         },
         {
             name: 'Brisbane CBD (Opening late 2025)',
             address: 'Brisbane CBD',
             tag: 'Opening late 2025',
             icon: <ScheduleIcon fontSize="small" />,
+            coordinates: [-27.4698, 153.0251] as [number, number], // Brisbane CBD
+            imagePosition: { x: 75, y: 25 }, // Position on image (percentage)
         },
         {
             name: 'More locations coming soon',
             address: 'Australia',
             tag: 'Coming soon',
             icon: <ScheduleIcon fontSize="small" />,
+            coordinates: [-25.2744, 133.7751] as [number, number], // Center of Australia
+            imagePosition: { x: 50, y: 50 }, // Position on image (percentage)
         },
     ]
 
@@ -58,6 +68,12 @@ export default function StorePage() {
                 <PageBanner title={t.storePage.hero.title} subtitle={t.storePage.hero.subtitle} />
 
                 <div className="container mx-auto px-4 py-10">
+                    {/* Leaflet Map Section */}
+                    <LeafletStoreMap 
+                        stores={stores}
+                        selectedStoreIndex={selectedIndex}
+                        onStoreSelect={setSelectedIndex}
+                    />
                     <Box sx={{ display: 'grid', gap: 4, gridTemplateColumns: '1fr' }}>
                         <Box>
                             <Card>
@@ -110,17 +126,11 @@ export default function StorePage() {
                                     <Typography variant="body2" color="text.secondary" gutterBottom>
                                         {selected.address}
                                     </Typography>
-                                    <Box sx={{ height: 400, position: 'relative', borderRadius: 1, overflow: 'hidden' }}>
-                                        <iframe
-                                            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}&q=${encodeURIComponent(selected.address)}`}
-                                            width="100%"
-                                            height="100%"
-                                            style={{ border: 0 }}
-                                            allowFullScreen
-                                            loading="lazy"
-                                            referrerPolicy="no-referrer-when-downgrade"
-                                        />
-                                    </Box>
+                                    <StoreMap 
+                                        stores={stores}
+                                        selectedStoreIndex={selectedIndex}
+                                        onStoreSelect={setSelectedIndex}
+                                    />
                                 </CardContent>
                             </Card>
                         </Box>
