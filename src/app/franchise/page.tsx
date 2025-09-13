@@ -4,6 +4,8 @@ import Header from '@/components/layout/public-header'
 import Footer from '@/components/layout/Footer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Building2, Users, Target, TrendingUp, Award, HeadphonesIcon, MapPin, FileText, CheckCircle } from 'lucide-react'
+import { ExpandableCard } from '@/components/ui/expandable-card'
+import { FAQSection } from '@/components/ui/faq-section'
 import FranchiseForm, { type FranchiseFormRef } from '@/components/form/franchise-form'
 import { useRef, useState } from 'react'
 import { useI18n } from '@/lib/contexts/LanguageContent'
@@ -205,126 +207,31 @@ export default function FranchisePage() {
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                            <Card className="overflow-hidden">
-                                <div className="relative">
-                                    <img
-                                        src="/products/ingredients.png"
-                                        alt="Location Advisory & Site Sourcing"
-                                        className="w-full h-48 object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 flex items-end">
-                                        <div className="p-4 text-white">
-                                            <h3 className="text-lg font-semibold">{t.franchisePage.franchiseSupport.locationAdvisory.title}</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <CardContent className="p-4">
-                                    <p className="text-muted-foreground">
-                                        {t.franchisePage.franchiseSupport.locationAdvisory.description}
-                                    </p>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="overflow-hidden">
-                                <div className="relative">
-                                    <img
-                                        src="/franchise/training.png"
-                                        alt="Initial Training"
-                                        className="w-full h-48 object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 flex items-end">
-                                        <div className="p-4 text-white">
-                                            <h3 className="text-lg font-semibold">{t.franchisePage.franchiseSupport.initialTraining.title}</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <CardContent className="p-4">
-                                    <p className="text-muted-foreground">
-                                        {t.franchisePage.franchiseSupport.initialTraining.description}
-                                    </p>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="overflow-hidden">
-                                <div className="relative">
-                                    <img
-                                        src="/products/chain.png"
-                                        alt="Design & Fit-Out"
-                                        className="w-full h-48 object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 flex items-end">
-                                        <div className="p-4 text-white">
-                                            <h3 className="text-lg font-semibold">{t.franchisePage.franchiseSupport.designFitout.title}</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <CardContent className="p-4">
-                                    <p className="text-muted-foreground">
-                                        {t.franchisePage.franchiseSupport.designFitout.description}
-                                    </p>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="overflow-hidden">
-                                <div className="relative">
-                                    <img
-                                        src="/products/combo.png"
-                                        alt="Pre-Opening & Launch Support"
-                                        className="w-full h-48 object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 flex items-end">
-                                        <div className="p-4 text-white">
-                                            <h3 className="text-lg font-semibold">{t.franchisePage.franchiseSupport.preOpeningSupport.title}</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <CardContent className="p-4">
-                                    <p className="text-muted-foreground">
-                                        {t.franchisePage.franchiseSupport.preOpeningSupport.description}
-                                    </p>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="overflow-hidden">
-                                <div className="relative">
-                                    <img
-                                        src="/franchise/marketing.png"
-                                        alt="Marketing & Promotion"
-                                        className="w-full h-48 object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 flex items-end">
-                                        <div className="p-4 text-white">
-                                            <h3 className="text-lg font-semibold">{t.franchisePage.franchiseSupport.marketingPromotion.title}</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <CardContent className="p-4">
-                                    <p className="text-muted-foreground">
-                                        {t.franchisePage.franchiseSupport.marketingPromotion.description}
-                                    </p>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="overflow-hidden">
-                                <div className="relative">
-                                    <img
-                                        src="/products/malaban.png"
-                                        alt="Ongoing Operational Support"
-                                        className="w-full h-48 object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 flex items-end">
-                                        <div className="p-4 text-white">
-                                            <h3 className="text-lg font-semibold">{t.franchisePage.franchiseSupport.ongoingSupport.title}</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <CardContent className="p-4">
-                                    <p className="text-muted-foreground">
-                                        {t.franchisePage.franchiseSupport.ongoingSupport.description}
-                                    </p>
-                                </CardContent>
-                            </Card>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                            <ExpandableCard
+                                title={t.franchisePage.franchiseSupport.locationAdvisory.title}
+                                description={t.franchisePage.franchiseSupport.locationAdvisory.description}
+                            />
+                            <ExpandableCard
+                                title={t.franchisePage.franchiseSupport.initialTraining.title}
+                                description={t.franchisePage.franchiseSupport.initialTraining.description}
+                            />
+                            <ExpandableCard
+                                title={t.franchisePage.franchiseSupport.designFitout.title}
+                                description={t.franchisePage.franchiseSupport.designFitout.description}
+                            />
+                            <ExpandableCard
+                                title={t.franchisePage.franchiseSupport.preOpeningSupport.title}
+                                description={t.franchisePage.franchiseSupport.preOpeningSupport.description}
+                            />
+                            <ExpandableCard
+                                title={t.franchisePage.franchiseSupport.marketingPromotion.title}
+                                description={t.franchisePage.franchiseSupport.marketingPromotion.description}
+                            />
+                            <ExpandableCard
+                                title={t.franchisePage.franchiseSupport.ongoingSupport.title}
+                                description={t.franchisePage.franchiseSupport.ongoingSupport.description}
+                            />
                         </div>
 
                         {/* <div className="max-w-4xl mx-auto text-center mt-12">
@@ -332,6 +239,45 @@ export default function FranchisePage() {
                                 {t.franchisePage.franchiseSupport.description}
                             </p>
                         </div> */}
+                    </div>
+                </section>
+                <Separator className="bg-black/10" />
+
+                {/* FAQ Section */}
+                <section className="py-20">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                                {t.franchisePage.faq.title}
+                            </h2>
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
+                            <FAQSection
+                                title={t.franchisePage.faq.sections.applicationProcess.title}
+                                questions={t.franchisePage.faq.sections.applicationProcess.questions}
+                            />
+                            <FAQSection
+                                title={t.franchisePage.faq.sections.financeCosts.title}
+                                questions={t.franchisePage.faq.sections.financeCosts.questions}
+                            />
+                            <FAQSection
+                                title={t.franchisePage.faq.sections.trainingSupport.title}
+                                questions={t.franchisePage.faq.sections.trainingSupport.questions}
+                            />
+                            <FAQSection
+                                title={t.franchisePage.faq.sections.siteLease.title}
+                                questions={t.franchisePage.faq.sections.siteLease.questions}
+                            />
+                            <FAQSection
+                                title={t.franchisePage.faq.sections.returnsOperations.title}
+                                questions={t.franchisePage.faq.sections.returnsOperations.questions}
+                            />
+                            <FAQSection
+                                title={t.franchisePage.faq.sections.citizenshipEligibility.title}
+                                questions={t.franchisePage.faq.sections.citizenshipEligibility.questions}
+                            />
+                        </div>
                     </div>
                 </section>
                 <Separator className="bg-black/10" />
@@ -347,7 +293,7 @@ export default function FranchisePage() {
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                             <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/5">
                                 <CardContent>
                                     <div className="flex justify-center mb-4">
@@ -378,10 +324,10 @@ export default function FranchisePage() {
                                         </span>
                                     </div>
                                     <h3 className="text-lg font-semibold text-foreground mb-3">
-                                        {t.franchisePage.process.steps.interview.title}
+                                        {t.franchisePage.process.steps.franchiseMeeting.title}
                                     </h3>
                                     <p className="text-foreground text-sm leading-relaxed">
-                                        {t.franchisePage.process.steps.interview.description}
+                                        {t.franchisePage.process.steps.franchiseMeeting.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -389,7 +335,7 @@ export default function FranchisePage() {
                             <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/5">
                                 <CardContent>
                                     <div className="flex justify-center mb-4">
-                                        <Users className="w-8 h-8 text-purple-600" />
+                                        <MapPin className="w-8 h-8 text-purple-600" />
                                     </div>
                                     <div className="mb-3">
                                         <span className="inline-flex items-center justify-center w-8 h-8 bg-primary text-white rounded-full text-sm font-semibold">
@@ -397,10 +343,10 @@ export default function FranchisePage() {
                                         </span>
                                     </div>
                                     <h3 className="text-lg font-semibold text-foreground mb-3">
-                                        {t.franchisePage.process.steps.onlineInterview.title}
+                                        {t.franchisePage.process.steps.siteSelection.title}
                                     </h3>
                                     <p className="text-foreground text-sm leading-relaxed">
-                                        {t.franchisePage.process.steps.onlineInterview.description}
+                                        {t.franchisePage.process.steps.siteSelection.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -408,7 +354,7 @@ export default function FranchisePage() {
                             <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/5">
                                 <CardContent>
                                     <div className="flex justify-center mb-4">
-                                        <Award className="w-8 h-8 text-orange-600" />
+                                        <FileText className="w-8 h-8 text-orange-600" />
                                     </div>
                                     <div className="mb-3">
                                         <span className="inline-flex items-center justify-center w-8 h-8 bg-primary text-white rounded-full text-sm font-semibold">
@@ -416,10 +362,48 @@ export default function FranchisePage() {
                                         </span>
                                     </div>
                                     <h3 className="text-lg font-semibold text-foreground mb-3">
-                                        {t.franchisePage.process.steps.meetFounder.title}
+                                        {t.franchisePage.process.steps.legalDocuments.title}
                                     </h3>
                                     <p className="text-foreground text-sm leading-relaxed">
-                                        {t.franchisePage.process.steps.meetFounder.description}
+                                        {t.franchisePage.process.steps.legalDocuments.description}
+                                    </p>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/5">
+                                <CardContent>
+                                    <div className="flex justify-center mb-4">
+                                        <Award className="w-8 h-8 text-red-600" />
+                                    </div>
+                                    <div className="mb-3">
+                                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary text-white rounded-full text-sm font-semibold">
+                                            5
+                                        </span>
+                                    </div>
+                                    <h3 className="text-lg font-semibold text-foreground mb-3">
+                                        {t.franchisePage.process.steps.training.title}
+                                    </h3>
+                                    <p className="text-foreground text-sm leading-relaxed">
+                                        {t.franchisePage.process.steps.training.description}
+                                    </p>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 bg-primary/5">
+                                <CardContent>
+                                    <div className="flex justify-center mb-4">
+                                        <CheckCircle className="w-8 h-8 text-green-600" />
+                                    </div>
+                                    <div className="mb-3">
+                                        <span className="inline-flex items-center justify-center w-8 h-8 bg-primary text-white rounded-full text-sm font-semibold">
+                                            6
+                                        </span>
+                                    </div>
+                                    <h3 className="text-lg font-semibold text-foreground mb-3">
+                                        {t.franchisePage.process.steps.opening.title}
+                                    </h3>
+                                    <p className="text-foreground text-sm leading-relaxed">
+                                        {t.franchisePage.process.steps.opening.description}
                                     </p>
                                 </CardContent>
                             </Card>

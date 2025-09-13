@@ -327,25 +327,160 @@ const en: Strings = {
     },
     process: {
       title: 'The Process',
-      subtitle: 'Our streamlined franchise process ensures a smooth experience for all potential partners.',
+      subtitle: 'YGF Australia Franchise Process (6 Steps)',
       steps: {
         enquire: {
-          title: 'Step 1 - Enquire',
-          description: 'Make an online enquiry and fill out the questionnaire.',
+          title: 'Enquire',
+          description: 'Pay application fee ($100).',
         },
-        interview: {
-          title: 'Step 2 - Interview',
-          description: 'Our franchise recruitment team will contact you by phone for an initial interview.',
+        franchiseMeeting: {
+          title: 'Franchise Meeting',
+          description: 'Face-to-face meeting and store visit.',
         },
-        onlineInterview: {
-          title: 'Step 3 - Online Interview',
-          description: 'Online interview with our Director of Franchise.',
+        siteSelection: {
+          title: 'Site Selection',
+          description: 'Choose a location (provided or self-selected).',
         },
-        meetFounder: {
-          title: 'Step 4 - Meet Our Founder',
-          description: 'Online brief meeting with Steven Marks (Founder and co-CEO).',
+        legalDocuments: {
+          title: 'Legal Documents',
+          description: 'Sign franchise agreement and related documents.',
+        },
+        training: {
+          title: 'Training',
+          description: 'Comprehensive training program.',
+        },
+        opening: {
+          title: 'Opening',
+          description: 'Store setup and official opening.',
         },
       },
+    },
+    faq: {
+      title: 'Frequently Asked Questions – YGF Australia',
+      sections: {
+        applicationProcess: {
+          title: 'Application & Process',
+          questions: [
+            {
+              question: 'Is the application deposit refundable?',
+              answer: 'The application deposit is AUD $100 and is non-refundable.'
+            },
+            {
+              question: 'How long will it take to come through the application process?',
+              answer: 'Once all documents are provided, the application process generally takes about one week to complete.'
+            },
+            {
+              question: 'Does YGF Australia release their franchisee selection criteria?',
+              answer: 'Yes. Final approval requires you to pass our selection process, including interviews and assessment of suitability.'
+            },
+            {
+              question: 'By placing an enquiry on the website, is that all I have to do to start the recruitment process?',
+              answer: 'Submitting an enquiry is the first step. You will then be guided through the full application, review, and interview process.'
+            }
+          ]
+        },
+        financeCosts: {
+          title: 'Finance & Costs',
+          questions: [
+            {
+              question: 'How much does your franchise opportunity cost, what does this price include and what other costs will be incurred in addition to this price?',
+              answer: 'The total investment includes the franchise fee, store fit-out, equipment, and initial stock. Additional costs may include working capital, rent, wages, and other operating expenses. The exact amount depends on store size and location.'
+            },
+            {
+              question: 'How much working capital do I need?',
+              answer: 'Franchisees should prepare additional working capital to cover ongoing expenses, particularly in the first few months.'
+            },
+            {
+              question: 'Do I need cash or equity towards the purchase of a franchise?',
+              answer: 'Yes. Franchise partners are expected to contribute equity or cash investment towards the business.'
+            },
+            {
+              question: 'How much money will the bank lend me?',
+              answer: 'This will depend on your financial situation and the bank\'s franchise lending criteria.'
+            },
+            {
+              question: 'What costs am I likely to incur once owning the business?',
+              answer: 'Typical costs include rent, wages, utilities, marketing contributions, and supplier costs.'
+            }
+          ]
+        },
+        trainingSupport: {
+          title: 'Training & Support',
+          questions: [
+            {
+              question: 'Do you train me? Who pays for my training? Where do I go for training?',
+              answer: 'YGF Australia provides comprehensive training covering store operations, food safety, and marketing. Training is included, but travel and accommodation expenses are usually paid by the franchisee.'
+            },
+            {
+              question: 'What ongoing support will I get from YGF Australia?',
+              answer: 'Franchisees receive continuous support in operations, supply chain, marketing, and business development.'
+            }
+          ]
+        },
+        siteLease: {
+          title: 'Site & Lease',
+          questions: [
+            {
+              question: 'Do I need to find a location for the store?',
+              answer: 'YGF Australia assists with site selection, but the lease will be signed directly between you and the landlord.'
+            },
+            {
+              question: 'If I suggest a location, does that mean I will be awarded that site?',
+              answer: 'Not automatically. All sites are subject to assessment of suitability and approval by YGF Australia.'
+            },
+            {
+              question: 'How long is the typical lease term? Why is the franchise & lease term different?',
+              answer: 'Lease terms are usually negotiated with landlords (commonly 5–7 years). Franchise agreements typically run for around 5 years to align with business planning cycles.'
+            },
+            {
+              question: 'What happens at the end of the lease term?',
+              answer: 'Options may include renewal, relocation, or closure, depending on performance and lease negotiations.'
+            }
+          ]
+        },
+        returnsOperations: {
+          title: 'Returns & Operations',
+          questions: [
+            {
+              question: 'What kind of returns can I expect from running a YGF Australia franchise?',
+              answer: 'Returns depend on location, market conditions, and individual effort. YGF Australia does not guarantee financial returns.'
+            },
+            {
+              question: 'Why are existing stores for sale, priced differently to new site opportunities?',
+              answer: 'Prices vary based on store performance, lease terms, and goodwill value.'
+            },
+            {
+              question: 'What if I want to own more than one store?',
+              answer: 'Multi-store ownership is possible for franchisees who meet performance benchmarks.'
+            },
+            {
+              question: 'Do I need to work in the business full-time or can I run my franchise under management?',
+              answer: 'We recommend franchisees work full-time, especially in the early stages. Some later transition to management-run operations once the store is stable.'
+            },
+            {
+              question: 'Can I source my own supplies for the business?',
+              answer: 'No. To ensure consistency and quality, all supplies must come from approved YGF suppliers.'
+            }
+          ]
+        },
+        citizenshipEligibility: {
+          title: 'Citizenship & Eligibility',
+          questions: [
+            {
+              question: 'Do I need previous business or food industry experience to become a franchise partner?',
+              answer: 'Yes. Previous business or food industry experience is preferred, as it helps you succeed. Comprehensive training and support will also be provided.'
+            },
+            {
+              question: 'How long is a YGF Australia Franchise Agreement?',
+              answer: 'Typically 5 years, with renewal subject to performance.'
+            },
+            {
+              question: 'Do I have to be an Australian Citizen or Permanent Resident of Australia to franchise with YGF Australia in Australia?',
+              answer: 'Yes. Franchisees must be Australian citizens or permanent residents to ensure long-term business operation.'
+            }
+          ]
+        }
+      }
     },
     application: {
       title: 'Enquire Today',
@@ -726,25 +861,160 @@ const zh: Strings = {
     },
     process: {
       title: '流程',
-      subtitle: '我们简化的加盟流程确保所有潜在合作伙伴的顺利体验。',
+      subtitle: 'YGF澳大利亚加盟流程（6个步骤）',
       steps: {
         enquire: {
-          title: '步骤1 - 咨询',
-          description: '进行在线咨询并填写问卷。',
+          title: '咨询',
+          description: '支付申请费（$100）。',
         },
-        interview: {
-          title: '步骤2 - 面试',
-          description: '我们的加盟招聘团队将通过电话联系您进行初步面试。',
+        franchiseMeeting: {
+          title: '加盟会议',
+          description: '面对面会议和门店参观。',
         },
-        onlineInterview: {
-          title: '步骤3 - 在线面试',
-          description: '与我们的加盟总监进行在线面试。',
+        siteSelection: {
+          title: '选址',
+          description: '选择位置（提供或自选）。',
         },
-        meetFounder: {
-          title: '步骤4 - 会见我们的创始人',
-          description: '与Steven Marks（创始人和联合首席执行官）进行简短的在线会议。',
+        legalDocuments: {
+          title: '法律文件',
+          description: '签署加盟协议和相关文件。',
+        },
+        training: {
+          title: '培训',
+          description: '全面培训计划。',
+        },
+        opening: {
+          title: '开业',
+          description: '门店设置和正式开业。',
         },
       },
+    },
+    faq: {
+      title: '常见问题 – YGF澳大利亚',
+      sections: {
+        applicationProcess: {
+          title: '申请与流程',
+          questions: [
+            {
+              question: '申请押金可以退还吗？',
+              answer: '申请押金为100澳元，不可退还。'
+            },
+            {
+              question: '申请流程需要多长时间？',
+              answer: '一旦提供所有文件，申请流程通常需要大约一周时间完成。'
+            },
+            {
+              question: 'YGF澳大利亚会公布他们的加盟商选择标准吗？',
+              answer: '是的。最终批准需要您通过我们的选择流程，包括面试和适合性评估。'
+            },
+            {
+              question: '在网站上提交咨询是否就是开始招聘流程的全部？',
+              answer: '提交咨询是第一步。然后您将被引导完成完整的申请、审查和面试流程。'
+            }
+          ]
+        },
+        financeCosts: {
+          title: '财务与成本',
+          questions: [
+            {
+              question: '您的加盟机会成本是多少，这个价格包括什么，除了这个价格之外还会产生什么其他成本？',
+              answer: '总投资包括加盟费、店面装修、设备和初始库存。额外成本可能包括营运资金、租金、工资和其他运营费用。确切金额取决于店面大小和位置。'
+            },
+            {
+              question: '我需要多少营运资金？',
+              answer: '加盟商应准备额外的营运资金来支付持续费用，特别是在前几个月。'
+            },
+            {
+              question: '购买加盟店我需要现金或股权吗？',
+              answer: '是的。加盟合作伙伴需要为业务贡献股权或现金投资。'
+            },
+            {
+              question: '银行会借给我多少钱？',
+              answer: '这将取决于您的财务状况和银行的加盟贷款标准。'
+            },
+            {
+              question: '拥有业务后我可能会产生什么成本？',
+              answer: '典型成本包括租金、工资、公用事业、营销贡献和供应商成本。'
+            }
+          ]
+        },
+        trainingSupport: {
+          title: '培训与支持',
+          questions: [
+            {
+              question: '您会培训我吗？谁支付我的培训费用？我去哪里培训？',
+              answer: 'YGF澳大利亚提供涵盖店面运营、食品安全和营销的全面培训。培训费用已包含，但差旅和住宿费用通常由加盟商支付。'
+            },
+            {
+              question: '我将从YGF澳大利亚获得什么持续支持？',
+              answer: '加盟商在运营、供应链、营销和业务发展方面获得持续支持。'
+            }
+          ]
+        },
+        siteLease: {
+          title: '选址与租赁',
+          questions: [
+            {
+              question: '我需要为店面找位置吗？',
+              answer: 'YGF澳大利亚协助选址，但租赁合同将直接由您与房东签署。'
+            },
+            {
+              question: '如果我建议一个位置，是否意味着我将获得该位置？',
+              answer: '不是自动的。所有位置都需要经过适合性评估和YGF澳大利亚的批准。'
+            },
+            {
+              question: '典型的租赁期限是多长？为什么加盟和租赁期限不同？',
+              answer: '租赁期限通常与房东协商（通常5-7年）。加盟协议通常运行约5年，以与业务规划周期保持一致。'
+            },
+            {
+              question: '租赁期限结束时会发生什么？',
+              answer: '根据业绩和租赁谈判，选择可能包括续约、搬迁或关闭。'
+            }
+          ]
+        },
+        returnsOperations: {
+          title: '回报与运营',
+          questions: [
+            {
+              question: '经营YGF澳大利亚加盟店我能期待什么样的回报？',
+              answer: '回报取决于位置、市场条件和个人努力。YGF澳大利亚不保证财务回报。'
+            },
+            {
+              question: '为什么现有店面出售价格与新位置机会不同？',
+              answer: '价格根据店面业绩、租赁条款和商誉价值而变化。'
+            },
+            {
+              question: '如果我想拥有多个店面怎么办？',
+              answer: '对于达到业绩基准的加盟商，多店面所有权是可能的。'
+            },
+            {
+              question: '我需要在业务中全职工作还是可以在管理下经营我的加盟店？',
+              answer: '我们建议加盟商全职工作，特别是在早期阶段。一些人在店面稳定后转向管理运营。'
+            },
+            {
+              question: '我可以为业务采购自己的供应品吗？',
+              answer: '不可以。为确保一致性和质量，所有供应品必须来自批准的YGF供应商。'
+            }
+          ]
+        },
+        citizenshipEligibility: {
+          title: '公民身份与资格',
+          questions: [
+            {
+              question: '成为加盟合作伙伴我需要有商业或食品行业经验吗？',
+              answer: '是的。优先考虑有商业或食品行业经验，因为这有助于您成功。也将提供全面培训和支持。'
+            },
+            {
+              question: 'YGF澳大利亚加盟协议多长时间？',
+              answer: '通常5年，续约取决于业绩。'
+            },
+            {
+              question: '在澳大利亚与YGF澳大利亚加盟，我必须是澳大利亚公民或永久居民吗？',
+              answer: '是的。加盟商必须是澳大利亚公民或永久居民，以确保长期业务运营。'
+            }
+          ]
+        }
+      }
     },
     application: {
       title: '今天咨询',
@@ -810,5 +1080,7 @@ export function useI18n() {
   const { language } = useLanguage()
   return language === 'zh' ? zh : en
 }
+
+
 
 
