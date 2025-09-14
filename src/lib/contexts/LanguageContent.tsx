@@ -47,14 +47,14 @@ const en: Strings = {
   },
   homePage: {
     hero: {
-      title: 'Yangguofu Australia',
-      subtitle: '"Global No.1 Malatang, now in Australia"',
+      title: 'YGF Australia',
+      subtitle: '"The World’s Very First Hot Pot"',
       extraText: 'Fresh, authentic, and made your way.',
       ctaButton: 'Learn More',
     },
     brand: {
       title: 'About Our Brand',
-      description: 'At Yang Guo Fu Malatang, our mission is to share the authentic taste of modern Malatang with the world. \nIn Australia, we are bringing a new standard of Asian fast-casual dining — authentic flavors, fresh daily ingredients, and a fully customizable experience.',
+      description: 'As part of the world’s leading Malatang brand, YGF Australia continues to extend the influence of authentic Malatang worldwide.\n In Australia, we establish a new benchmark in Asian fast- casual dining — authentic flavors, fresh ingredients every day, and a uniquely personalized dining journey.',
       ctaButton: 'Franchise With Us',
     },
     products: {
@@ -100,7 +100,7 @@ const en: Strings = {
     },
     mission: {
       title: 'Looking Ahead',
-      description1: '• November 2025: Marion (South Australia)\n• End of 2025: Gouger Street Adelaide flagship + Brisbane CBD\n• First Half 2026: Two more stores in SA\n• Mid-2026: Sydney flagship\n• By 2028: 30 YGF stores across Australia',
+      description1: '• November 2025: Marion store opens (South Australia)\n• Flagship on Gouger Street, Adelaide, plus Brisbane CBD launch\n• Continued growth with two new SA stores\n• Sydney flagship opening\n• 30 YGF stores nationwide, establishing YGF as the leading Malatang brand in Australia',
       description2: '',
       description3: '',
     },
@@ -158,9 +158,9 @@ const en: Strings = {
       subtitle: "Have a question or want to work together? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
     },
     form: {
-      title: 'Send us a Message',
+      title: 'Make an Enquiry',
       subtitle: "Fill out the form below and we'll get back to you within 24 hours.",
-      sendMessage: 'Send Message',
+      sendMessage: 'Send Enquiry',
       subjectOptions: {
         general: 'General Inquiry',
         support: 'Technical Support',
@@ -264,71 +264,238 @@ const en: Strings = {
   franchisePage: {
     hero: {
       title: 'Franchise Opportunities',
-      subtitle: 'Company Description\nAt Yang Guo Fu Malatang, our mission is to share the authentic taste of modern Malatang with the world. Founded in 2000, YGF has grown from a small Harbin food stall into the global leader of Malatang dining, with nearly 7,000 restaurants in over 20 countries.\nIn Australia, we are bringing a new standard of Asian fast-casual dining — authentic flavors, fresh daily ingredients, and a fully customizable experience. We are proud of our heritage, our innovation as the creator of drinkable soup Malatang, and the vibrant community our brand represents.',
+      subtitle: 'As a YGF Australia Franchise Partner, you are more than an investor — you are joining the world’s largest and most recognized Malatang brand, with over 6,000 stores worldwide and rapid growth in Australia.',
+
     },
     jobDescription: {
-      title: 'Job Description – Your Role as a Franchise Partner',
-      description1: 'As a Yang Guo Fu Franchise Partner, you are more than a business owner — you are an ambassador of our brand. Your role is hands-on, dynamic, and deeply rewarding. One day you may be on the floor, guiding your team to deliver the perfect customer experience; the next, you may be engaging with the local community to introduce Malatang culture to new audiences.',
-      description2: 'You\'ll lead with passion, uphold the highest standards of quality and food safety, and ensure every guest enjoys a dining experience that is authentic, welcoming, and memorable. As a partner, you\'ll not only grow a profitable business but also help build the future of Yang Guo Fu in Australia.',
+      title: 'By partnering with us, you gain:',
+      description1: '• Proven Business Model – a globally successful, highly replicable system tailored for the Australian market.',
+      description2: '• Comprehensive Support – from site selection, store design, and staff training to supply chain and marketing campaigns.',
+      description3: '• Strong Brand Power – leverage the reputation of YGF, already renowned as the world’s No.1 Malatang brand.',
+      description4: '• Growing Market Demand – tap into the booming Asian fast- casual dining sector across Australia.',
+      description5: '• As a franchise partner, you will not only build a profitable business but also help shape the future of YGF in Australia, bringing authentic Malatang culture to new audiences nationwide.',
     },
     qualifications: {
       title: 'Qualifications & Ideal Partner Profile',
-      subtitle: 'We are seeking passionate individuals who share our love for food, culture, and community.',
+      subtitle: 'We are seeking ambitious business partners who are ready to grow with YGF Australia and share our vision of bringing authentic Malatang culture across the nation',
+      subtitle2: 'What we look for in a franchise partner:',
       experience: {
-        title: 'Experience',
-        description: 'Experience in hospitality, retail, or managing large teams',
+        title: 'Investment Capability',
+        description: 'Solid financial capacity and commitment to invest in building and operating a successful YGF store.',
       },
       businessAcumen: {
         title: 'Business Acumen',
-        description: 'Strong business and financial understanding',
+        description: 'Strong understanding of business operations, with the ability to make sound financial and strategic decisions.',
       },
       leadership: {
-        title: 'Leadership',
-        description: 'A commitment to hands-on leadership — being actively involved in your restaurant daily',
+        title: 'Brand Commitment',
+        description: 'Alignment with YGF’s values and dedication to maintaining our high standards of quality, service, and food safety.',
       },
       flexibility: {
-        title: 'Flexibility',
-        description: 'Willingness to embrace opportunities in both metropolitan and regional areas of Australia',
+        title: 'Growth Mindset',
+        description: 'Willingness to scale — from operating a single store to potentially managing multiple locations in the future.',
       },
     },
     franchiseSupport: {
       title: 'Franchise Support',
-      subtitle: 'Our franchise agreements are designed as true partnerships, built on long-term success.',
-      trainingOperations: {
-        title: 'Training & Operations',
-        description: 'Comprehensive training & operations manuals',
+      subtitle: 'At YGF Australia, we are committed to providing our franchise partners with comprehensive support at every stage of their journey. From selecting the right location to ensuring long-term operational excellence, our head office team is with you every step of the way.',
+      locationAdvisory: {
+        title: 'Location Advisory & Site Sourcing',
+        description: 'With access to strong real estate networks, YGF Australia assists franchisees in identifying high-potential locations, sourcing prime retail sites, and negotiating favorable lease terms.',
       },
-      supplyChain: {
-        title: 'Supply Chain & Logistics',
-        description: 'Centralized supply chain & logistics',
+      initialTraining: {
+        title: 'Initial Training',
+        description: 'Comprehensive training delivered to franchisees and their teams, covering store operations, food handling standards, service protocols, and compliance with Australian law.',
       },
-      marketingCampaigns: {
-        title: 'Marketing Campaigns',
-        description: 'National & international marketing campaigns',
+      designFitout: {
+        title: 'Design & Fit-Out',
+        description: 'We provide end-to-end design solutions, including store layout, interior design, branding, and supply of essential fit-out materials.',
+      },
+      preOpeningSupport: {
+        title: 'Pre-Opening & Launch Support',
+        description: 'Our experienced operations team provides on-site guidance for 4-6 weeks, assistance with recruitment & staff training, and hands-on operational support.',
+      },
+      marketingPromotion: {
+        title: 'Marketing & Promotion',
+        description: 'Franchisees benefit from national and local marketing initiatives, social media exposure, and grand opening campaign support.',
+      },
+      ongoingSupport: {
+        title: 'Ongoing Operational Support',
+        description: 'Long-term support including regular audits, continuous training, quality control, and compliance monitoring to ensure highest standards.',
       },
       description: 'Becoming a YGF Franchise Partner is a journey that requires dedication and resilience, but the rewards are significant — both financially and personally. Together, we will bring authentic Malatang to every corner of Australia.',
     },
     process: {
       title: 'The Process',
-      subtitle: 'Our streamlined franchise process ensures a smooth experience for all potential partners.',
+      subtitle: 'YGF Australia Franchise Process (6 Steps)',
       steps: {
         enquire: {
-          title: 'Step 1 - Enquire',
-          description: 'Make an online enquiry and fill out the questionnaire.',
+          title: 'Enquire',
+          description: 'Pay application fee ($100).',
         },
-        interview: {
-          title: 'Step 2 - Interview',
-          description: 'Our franchise recruitment team will contact you by phone for an initial interview.',
+        franchiseMeeting: {
+          title: 'Franchise Meeting',
+          description: 'Face-to-face meeting and store visit.',
         },
-        onlineInterview: {
-          title: 'Step 3 - Online Interview',
-          description: 'Online interview with our Director of Franchise.',
+        siteSelection: {
+          title: 'Site Selection',
+          description: 'Choose a location (provided or self-selected).',
         },
-        meetFounder: {
-          title: 'Step 4 - Meet Our Founder',
-          description: 'Online brief meeting with Steven Marks (Founder and co-CEO).',
+        legalDocuments: {
+          title: 'Legal Documents',
+          description: 'Sign franchise agreement and related documents.',
+        },
+        training: {
+          title: 'Training',
+          description: 'Comprehensive training program.',
+        },
+        opening: {
+          title: 'Opening',
+          description: 'Store setup and official opening.',
         },
       },
+    },
+    faq: {
+      title: 'Frequently Asked Questions – YGF Australia',
+      sections: {
+        applicationProcess: {
+          title: 'Application & Process',
+          questions: [
+            {
+              question: 'Is the application deposit refundable?',
+              answer: 'The application deposit is AUD $100 and is non-refundable.'
+            },
+            {
+              question: 'How long will it take to come through the application process?',
+              answer: 'Once all documents are provided, the application process generally takes about one week to complete.'
+            },
+            {
+              question: 'Does YGF Australia release their franchisee selection criteria?',
+              answer: 'Yes. Final approval requires you to pass our selection process, including interviews and assessment of suitability.'
+            },
+            {
+              question: 'By placing an enquiry on the website, is that all I have to do to start the recruitment process?',
+              answer: 'Submitting an enquiry is the first step. You will then be guided through the full application, review, and interview process.'
+            }
+          ]
+        },
+        financeCosts: {
+          title: 'Finance & Costs',
+          questions: [
+            {
+              question: 'How much does your franchise opportunity cost, what does this price include and what other costs will be incurred in addition to this price?',
+              answer: 'The total investment includes the franchise fee, store fit-out, equipment, and initial stock. Additional costs may include working capital, rent, wages, and other operating expenses. The exact amount depends on store size and location.'
+            },
+            {
+              question: 'How much working capital do I need?',
+              answer: 'Franchisees should prepare additional working capital to cover ongoing expenses, particularly in the first few months.'
+            },
+            {
+              question: 'Do I need cash or equity towards the purchase of a franchise?',
+              answer: 'Yes. Franchise partners are expected to contribute equity or cash investment towards the business.'
+            },
+            {
+              question: 'How much money will the bank lend me?',
+              answer: 'This will depend on your financial situation and the bank\'s franchise lending criteria.'
+            },
+            {
+              question: 'What costs am I likely to incur once owning the business?',
+              answer: 'Typical costs include rent, wages, utilities, marketing contributions, and supplier costs.'
+            }
+          ]
+        },
+        trainingSupport: {
+          title: 'Training & Support',
+          questions: [
+            {
+              question: 'Do you train me? Who pays for my training? Where do I go for training?',
+              answer: 'YGF Australia provides comprehensive training covering store operations, food safety, and marketing. Training is included, but travel and accommodation expenses are usually paid by the franchisee.'
+            },
+            {
+              question: 'What ongoing support will I get from YGF Australia?',
+              answer: 'Franchisees receive continuous support in operations, supply chain, marketing, and business development.'
+            }
+          ]
+        },
+        siteLease: {
+          title: 'Site & Lease',
+          questions: [
+            {
+              question: 'Do I need to find a location for the store?',
+              answer: 'YGF Australia assists with site selection, but the lease will be signed directly between you and the landlord.'
+            },
+            {
+              question: 'If I suggest a location, does that mean I will be awarded that site?',
+              answer: 'Not automatically. All sites are subject to assessment of suitability and approval by YGF Australia.'
+            },
+            {
+              question: 'How long is the typical lease term? Why is the franchise & lease term different?',
+              answer: 'Lease terms are usually negotiated with landlords (commonly 5–7 years). Franchise agreements typically run for around 5 years to align with business planning cycles.'
+            },
+            {
+              question: 'What happens at the end of the lease term?',
+              answer: 'Options may include renewal, relocation, or closure, depending on performance and lease negotiations.'
+            }
+          ]
+        },
+        returnsOperations: {
+          title: 'Returns & Operations',
+          questions: [
+            {
+              question: 'What kind of returns can I expect from running a YGF Australia franchise?',
+              answer: 'Returns depend on location, market conditions, and individual effort. YGF Australia does not guarantee financial returns.'
+            },
+            {
+              question: 'Why are existing stores for sale, priced differently to new site opportunities?',
+              answer: 'Prices vary based on store performance, lease terms, and goodwill value.'
+            },
+            {
+              question: 'What if I want to own more than one store?',
+              answer: 'Multi-store ownership is possible for franchisees who meet performance benchmarks.'
+            },
+            {
+              question: 'Do I need to work in the business full-time or can I run my franchise under management?',
+              answer: 'We recommend franchisees work full-time, especially in the early stages. Some later transition to management-run operations once the store is stable.'
+            },
+            {
+              question: 'Can I source my own supplies for the business?',
+              answer: 'No. To ensure consistency and quality, all supplies must come from approved YGF suppliers.'
+            }
+          ]
+        },
+        citizenshipEligibility: {
+          title: 'Citizenship & Eligibility',
+          questions: [
+            {
+              question: 'Do I need previous business or food industry experience to become a franchise partner?',
+              answer: 'Yes. Previous business or food industry experience is preferred, as it helps you succeed. Comprehensive training and support will also be provided.'
+            },
+            {
+              question: 'How long is a YGF Australia Franchise Agreement?',
+              answer: 'Typically 5 years, with renewal subject to performance.'
+            },
+            {
+              question: 'Do I have to be an Australian Citizen or Permanent Resident of Australia to franchise with YGF Australia in Australia?',
+              answer: 'Yes. Franchisees must be Australian citizens or permanent residents to ensure long-term business operation.'
+            }
+          ]
+        }
+      }
+    },
+    franchiseeStories: {
+      title: 'Franchisee Stories: Growth, Success & Freedom',
+      stories: [
+        {
+          name: 'Daniel Mesiti & Anthony Stahl',
+          location: 'Eastgardens, Chatswood Monsoon & Westfield, Top Ryde, Bankstown',
+          story: 'After struggling in our own business for over 5 years we looked to Franchising to improve our business and ourselves. We didn\'t understand at the time just how good a fit Boost would be. Boost continue to push themselves to improve and us as Partners. After 12 years we are still loving life and Boost! Being part of a healthy brand that aims to make its customers feel just a little bit better has changed our lives.'
+        },
+        {
+          name: 'Daniel Chams-Eddine & Diana Dolgov',
+          location: 'Helensvale',
+          story: 'We feel truly honoured and grateful to be part of the beautiful Boost Family from the very beginning of our journey. We take pride in being part of an Australian Icon. We love the brand, it\'s raw energy, vibe, unique buzz & promoting a fun, loving and healthy lifestyle. Over the past few years we have enjoyed being part of a family that embraces its passion for life and worked closely with us to achieving our ongoing success and accomplishments.'
+        }
+      ]
     },
     application: {
       title: 'Enquire Today',
@@ -660,6 +827,7 @@ const zh: Strings = {
     qualifications: {
       title: '资格和理想合作伙伴档案',
       subtitle: '我们正在寻找与我们一样热爱食物、文化和社区的热情个人。',
+      subtitle2: '我们的理想加盟合作伙伴具备以下关键特质：',
       experience: {
         title: '经验',
         description: '在酒店、零售或管理大型团队方面的经验',
@@ -679,42 +847,204 @@ const zh: Strings = {
     },
     franchiseSupport: {
       title: '加盟支持',
-      subtitle: '我们的加盟协议设计为真正的合作伙伴关系，建立在长期成功的基础上。',
-      trainingOperations: {
-        title: '培训和运营',
-        description: '全面的培训和运营手册',
+      subtitle: '在杨国福澳大利亚，我们致力于为加盟合作伙伴在旅程的每个阶段提供全面支持。从选择合适的位置到确保长期运营卓越，我们的总部团队与您一路同行。',
+      locationAdvisory: {
+        title: '选址咨询和场地采购',
+        description: '凭借强大的房地产网络，杨国福澳大利亚协助加盟商识别高潜力位置、采购优质零售场地并协商有利的租赁条款。',
       },
-      supplyChain: {
-        title: '供应链和物流',
-        description: '集中式供应链和物流',
+      initialTraining: {
+        title: '初期培训',
+        description: '为加盟商及其团队提供全面培训，涵盖店铺运营、食品处理标准、服务协议和澳大利亚法律合规。',
       },
-      marketingCampaigns: {
-        title: '营销活动',
-        description: '国家和国际营销活动',
+      designFitout: {
+        title: '设计和装修',
+        description: '我们提供端到端的设计解决方案，包括店铺布局、室内设计、品牌标识和基本装修材料供应。',
+      },
+      preOpeningSupport: {
+        title: '开业前和启动支持',
+        description: '我们经验丰富的运营团队提供4-6周的现场指导、招聘和员工培训协助，以及实际操作支持。',
+      },
+      marketingPromotion: {
+        title: '营销和推广',
+        description: '加盟商受益于国家和本地营销活动、社交媒体曝光和盛大开业活动支持。',
+      },
+      ongoingSupport: {
+        title: '持续运营支持',
+        description: '长期支持包括定期审计、持续培训、质量控制和合规监控，确保最高标准。',
       },
       description: '成为杨国福加盟合作伙伴是一个需要奉献和韧性的旅程，但回报是巨大的——无论是财务上还是个人上。我们将一起将正宗的麻辣烫带到澳大利亚的每个角落。',
     },
     process: {
       title: '流程',
-      subtitle: '我们简化的加盟流程确保所有潜在合作伙伴的顺利体验。',
+      subtitle: 'YGF澳大利亚加盟流程（6个步骤）',
       steps: {
         enquire: {
-          title: '步骤1 - 咨询',
-          description: '进行在线咨询并填写问卷。',
+          title: '咨询',
+          description: '支付申请费（$100）。',
         },
-        interview: {
-          title: '步骤2 - 面试',
-          description: '我们的加盟招聘团队将通过电话联系您进行初步面试。',
+        franchiseMeeting: {
+          title: '加盟会议',
+          description: '面对面会议和门店参观。',
         },
-        onlineInterview: {
-          title: '步骤3 - 在线面试',
-          description: '与我们的加盟总监进行在线面试。',
+        siteSelection: {
+          title: '选址',
+          description: '选择位置（提供或自选）。',
         },
-        meetFounder: {
-          title: '步骤4 - 会见我们的创始人',
-          description: '与Steven Marks（创始人和联合首席执行官）进行简短的在线会议。',
+        legalDocuments: {
+          title: '法律文件',
+          description: '签署加盟协议和相关文件。',
+        },
+        training: {
+          title: '培训',
+          description: '全面培训计划。',
+        },
+        opening: {
+          title: '开业',
+          description: '门店设置和正式开业。',
         },
       },
+    },
+    faq: {
+      title: '常见问题 – YGF澳大利亚',
+      sections: {
+        applicationProcess: {
+          title: '申请与流程',
+          questions: [
+            {
+              question: '申请押金可以退还吗？',
+              answer: '申请押金为100澳元，不可退还。'
+            },
+            {
+              question: '申请流程需要多长时间？',
+              answer: '一旦提供所有文件，申请流程通常需要大约一周时间完成。'
+            },
+            {
+              question: 'YGF澳大利亚会公布他们的加盟商选择标准吗？',
+              answer: '是的。最终批准需要您通过我们的选择流程，包括面试和适合性评估。'
+            },
+            {
+              question: '在网站上提交咨询是否就是开始招聘流程的全部？',
+              answer: '提交咨询是第一步。然后您将被引导完成完整的申请、审查和面试流程。'
+            }
+          ]
+        },
+        financeCosts: {
+          title: '财务与成本',
+          questions: [
+            {
+              question: '您的加盟机会成本是多少，这个价格包括什么，除了这个价格之外还会产生什么其他成本？',
+              answer: '总投资包括加盟费、店面装修、设备和初始库存。额外成本可能包括营运资金、租金、工资和其他运营费用。确切金额取决于店面大小和位置。'
+            },
+            {
+              question: '我需要多少营运资金？',
+              answer: '加盟商应准备额外的营运资金来支付持续费用，特别是在前几个月。'
+            },
+            {
+              question: '购买加盟店我需要现金或股权吗？',
+              answer: '是的。加盟合作伙伴需要为业务贡献股权或现金投资。'
+            },
+            {
+              question: '银行会借给我多少钱？',
+              answer: '这将取决于您的财务状况和银行的加盟贷款标准。'
+            },
+            {
+              question: '拥有业务后我可能会产生什么成本？',
+              answer: '典型成本包括租金、工资、公用事业、营销贡献和供应商成本。'
+            }
+          ]
+        },
+        trainingSupport: {
+          title: '培训与支持',
+          questions: [
+            {
+              question: '您会培训我吗？谁支付我的培训费用？我去哪里培训？',
+              answer: 'YGF澳大利亚提供涵盖店面运营、食品安全和营销的全面培训。培训费用已包含，但差旅和住宿费用通常由加盟商支付。'
+            },
+            {
+              question: '我将从YGF澳大利亚获得什么持续支持？',
+              answer: '加盟商在运营、供应链、营销和业务发展方面获得持续支持。'
+            }
+          ]
+        },
+        siteLease: {
+          title: '选址与租赁',
+          questions: [
+            {
+              question: '我需要为店面找位置吗？',
+              answer: 'YGF澳大利亚协助选址，但租赁合同将直接由您与房东签署。'
+            },
+            {
+              question: '如果我建议一个位置，是否意味着我将获得该位置？',
+              answer: '不是自动的。所有位置都需要经过适合性评估和YGF澳大利亚的批准。'
+            },
+            {
+              question: '典型的租赁期限是多长？为什么加盟和租赁期限不同？',
+              answer: '租赁期限通常与房东协商（通常5-7年）。加盟协议通常运行约5年，以与业务规划周期保持一致。'
+            },
+            {
+              question: '租赁期限结束时会发生什么？',
+              answer: '根据业绩和租赁谈判，选择可能包括续约、搬迁或关闭。'
+            }
+          ]
+        },
+        returnsOperations: {
+          title: '回报与运营',
+          questions: [
+            {
+              question: '经营YGF澳大利亚加盟店我能期待什么样的回报？',
+              answer: '回报取决于位置、市场条件和个人努力。YGF澳大利亚不保证财务回报。'
+            },
+            {
+              question: '为什么现有店面出售价格与新位置机会不同？',
+              answer: '价格根据店面业绩、租赁条款和商誉价值而变化。'
+            },
+            {
+              question: '如果我想拥有多个店面怎么办？',
+              answer: '对于达到业绩基准的加盟商，多店面所有权是可能的。'
+            },
+            {
+              question: '我需要在业务中全职工作还是可以在管理下经营我的加盟店？',
+              answer: '我们建议加盟商全职工作，特别是在早期阶段。一些人在店面稳定后转向管理运营。'
+            },
+            {
+              question: '我可以为业务采购自己的供应品吗？',
+              answer: '不可以。为确保一致性和质量，所有供应品必须来自批准的YGF供应商。'
+            }
+          ]
+        },
+        citizenshipEligibility: {
+          title: '公民身份与资格',
+          questions: [
+            {
+              question: '成为加盟合作伙伴我需要有商业或食品行业经验吗？',
+              answer: '是的。优先考虑有商业或食品行业经验，因为这有助于您成功。也将提供全面培训和支持。'
+            },
+            {
+              question: 'YGF澳大利亚加盟协议多长时间？',
+              answer: '通常5年，续约取决于业绩。'
+            },
+            {
+              question: '在澳大利亚与YGF澳大利亚加盟，我必须是澳大利亚公民或永久居民吗？',
+              answer: '是的。加盟商必须是澳大利亚公民或永久居民，以确保长期业务运营。'
+            }
+          ]
+        }
+      }
+    },
+    franchiseeStories: {
+      title: '加盟商故事：成长、成功与自由',
+      stories: [
+        {
+          name: 'Daniel Mesiti & Anthony Stahl',
+          location: 'Eastgardens, Chatswood Monsoon & Westfield, Top Ryde, Bankstown',
+          story: '在经营自己的生意超过5年并遇到困难后，我们转向加盟来改善我们的生意和我们自己。当时我们并不了解Boost会是多么合适的选择。Boost继续推动自己改进，也推动我们作为合作伙伴改进。12年后，我们仍然热爱生活和Boost！成为这样一个健康品牌的一部分，致力于让客户感觉更好一点，这改变了我们的生活。'
+        },
+        {
+          name: 'Daniel Chams-Eddine & Diana Dolgov',
+          location: 'Helensvale',
+          story: '我们感到非常荣幸和感激能够从旅程的一开始就成为美丽Boost家庭的一部分。我们为成为澳大利亚标志性品牌的一部分而感到自豪。我们热爱这个品牌，它的原始能量、氛围、独特的活力以及推广有趣、充满爱意和健康的生活方式。在过去的几年里，我们享受成为这样一个家庭的成员，它拥抱对生活的热情，并与我们密切合作，实现我们持续的成功和成就。'
+        }
+      ]
     },
     application: {
       title: '今天咨询',
@@ -780,5 +1110,7 @@ export function useI18n() {
   const { language } = useLanguage()
   return language === 'zh' ? zh : en
 }
+
+
 
 

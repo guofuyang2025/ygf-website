@@ -8,6 +8,7 @@ import CareersEmail, { type CareersEmailRef } from '@/components/form/careers-em
 import { useRef, useState } from 'react'
 import { useI18n } from '@/lib/contexts/LanguageContent'
 import PageBanner from '@/components/layout/PageBanner'
+import { Separator } from '@/components/ui/separator'
 
 export default function CareersPage() {
     const t = useI18n()
@@ -64,13 +65,19 @@ export default function CareersPage() {
         { value: 'head-office', label: t.careersPage.currentOpenings.positions.headOffice.title },
         { value: 'other', label: 'Other' },
     ]
+    const backgroundImage = [
+        {
+            src: "/about/title.png",
+            alt: "Background Image"
+        },
+    ]
 
     return (
         <>
             <Header />
             <main className="min-h-screen bg-background">
                 {/* Hero Section */}
-                <PageBanner title={t.careersPage.hero.title} subtitle={t.careersPage.hero.subtitle} />
+                <PageBanner title={t.careersPage.hero.title} subtitle={t.careersPage.hero.subtitle} backgroundImage={backgroundImage[0]} />
 
                 {/* Why Work With Us Section */}
                 <section className="py-20">
@@ -144,7 +151,7 @@ export default function CareersPage() {
                 </section>
 
                 {/* Current Openings Section */}
-                <section className="py-20 bg-muted/30">
+                <section className="py-20 bg-black/5">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -200,7 +207,7 @@ export default function CareersPage() {
                                                 {t.careersPage.currentOpenings.positions.kitchenStaff.description}
                                             </p>
                                         </div>
-                                        <div className="w-12 h-12 bg-primary/20 dark:bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <div className="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                                             <Target className="w-6 h-6 text-primary" />
                                         </div>
                                     </div>
@@ -234,7 +241,7 @@ export default function CareersPage() {
                                                 {t.careersPage.currentOpenings.positions.shiftLeaders.description}
                                             </p>
                                         </div>
-                                        <div className="w-12 h-12 bg-primary/20 dark:bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <div className="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                                             <TrendingUp className="w-6 h-6 text-primary" />
                                         </div>
                                     </div>
@@ -268,7 +275,7 @@ export default function CareersPage() {
                                                 {t.careersPage.currentOpenings.positions.headOffice.description}
                                             </p>
                                         </div>
-                                        <div className="w-12 h-12 bg-primary/20 dark:bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <div className="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                                             <Building2 className="w-6 h-6 text-primary" />
                                         </div>
                                     </div>
@@ -418,9 +425,10 @@ export default function CareersPage() {
                         </div>
                     </div>
                 </section>
+                <Separator className="bg-black/10" />
 
                 {/* Contact Form Section */}
-                <section className="py-20 bg-primary/20">
+                <section className="py-20">
                     <div className="container mx-auto px-4">
                         <div className="max-w-4xl mx-auto">
                             <div className="text-center mb-12">

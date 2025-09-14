@@ -95,7 +95,7 @@ export default function HomePage() {
               onSlideChange={setCurrentSlide}
             />
             {/* 主题色遮罩层 - 只影响图片 */}
-            <div className="absolute inset-0 bg-primary/30"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/30 from-60% to-black to-100%"></div>
           </div>
 
           {/* 内容覆盖层 - 高z-index，不受遮罩影响 */}
@@ -115,7 +115,7 @@ export default function HomePage() {
           </div>
 
           {/* 轮播指示器 - 放在底部 */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+          {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-2/3 z-20">
             <div className="flex justify-center gap-3">
               {carouselImages.map((_, index) => (
                 <button
@@ -129,13 +129,13 @@ export default function HomePage() {
                 />
               ))}
             </div>
-          </div>
+          </div> */}
         </section>
 
         {/* 中间部分 - 两个区块 */}
-        <section className="py-20 bg-primary/80">
+        <section className="py-20 bg-gradient-to-b from-black from-20% to-primary to-100%">
           <div className="w-full px-4 lg:px-8">
-            <div className="w-full space-y-12">
+            <div className="w-full mt-5 space-y-12">
               {/* 品牌区块 */}
               <Card className="hover:shadow-lg transition-shadow duration-300 w-full bg-white/80 dark:bg-black/80 backdrop-blur-sm">
                 <div className="flex flex-col lg:flex-row w-full">
@@ -150,15 +150,15 @@ export default function HomePage() {
                   </div>
                   <div className="lg:w-1/3 p-6 lg:p-8 flex flex-col justify-center">
                     <CardHeader className="p-0 pb-4">
-                      <CardTitle className="text-2xl lg:text-3xl font-semibold text-foreground">
+                      <CardTitle className="text-2xl lg:text-3xl font-semibold text-black">
                         {t.homePage.brand.title}
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="p-0 space-y-4">
-                      <p className="text-muted-foreground leading-relaxed text-base lg:text-lg whitespace-pre-line">
+                      <p className="text-muted-foreground leading-relaxed text-black lg:text-lg whitespace-pre-line">
                         {t.homePage.brand.description}
                       </p>
-                      <Button variant="outline" className="w-full" asChild>
+                      <Button variant="outline" className="w-full dark:bg-primary/60 dark:text-white hover:bg-primary/80" asChild>
                         <Link href="/about">
                           {t.homePage.brand.ctaButton}
                         </Link>
@@ -190,7 +190,7 @@ export default function HomePage() {
                       <p className="text-muted-foreground leading-relaxed text-base lg:text-lg whitespace-pre-line">
                         {t.homePage.products.description}
                       </p>
-                      <Button variant="outline" className="w-full" asChild>
+                      <Button variant="outline" className="w-full dark:bg-primary/80 dark:text-white hover:bg-primary/80" asChild>
                         <Link href="/products">
                           {t.homePage.products.ctaButton}
                         </Link>

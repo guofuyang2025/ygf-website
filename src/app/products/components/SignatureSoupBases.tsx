@@ -12,27 +12,27 @@ export function SignatureSoupBases() {
             id: 1,
             name: t.productsPage.soupBases.classicBoneBroth.name,
             description: t.productsPage.soupBases.classicBoneBroth.description,
-            image: '/products/gutang.png',
+            image: '/home/lunbo1.png',
             isLeft: true
         },
         {
             id: 2,
             name: t.productsPage.soupBases.tomatoBase.name,
             description: t.productsPage.soupBases.tomatoBase.description,
-            image: '/products/fanqie.png',
+            image: '/home/lunbo2.png',
             isLeft: false
         },
         {
             id: 3,
             name: t.productsPage.soupBases.dryMixMala.name,
             description: t.productsPage.soupBases.dryMixMala.description,
-            image: '/products/malaban.png',
+            image: '/home/lunbo3.png',
             isLeft: true
         }
     ]
 
     return (
-        <section className="py-8">
+        <section className="py-8 ">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-foreground mb-4">{t.productsPage.signatureSoupBases.title}</h2>
                 <p className="text-lg text-muted-foreground">{t.productsPage.signatureSoupBases.subtitle}</p>

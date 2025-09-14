@@ -51,11 +51,17 @@ export default function StorePage() {
 
     const [selectedIndex, setSelectedIndex] = useState(0)
     const selected = stores[selectedIndex]
+    const backgroundImage = [
+        {
+            src: "/about/title.png",
+            alt: "Background Image"
+        },
+    ]
     return (
         <>
             <Header />
             <main className="min-h-screen bg-background">
-                <PageBanner title={t.storePage.hero.title} subtitle={t.storePage.hero.subtitle} />
+                <PageBanner title={t.storePage.hero.title} subtitle={t.storePage.hero.subtitle} backgroundImage={backgroundImage[0]} />
 
                 <div className="container mx-auto px-4 py-10">
                     <Box sx={{ display: 'grid', gap: 4, gridTemplateColumns: '1fr' }}>

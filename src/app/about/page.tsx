@@ -9,16 +9,81 @@ import PageBanner from '@/components/layout/PageBanner'
 
 export default function AboutPage() {
     const t = useI18n()
+    const backgroundImage = [
+        {
+            src: "/about/title.png",
+            alt: "Background Image"
+        },
+
+    ]
 
     return (
         <>
             <Header />
             <main className="min-h-screen bg-background">
                 {/* Hero Section */}
-                <PageBanner title={t.aboutPage.hero.title} subtitle={t.aboutPage.hero.subtitle} />
+                <PageBanner title={t.aboutPage.hero.title} subtitle={t.aboutPage.hero.subtitle} backgroundImage={backgroundImage[0]} />
+
+                {/* Brand Story Section Title */}
+                <section className="py-12 bg-white">
+                    <div className="container mx-auto px-4 text-center">
+                        <h2 className="text-4xl font-bold text-black mb-4">Our Brand Story</h2>
+                        <p className="text-xl text-black max-w-2xl mx-auto">
+                            Discover the journey that shaped our company and the values that drive us forward
+                        </p>
+                    </div>
+                </section>
+
+                {/* Story Section 1 - Left Image, Right Text */}
+                <section className="py-20 bg-white">
+                    <div className="container mx-auto px-4">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div className="order-2 lg:order-1">
+                                <img
+                                    src="/about/mainbuilding.png"
+                                    alt="Our Journey Begins"
+                                    className="rounded-lg shadow-lg w-full h-auto"
+                                />
+                            </div>
+                            <div className="order-1 lg:order-2">
+                                <h2 className="text-3xl font-bold text-foreground mb-6">{t.aboutPage.story.journey.title}</h2>
+                                <p className="text-lg text-muted-foreground mb-6 leading-relaxed whitespace-pre-line">
+                                    {t.aboutPage.story.journey.description1}
+                                </p>
+                                <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
+                                    {t.aboutPage.story.journey.description2}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Story Section 2 - Right Image, Left Text */}
+                <section className="py-20 bg-white">
+                    <div className="container mx-auto px-4">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <h2 className="text-3xl font-bold text-foreground mb-6">{t.aboutPage.story.innovation.title}</h2>
+                                <p className="text-lg text-muted-foreground mb-6 leading-relaxed whitespace-pre-line">
+                                    {t.aboutPage.story.innovation.description1}
+                                </p>
+                                <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
+                                    {t.aboutPage.story.innovation.description2}
+                                </p>
+                            </div>
+                            <div>
+                                <img
+                                    src="/about/ygf_au.png"
+                                    alt="Innovation at Our Core"
+                                    className="rounded-lg shadow-lg w-full h-auto"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 {/* Team Section */}
-                <section className="py-20">
+                <section className="py-20 bg-black/5">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-16">
                             <h2 className="text-4xl font-bold text-foreground mb-4">{t.aboutPage.team.title}</h2>
@@ -88,63 +153,7 @@ export default function AboutPage() {
                     </div>
                 </section>
 
-                {/* Brand Story Section Title */}
-                <section className="py-12 bg-primary/10">
-                    <div className="container mx-auto px-4 text-center">
-                        <h2 className="text-4xl font-bold text-foreground mb-4">Our Brand Story</h2>
-                        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                            Discover the journey that shaped our company and the values that drive us forward
-                        </p>
-                    </div>
-                </section>
-
-                {/* Story Section 1 - Left Image, Right Text */}
-                <section className="py-20 bg-primary/10">
-                    <div className="container mx-auto px-4">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                            <div className="order-2 lg:order-1">
-                                <img
-                                    src="/about/mainbuilding.png"
-                                    alt="Our Journey Begins"
-                                    className="rounded-lg shadow-lg w-full h-auto"
-                                />
-                            </div>
-                            <div className="order-1 lg:order-2">
-                                <h2 className="text-3xl font-bold text-foreground mb-6">{t.aboutPage.story.journey.title}</h2>
-                                <p className="text-lg text-muted-foreground mb-6 leading-relaxed whitespace-pre-line">
-                                    {t.aboutPage.story.journey.description1}
-                                </p>
-                                <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
-                                    {t.aboutPage.story.journey.description2}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Story Section 2 - Right Image, Left Text */}
-                <section className="py-20 bg-primary/10">
-                    <div className="container mx-auto px-4">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                            <div>
-                                <h2 className="text-3xl font-bold text-foreground mb-6">{t.aboutPage.story.innovation.title}</h2>
-                                <p className="text-lg text-muted-foreground mb-6 leading-relaxed whitespace-pre-line">
-                                    {t.aboutPage.story.innovation.description1}
-                                </p>
-                                <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
-                                    {t.aboutPage.story.innovation.description2}
-                                </p>
-                            </div>
-                            <div>
-                                <img
-                                    src="/about/ygf_au.png"
-                                    alt="Innovation at Our Core"
-                                    className="rounded-lg shadow-lg w-full h-auto"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                
 
                 {/* Vision/Mission Section */}
                 <section className="py-20">

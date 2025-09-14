@@ -14,6 +14,7 @@ import { useI18n } from '@/lib/contexts/LanguageContent'
 import { createClient } from '@/lib/supabase'
 import PageBanner from '@/components/layout/PageBanner'
 import Image from 'next/image'
+import { Separator } from '@/components/ui/separator'
 
 export default function MembershipPage() {
     const t = useI18n()
@@ -92,19 +93,26 @@ export default function MembershipPage() {
             setIsSubmitting(false)
         }
     }
+    const backgroundImage = [
+        {
+            src: "/about/title.png",
+            alt: "Background Image"
+        },
+
+    ]
 
     return (
         <>
             <Header />
             <main className="min-h-screen bg-background">
                 {/* Hero Section */}
-                <PageBanner title={t.membershipPage.hero.title} subtitle={t.membershipPage.hero.subtitle} />
+                <PageBanner title={t.membershipPage.hero.title} subtitle={t.membershipPage.hero.subtitle} backgroundImage={backgroundImage[0]} />
 
 
 
 
                 {/* Detailed Benefits Section */}
-                <section className="py-20">
+                <section className="py-20 bg-black/5">
                     <div className="container mx-auto px-4">
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-16">
                             {t.membershipPage.benefits.title}
@@ -179,9 +187,10 @@ export default function MembershipPage() {
                         </div>
                     </div>
                 </section>
+                <Separator className="bg-black/10" />
 
                 {/* Membership Application Form */}
-                <section className="py-20 bg-primary/20">
+                <section className="py-20">
                     <div className="container mx-auto px-4">
                         <div className="max-w-4xl mx-auto">
                             <div className="text-center mb-12">

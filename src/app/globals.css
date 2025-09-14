@@ -6,11 +6,16 @@
 
 :root {
 
-  --theme-primary: #d85218;
+  --theme-primary: #E7400B;
   --theme-primary-light: #be4211;
   --theme-primary-dark: #b8390f;
   --theme-primary-lighter: #f07642;
   --theme-primary-darker: #a9400b;
+  --theme-secondary: #140000;
+  --theme-secondary-light: #200101;
+  --theme-secondary-dark: #080606;
+  --theme-secondary-lighter: #1e1c1c;
+  --theme-secondary-darker: #130000;
 
   --radius: 0.625rem;
   --background: oklch(1 0 0);

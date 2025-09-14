@@ -2,7 +2,9 @@ export type ContactEmailData = {
     firstName: string
     lastName: string
     email: string
-    subject: string
+    phone: string
+    enquiryType: string
+    subject?: string
     message: string
     source?: string
 }
@@ -17,8 +19,10 @@ export function generateContactEmailHtml(data: ContactEmailData): string {
             <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
                 <p><strong>Name:</strong> ${data.firstName} ${data.lastName}</p>
                 <p><strong>Email:</strong> <a href="mailto:${data.email}">${data.email}</a></p>
+                <p><strong>Phone:</strong> ${data.phone}</p>
+                <p><strong>Enquiry Type:</strong> ${data.enquiryType}</p>
+                ${data.subject ? `<p><strong>Subject:</strong> ${data.subject}</p>` : ''}
                 ${data.source ? `<p><strong>Source:</strong> ${data.source}</p>` : ''}
-                <p><strong>Subject:</strong> ${data.subject}</p>
             </div>
             
             <div style="background-color: #fff; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px;">
