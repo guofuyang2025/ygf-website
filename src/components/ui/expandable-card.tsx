@@ -26,7 +26,7 @@ export function ExpandableCard({ title, description, className }: ExpandableCard
             )}
             onClick={toggleExpanded}
         >
-            <CardHeader className="pb-3">
+            <CardHeader className="pb-0">
                 <CardTitle className="flex items-center justify-between text-lg font-semibold">
                     <span>{title}</span>
                     <div className="flex items-center">
