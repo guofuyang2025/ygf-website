@@ -4,47 +4,12 @@ import Header from '@/components/layout/public-header'
 import Footer from '@/components/layout/Footer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Star } from 'lucide-react'
 import { Carousel, CarouselRef } from '@/components/ui/carousel'
 import { useI18n } from '@/lib/contexts/LanguageContent'
 import { useState, useRef } from 'react'
 import Link from 'next/link'
+import RotatingTestimonials from '@/features/testimonials/RotatingTestimonials'
 
-// 客户评价卡片组件
-function TestimonialCard({
-  name,
-  feedback,
-  avatarSrc,
-  rating = 5
-}: {
-  name: string;
-  feedback: string;
-  avatarSrc: string;
-  rating?: number
-}) {
-  return (
-    <Card className="text-center hover:shadow-lg transition-shadow duration-300 h-full">
-      <CardHeader className="pb-4">
-        <Avatar className="w-16 h-16 mx-auto mb-4">
-          <AvatarImage src={avatarSrc} alt={name} />
-          <AvatarFallback className="text-lg">{name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-        </Avatar>
-        <div className="flex justify-center items-center gap-1 mb-2">
-          {[...Array(rating)].map((_, i) => (
-            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-          ))}
-        </div>
-        <CardTitle className="text-lg font-semibold text-foreground">{name}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="text-sm text-muted-foreground leading-relaxed italic">
-          "{feedback}"
-        </p>
-      </CardContent>
-    </Card>
-  )
-}
 
 export default function HomePage() {
   const t = useI18n()
@@ -203,7 +168,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 客户评价部分 */}
+        {/* Customer Testimonials Section */}
         <section className="py-20 bg-muted/30">
           <div className="w-full px-4 lg:px-8">
             <div className="text-center mb-16">
@@ -213,17 +178,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-              {t.homePage.testimonials.items.map((testimonial: any, index: number) => (
-                <TestimonialCard
-                  key={index}
-                  name={testimonial.name}
-                  feedback={testimonial.feedback}
-                  avatarSrc={testimonial.avatarSrc}
-                  rating={testimonial.rating}
-                />
-              ))}
-            </div>
+            <RotatingTestimonials />
           </div>
         </section>
       </main>
