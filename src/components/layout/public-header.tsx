@@ -95,7 +95,7 @@ export default function PublicHeader() {
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex items-center gap-2">
                         <Link href="/" className="block h-full">
-                            <Image src="/logo.png" alt="Yangguofu Malatang" className='h-full object-cover' width={165} height={165} />
+                            <Image src="/logo.png" alt="YGF Australia" className='h-full object-cover' width={165} height={165} />
                         </Link>
                         {/* <Link href="/" className="text-xl font-bold text-primary dark:text-white hover:text-primary/80 dark:hover:text-white/80 transition-colors">
                             {t.header.siteTitle}

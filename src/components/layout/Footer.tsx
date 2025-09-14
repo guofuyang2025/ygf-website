@@ -42,7 +42,7 @@ export default function Footer() {
               YangGuoFu
             </h2>
             <p className="text-sm leading-relaxed max-w-xs text-white/90">
-              Yangguofu Malatang is a restaurant chain that specializes in麻辣烫. It was founded in 2000, and is headquartered in Harbin, China.
+              YGF Australia is a restaurant chain that specializes in麻辣烫. It was founded in 2000, and is headquartered in Harbin, China.
             </p>
           </div>
 

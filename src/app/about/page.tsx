@@ -102,7 +102,7 @@ export default function AboutPage() {
                                     </Avatar>
                                     <div>
                                         <h3 className="text-xl font-semibold text-foreground">Founder</h3>
-                                        <p className="text-muted-foreground">Yang Guo Fu Malatang</p>
+                                        <p className="text-muted-foreground">YGF Australia</p>
                                     </div>
                                 </CardHeader>
                                 <CardContent>

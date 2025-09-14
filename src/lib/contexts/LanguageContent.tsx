@@ -7,7 +7,7 @@ type Strings = any
 const en: Strings = {
   header: {
 
-    siteTitle: 'Yangguofu Malatang',
+    siteTitle: 'YGF Australia',
 
     login: 'Login',
     about: 'About Us',
@@ -25,19 +25,19 @@ const en: Strings = {
   },
   banner: {
     title: 'Welcome',
-    subtitle: 'Welcome to Yangguofu Malatang',
+    subtitle: 'Welcome to YGF Australia',
   },
   introduction: {
     title: 'Introduction',
-    body: 'Yangguofu Malatang is a restaurant chain that specializes in麻辣烫. It was founded in 2000, and is headquartered in Harbin, China.',
+    body: 'YGF Australia is a restaurant chain that specializes in麻辣烫. It was founded in 2000, and is headquartered in Harbin, China.',
   },
   product: {
     title: 'Products',
     cardTitle: (id: number) => `Product ${id}`,
-    cardBody: 'Yangguofu Malatang products are unique and delicious.',
+    cardBody: 'YGF Australia products are unique and delicious.',
   },
   footer: {
-    text: 'Yangguofu Malatang',
+    text: 'YGF Australia',
   },
   loginPage: {
     title: 'Login',
@@ -66,15 +66,15 @@ const en: Strings = {
       title: 'What Our Clients Say',
       subtitle: 'Hear from our satisfied customers about their experience with our services.',
       items: [
-        { name: 'Jay Chou', feedback: 'Yangguofu Malatang, Oh Yeah!', rating: 5, avatarSrc: '/tmp/avatar_1.png' },
-        { name: 'JJ Lin', feedback: 'Yangguofu Malatang, Oh Yeah!', rating: 4, avatarSrc: '/tmp/avatar_2.png' },
-        { name: 'Wang Lihong', feedback: 'Yangguofu Malatang, Oh Yeah!', rating: 5, avatarSrc: '/tmp/avatar_3.png' },
+        { name: 'Jay Chou', feedback: 'YGF Australia, Oh Yeah!', rating: 5, avatarSrc: '/tmp/avatar_1.png' },
+        { name: 'JJ Lin', feedback: 'YGF Australia, Oh Yeah!', rating: 4, avatarSrc: '/tmp/avatar_2.png' },
+        { name: 'Wang Lihong', feedback: 'YGF Australia, Oh Yeah!', rating: 5, avatarSrc: '/tmp/avatar_3.png' },
       ],
     },
   },
   aboutPage: {
     title: 'About Us',
-    body: 'Yangguofu Malatang is a restaurant chain that specializes in麻辣烫. It was founded in 2000, and is headquartered in Harbin, China.',
+    body: 'YGF Australia is a restaurant chain that specializes in麻辣烫. It was founded in 2000, and is headquartered in Harbin, China.',
     hero: {
       title: 'About Us',
       subtitle: 'Our Story – From Harbin to the World',
@@ -93,7 +93,7 @@ const en: Strings = {
       },
       innovation: {
         title: 'Yangguofu in Australia',
-        description1: 'In May 2025, YGF Australia became the exclusive master franchisee of YGF Malatang.\nOur leadership team brings over 15 years of Australian F&B industry expertise, including key members who helped establish Spicy World Australia.',
+        description1: 'In May 2025, YGF Australia became the exclusive master franchisee of YGF Australia.\nOur leadership team brings over 15 years of Australian F&B industry expertise, including key members who helped establish Spicy World Australia.',
         description2: 'Today, YGF operates 10 stores nationwide. By the end of 2025, we will open three more — including a AUD $2 million flagship store on Gouger Street, Adelaide\'s Chinatown, the largest Malatang restaurant in the Southern Hemisphere.\nOur flagship location will combine authentic YGF flavors with rich cultural and Australian design elements, representing a new generation of modern Malatang.',
         button: 'Explore Our Work',
       },
@@ -186,7 +186,7 @@ const en: Strings = {
     },
     whyWorkWithUs: {
       title: 'Why Work With Us?',
-      subtitle: "At Yangguofu Malatang, we believe our people are the heart of our success. With nearly 7,000 restaurants worldwide, we're bringing authentic Malatang to Australia — and we're looking for passionate, energetic, and customer-focused individuals to join our team.",
+      subtitle: "At YGF Australia, we believe our people are the heart of our success. With nearly 7,000 restaurants worldwide, we're bringing authentic Malatang to Australia — and we're looking for passionate, energetic, and customer-focused individuals to join our team.",
       globalBrand: {
         title: 'Global Brand',
         description: 'Be part of a global brand with exciting expansion plans in Australia',
