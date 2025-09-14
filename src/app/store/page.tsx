@@ -1,9 +1,11 @@
 'use client'
 
+import React from 'react'
 import Header from '@/components/layout/public-header'
 import Footer from '@/components/layout/Footer'
 import { useI18n } from '@/lib/contexts/LanguageContent'
 import PageBanner from '@/components/layout/PageBanner'
+import GoogleMap from '@/components/maps/GoogleMap'
 import { useState } from 'react'
 import {
     Box,
@@ -14,43 +16,30 @@ import {
     Chip,
     Stack,
     Card,
-    CardContent
+    CardContent,
+    Button,
+    TextField,
+    InputAdornment
 } from '@mui/material'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
-import StarIcon from '@mui/icons-material/Star'
-import ScheduleIcon from '@mui/icons-material/Schedule'
+import SearchIcon from '@mui/icons-material/Search'
+import { useRouter } from 'next/navigation'
+import { stores, getStoreIcon } from './data'
 
 export default function StorePage() {
     const t = useI18n()
-    const stores = [
-        {
-            name: 'Adelaide CBD Chinatown – Flagship',
-            address: 'Adelaide Chinatown',
-            tag: 'Flagship',
-            icon: <StarIcon fontSize="small" />,
-        },
-        {
-            name: 'Marion Westfield (Opening Nov 2025)',
-            address: 'Westfield Marion, Adelaide',
-            tag: 'Opening Nov 2025',
-            icon: <ScheduleIcon fontSize="small" />,
-        },
-        {
-            name: 'Brisbane CBD (Opening late 2025)',
-            address: 'Brisbane CBD',
-            tag: 'Opening late 2025',
-            icon: <ScheduleIcon fontSize="small" />,
-        },
-        {
-            name: 'More locations coming soon',
-            address: 'Australia',
-            tag: 'Coming soon',
-            icon: <ScheduleIcon fontSize="small" />,
-        },
-    ]
+    const router = useRouter()
 
     const [selectedIndex, setSelectedIndex] = useState(0)
-    const selected = stores[selectedIndex]
+    const [searchQuery, setSearchQuery] = useState('')
+    
+    // Filter stores based on search query
+    const filteredStores = stores.filter(store => 
+        store.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        store.address.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    
+    const selected = filteredStores[selectedIndex] || filteredStores[0]
     const backgroundImage = [
         {
             src: "/about/title.png",
@@ -64,18 +53,49 @@ export default function StorePage() {
                 <PageBanner title={t.storePage.hero.title} subtitle={t.storePage.hero.subtitle} backgroundImage={backgroundImage[0]} />
 
                 <div className="container mx-auto px-4 py-10">
-                    <Box sx={{ display: 'grid', gap: 4, gridTemplateColumns: '1fr' }}>
-                        <Box>
+                    {/* Search Bar */}
+                    <Box sx={{ mb: 4 }}>
+                        <TextField
+                            fullWidth
+                            placeholder="Search stores by name or location..."
+                            value={searchQuery}
+                            onChange={(e) => {
+                                setSearchQuery(e.target.value)
+                                setSelectedIndex(0) // Reset selection when searching
+                            }}
+                            InputProps={{
+                                startAdornment: (
+                                    <InputAdornment position="start">
+                                        <SearchIcon />
+                                    </InputAdornment>
+                                ),
+                            }}
+                            sx={{ 
+                                '& .MuiOutlinedInput-root': {
+                                    borderRadius: 2,
+                                }
+                            }}
+                        />
+                    </Box>
+
+                    <Box sx={{ display: 'flex', gap: 4, flexDirection: { xs: 'column', md: 'row' } }}>
+                        {/* 左侧门店列表 */}
+                        <Box sx={{ flex: { xs: 1, md: '0 0 400px' } }}>
                             <Card>
                                 <CardContent>
                                     <Typography variant="h5" gutterBottom>
                                         Find a Store Near You
+                                        {searchQuery && (
+                                            <Typography variant="body2" color="text.secondary" component="span">
+                                                {' '}({filteredStores.length} result{filteredStores.length !== 1 ? 's' : ''})
+                                            </Typography>
+                                        )}
                                     </Typography>
 
                                     <List>
-                                        {stores.map((s, idx) => (
+                                        {filteredStores.map((s, idx) => (
                                             <ListItemButton
-                                                key={s.name}
+                                                key={s.id}
                                                 selected={idx === selectedIndex}
                                                 onClick={() => setSelectedIndex(idx)}
                                                 sx={{ borderRadius: 1, mb: 1 }}
@@ -87,10 +107,10 @@ export default function StorePage() {
                                                 />
                                                 {s.tag && (
                                                     <Chip
-                                                        icon={s.icon}
+                                                        icon={React.createElement(getStoreIcon(s.iconType), { fontSize: "small" })}
                                                         label={s.tag}
                                                         size="small"
-                                                        color={idx === 0 ? 'primary' : 'default'}
+                                                        color={s.status === 'open' ? 'primary' : 'default'}
                                                         sx={{ ml: 1 }}
                                                     />
                                                 )}
@@ -98,35 +118,40 @@ export default function StorePage() {
                                         ))}
                                     </List>
 
-                                    <Stack direction="row" spacing={1} mt={2} flexWrap="wrap">
-                                        <Chip label="Modern dine-in experience" variant="outlined" />
-                                        <Chip label="Convenient takeaway options" variant="outlined" />
-                                        <Chip label="Student-friendly promotions" variant="outlined" />
-                                    </Stack>
+                                    {/* 查看详情按钮 */}
+                                    {selected && (
+                                        <Box sx={{ mt: 3 }}>
+                                            <Button
+                                                variant="contained"
+                                                fullWidth
+                                                onClick={() => router.push(`/store/${selected.id}`)}
+                                                disabled={selected.status !== 'open'}
+                                            >
+                                                {selected.status === 'open' ? 'View Store Details' : 'Coming Soon'}
+                                            </Button>
+                                        </Box>
+                                    )}
+
+                                    {/* No results message */}
+                                    {filteredStores.length === 0 && (
+                                        <Box sx={{ mt: 3, textAlign: 'center' }}>
+                                            <Typography variant="body2" color="text.secondary">
+                                                No stores found matching "{searchQuery}"
+                                            </Typography>
+                                        </Box>
+                                    )}
                                 </CardContent>
                             </Card>
                         </Box>
 
-                        <Box>
+                        {/* 右侧地图 */}
+                        <Box sx={{ flex: 1 }}>
                             <Card sx={{ height: '100%' }}>
                                 <CardContent>
                                     <Typography variant="h6" gutterBottom>
-                                        {selected.name}
+                                        Store Locations
                                     </Typography>
-                                    <Typography variant="body2" color="text.secondary" gutterBottom>
-                                        {selected.address}
-                                    </Typography>
-                                    <Box sx={{ height: 400, position: 'relative', borderRadius: 1, overflow: 'hidden' }}>
-                                        <iframe
-                                            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}&q=${encodeURIComponent(selected.address)}`}
-                                            width="100%"
-                                            height="100%"
-                                            style={{ border: 0 }}
-                                            allowFullScreen
-                                            loading="lazy"
-                                            referrerPolicy="no-referrer-when-downgrade"
-                                        />
-                                    </Box>
+                                    <GoogleMap stores={filteredStores} height="600px" />
                                 </CardContent>
                             </Card>
                         </Box>
