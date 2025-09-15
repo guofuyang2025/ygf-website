@@ -38,7 +38,7 @@ export default function PublicHeader() {
     // 在客户端水合完成前显示加载状态
     if (!mounted) {
         return (
-            <header className="sticky top-0 z-50 w-full border-b bg-black backdrop-blur-md">
+            <header className="w-full bg-black backdrop-blur-md">
                 <div className="container mx-auto px-4">
                     <div className="flex h-16 items-center justify-between">
                         <div className="flex items-center gap-2">
@@ -90,14 +90,14 @@ export default function PublicHeader() {
     }
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b bg-black backdrop-blur-md">
+        <header className="w-full bg-black backdrop-blur-md">
             <div className="absolute inset-0 bg-white/20 pointer-events-none"></div>
 
             <div className="container mx-auto px-4">
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex items-center gap-2">
                         <Link href="/" className="block h-full">
-                            <Image src="/logo.png" alt="YGF Australia" className='h-full object-cover' width={165} height={165} />
+                            <Image src="/logo.jpg" alt="YGF Australia" className='h-full object-cover' width={165} height={165} />
                         </Link>
                         {/* <Link href="/" className="text-xl font-bold text-primary dark:text-white hover:text-primary/80 dark:hover:text-white/80 transition-colors">
                             {t.header.siteTitle}

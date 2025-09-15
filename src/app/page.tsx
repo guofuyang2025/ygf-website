@@ -69,12 +69,12 @@ export default function HomePage() {
               <h1 className="text-5xl md:text-7xl font-bold text-white dark:text-black mb-6 [text-shadow:_0_4px_8px_rgb(var(--primary)_/_0.4)]">
                 {t.homePage.hero.title}
               </h1>
-              {/* <p className="text-xl md:text-3xl text-white dark:text-black mb-4 max-w-4xl mx-auto [text-shadow:_0_2px_4px_rgb(var(--primary)_/_0.3)]">
+              <p className="text-xl md:text-3xl text-white dark:text-black mb-4 max-w-4xl mx-auto [text-shadow:_0_2px_4px_rgb(var(--primary)_/_0.3)]">
                 {t.homePage.hero.subtitle}
               </p>
               <p className="text-lg md:text-xl text-white dark:text-black mb-8 max-w-3xl mx-auto [text-shadow:_0_2px_4px_rgb(var(--primary)_/_0.3)]">
                 {t.homePage.hero.extraText}
-              </p> */}
+              </p>
 
             </div>
           </div>
