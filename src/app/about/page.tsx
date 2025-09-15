@@ -22,7 +22,7 @@ export default function AboutPage() {
             <Header />
             <main className="min-h-screen bg-background">
                 {/* Hero Section */}
-                <PageBanner title={t.aboutPage.hero.title} subtitle={t.aboutPage.hero.subtitle} backgroundImage={backgroundImage[0]} />
+                <PageBanner title={t.aboutPage.hero.title} backgroundImage={backgroundImage[0]} />
 
                 {/* Brand Story Section Title */}
                 <section className="py-12 bg-white">

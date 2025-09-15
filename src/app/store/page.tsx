@@ -50,7 +50,7 @@ export default function StorePage() {
         <>
             <Header />
             <main className="min-h-screen bg-background">
-                <PageBanner title={t.storePage.hero.title} subtitle={t.storePage.hero.subtitle} backgroundImage={backgroundImage[0]} />
+                <PageBanner title={t.storePage.hero.title} backgroundImage={backgroundImage[0]} />
 
                 <div className="container mx-auto px-4 py-10">
                     {/* Search Bar */}
@@ -66,13 +66,41 @@ export default function StorePage() {
                             InputProps={{
                                 startAdornment: (
                                     <InputAdornment position="start">
-                                        <SearchIcon />
+                                        <SearchIcon sx={{ color: '#1976d2', fontSize: '24px' }} />
                                     </InputAdornment>
                                 ),
                             }}
                             sx={{ 
                                 '& .MuiOutlinedInput-root': {
-                                    borderRadius: 2,
+                                    borderRadius: 3,
+                                    backgroundColor: '#ffffff',
+                                    border: '3px solid',
+                                    borderColor: '#e0e0e0',
+                                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                                    transition: 'all 0.3s ease',
+                                    '&:hover': {
+                                        borderColor: '#1976d2',
+                                        boxShadow: '0 4px 12px rgba(25,118,210,0.2)',
+                                        transform: 'translateY(-1px)',
+                                    },
+                                    '&.Mui-focused': {
+                                        borderColor: '#1976d2',
+                                        backgroundColor: '#ffffff',
+                                        boxShadow: '0 4px 16px rgba(25,118,210,0.3)',
+                                        transform: 'translateY(-1px)',
+                                    },
+                                    '& .MuiOutlinedInput-input': {
+                                        padding: '16px 18px',
+                                        fontSize: '18px',
+                                        fontWeight: 500,
+                                        color: '#333333',
+                                    }
+                                },
+                                '& .MuiInputBase-input::placeholder': {
+                                    color: '#666666',
+                                    opacity: 1,
+                                    fontSize: '18px',
+                                    fontWeight: 400,
                                 }
                             }}
                         />

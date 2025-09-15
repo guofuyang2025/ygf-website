@@ -12,7 +12,7 @@ const en: Strings = {
     login: 'Login',
     about: 'About Us',
     products: 'Products',
-    store: 'Store',
+    store: 'Stores',
     membership: 'Membership',
     contact: 'Contact Us',
     franchise: 'Franchise',

@@ -21,7 +21,7 @@ export default function ContactPage() {
             <Header />
             <main className="min-h-screen bg-background">
                 {/* Page Header */}
-                <PageBanner title={t.contactPage.hero.title} subtitle={t.contactPage.hero.subtitle} backgroundImage={backgroundImage[0]} />
+                <PageBanner title={t.contactPage.hero.title} backgroundImage={backgroundImage[0]} />
 
                 <div className="container mx-auto px-4 py-12">
 

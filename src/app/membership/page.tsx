@@ -19,7 +19,6 @@ export default function Membership() {
                 {/* Hero Section */}
                 <PageBanner 
                     title="Membership Program" 
-                    subtitle="Exclusive Benefits & Gift Redemption Coming Soon" 
                     backgroundImage={backgroundImage[0]} 
                 />
 

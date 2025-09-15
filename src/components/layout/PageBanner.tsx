@@ -13,7 +13,7 @@ type PageBannerProps = {
 
 export default function PageBanner({ title, subtitle, backgroundImage }: PageBannerProps) {
   return (
-    <section className="relative py-20 bg-primary/80 overflow-hidden">
+    <section className="relative py-32 bg-primary/80 overflow-hidden">
       {/* Background Image */}
       {backgroundImage && (
         <div className="absolute inset-0 z-0">

@@ -79,7 +79,6 @@ export default function FranchisePage() {
                 {/* Hero Section */}
                 <PageBanner
                     title={t.franchisePage.hero.title}
-                    subtitle={t.franchisePage.hero.subtitle}
                     backgroundImage={backgroundImage[0]}
                 />
 

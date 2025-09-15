@@ -14,7 +14,7 @@ export function HeroSection() {
     ]
     
     return (
-            <PageBanner title={t.productsPage.hero.title} subtitle={t.productsPage.hero.subtitle} backgroundImage={backgroundImage[0]} />
+            <PageBanner title={t.productsPage.hero.title} backgroundImage={backgroundImage[0]} />
             
     );
 }

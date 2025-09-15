@@ -29,7 +29,7 @@ function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-primary py-12 px-4 sm:px-6 lg:px-8 text-white">
+    <footer className="relative bg-black py-12 px-4 sm:px-6 lg:px-8 text-white">
       {/* 灰白色遮罩层 */}
       <div className="absolute inset-0 bg-white/20"></div>
 

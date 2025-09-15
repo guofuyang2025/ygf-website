@@ -77,7 +77,7 @@ export default function CareersPage() {
             <Header />
             <main className="min-h-screen bg-background">
                 {/* Hero Section */}
-                <PageBanner title={t.careersPage.hero.title} subtitle={t.careersPage.hero.subtitle} backgroundImage={backgroundImage[0]} />
+                <PageBanner title={t.careersPage.hero.title} backgroundImage={backgroundImage[0]} />
 
                 {/* Why Work With Us Section */}
                 <section className="py-20">
