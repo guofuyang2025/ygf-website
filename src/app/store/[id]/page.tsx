@@ -87,7 +87,7 @@ export default function StoreDetailPage() {
                     backgroundImage={backgroundImage} 
                 />
 
-                <div className="container mx-auto px-4 py-10">
+                <div className="container mx-auto px-4 lg:px-8 xl:px-16 py-10">
                     <Button
                         startIcon={<ArrowBackIcon />}
                         onClick={() => router.back()}

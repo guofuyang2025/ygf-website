@@ -85,7 +85,7 @@ export default function FranchisePage() {
 
                 {/* Job Description Section */}
                 <section className="py-20 bg-black/5">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="max-w-6xl mx-auto">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
                                 {t.franchisePage.jobDescription.title}
@@ -124,7 +124,7 @@ export default function FranchisePage() {
 
                 {/* Qualifications Section */}
                 <section className="py-20">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                                 {t.franchisePage.qualifications.title}
@@ -201,7 +201,7 @@ export default function FranchisePage() {
 
                 {/* Franchise Support Section */}
                 <section className="py-20">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                                 {t.franchisePage.franchiseSupport.title}
@@ -249,7 +249,7 @@ export default function FranchisePage() {
 
                 {/* FAQ Section */}
                 <section className="py-20">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                                 {t.franchisePage.faq.title}
@@ -288,7 +288,7 @@ export default function FranchisePage() {
 
                 {/* Franchisee Stories Section */}
                 <section className="py-20">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                                 {t.franchisePage.franchiseeStories.title}
@@ -322,7 +322,7 @@ export default function FranchisePage() {
                 <Separator className="bg-black/10" />
                 {/* Application Process Section */}
                 <section className="py-20">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                                 {t.franchisePage.process.title}
@@ -452,7 +452,7 @@ export default function FranchisePage() {
                 <Separator className="bg-black/10" />
                 {/* Contact Form Section */}
                 <section id="franchise-form" className="py-20">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="max-w-4xl mx-auto">
                             <div className="text-center mb-12">
                                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">

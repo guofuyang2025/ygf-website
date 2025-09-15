@@ -81,7 +81,7 @@ export default function CareersPage() {
 
                 {/* Why Work With Us Section */}
                 <section className="py-20">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                                 {t.careersPage.whyWorkWithUs.title}
@@ -152,7 +152,7 @@ export default function CareersPage() {
 
                 {/* Current Openings Section */}
                 <section className="py-20 bg-black/5">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                                 {t.careersPage.currentOpenings.title}
@@ -303,7 +303,7 @@ export default function CareersPage() {
 
                 {/* Benefits Section */}
                 {/* <section className="py-20">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-16">
                             Why work with us?
                         </h2>
@@ -388,7 +388,7 @@ export default function CareersPage() {
 
                 {/* Additional Info Section */}
                 <section className="py-20 bg-muted/30">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
                             <div>
                                 <h2 className="text-3xl font-bold text-foreground mb-6">
@@ -429,7 +429,7 @@ export default function CareersPage() {
 
                 {/* Contact Form Section */}
                 <section className="py-20">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="max-w-4xl mx-auto">
                             <div className="text-center mb-12">
                                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">

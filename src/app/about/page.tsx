@@ -26,7 +26,7 @@ export default function AboutPage() {
 
                 {/* Brand Story Section Title */}
                 <section className="py-12 bg-white">
-                    <div className="container mx-auto px-4 text-center">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16 px-4 lg:px-8 xl:px-16 text-center">
                         <h2 className="text-4xl font-bold text-black mb-4">Our Brand Story</h2>
                         <p className="text-xl text-black max-w-2xl mx-auto">
                             Discover the journey that shaped our company and the values that drive us forward
@@ -36,7 +36,7 @@ export default function AboutPage() {
 
                 {/* Story Section 1 - Left Image, Right Text */}
                 <section className="py-20 bg-white">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div className="order-2 lg:order-1">
                                 <img
@@ -60,7 +60,7 @@ export default function AboutPage() {
 
                 {/* Story Section 2 - Right Image, Left Text */}
                 <section className="py-20 bg-white">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div>
                                 <h2 className="text-3xl font-bold text-foreground mb-6">{t.aboutPage.story.innovation.title}</h2>
@@ -84,7 +84,7 @@ export default function AboutPage() {
 
                 {/* Team Section */}
                 <section className="py-20 bg-black/5">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="text-center mb-16">
                             <h2 className="text-4xl font-bold text-foreground mb-4">{t.aboutPage.team.title}</h2>
                             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -157,7 +157,7 @@ export default function AboutPage() {
 
                 {/* Vision/Mission Section */}
                 <section className="py-20">
-                    <div className="container mx-auto px-4 text-center">
+                    <div className="container mx-auto px-4 lg:px-8 xl:px-16 text-center">
                         <h2 className="text-4xl font-bold text-foreground mb-8">{t.aboutPage.mission.title}</h2>
                         <div className="max-w-4xl mx-auto">
                             <p className="text-xl text-muted-foreground mb-6 leading-relaxed whitespace-pre-line">

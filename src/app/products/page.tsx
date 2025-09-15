@@ -48,7 +48,7 @@ export default function ProductsPage() {
                 <HeroSection />
 
                 {/* 主要内容 */}
-                <main className="container mx-auto px-4 py-8 bg-black/5">
+                <main className="container mx-auto px-4 lg:px-8 xl:px-16 py-8 bg-black/5">
                     {/* 招牌汤底部分 */}
                     <SignatureSoupBases />
 

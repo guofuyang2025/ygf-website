@@ -23,7 +23,7 @@ export default function ContactPage() {
                 {/* Page Header */}
                 <PageBanner title={t.contactPage.hero.title} backgroundImage={backgroundImage[0]} />
 
-                <div className="container mx-auto px-4 py-12">
+                <div className="container mx-auto px-4 lg:px-8 xl:px-16 py-12">
 
                     {/* Main Content */}
                     <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-8 lg:gap-12 max-w-6xl mx-auto">

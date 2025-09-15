@@ -99,7 +99,7 @@ export default function HomePage() {
 
         {/* 中间部分 - 两个区块 */}
         <section className="py-20 bg-gradient-to-b from-black from-20% to-primary to-100%">
-          <div className="w-full px-4 lg:px-8">
+          <div className="w-full px-4 lg:px-8 xl:px-16">
             <div className="w-full mt-5 space-y-12">
               {/* 品牌区块 */}
               <Card className="hover:shadow-lg transition-shadow duration-300 w-full bg-white/80 dark:bg-black/80 backdrop-blur-sm">
